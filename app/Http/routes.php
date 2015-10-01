@@ -36,7 +36,6 @@ Route::put('user/{id}', 'UserController@actionUpdate');
 Route::get('movies', 'MovieController@viewReadAll');
 Route::get('movies/create', 'MovieController@viewCreate');
 Route::get('movies/{id}', 'MovieController@viewReadOne');
-Route::get('movies/{id}/edit', 'MovieController@viewUpdate');
 Route::post('movies', 'MovieController@actionCreate');
 Route::put('movies/{id}', 'MovieController@actionUpdate');
 Route::delete('movies/{id}', 'MovieController@actionDelete');

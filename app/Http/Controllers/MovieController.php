@@ -54,7 +54,6 @@ class MovieController extends Controller {
 
 		return view('movies.viewReadOne')->with('movie', $movie);
 
-
 	}
 
 	// View page to update a movie's information.
@@ -79,7 +78,17 @@ class MovieController extends Controller {
 
 	// Update a movie's information in the database.
 
-	public function actionUpdate(){
+	public function actionUpdate($id, Requests\UpdateMovieRequest $request){
+
+		$user = Auth::user();
+
+		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
+
+		$movie->update($request->all());
+
+		// return view('movies.viewReadOne')->with('movie', $movie)->with('user', $user);
+
+		return redirect('movies');
 
 	}
 

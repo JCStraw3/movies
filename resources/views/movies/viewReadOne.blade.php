@@ -4,41 +4,53 @@
 </head>
 <body>
 
-	<article class='movie'>
-		<h1><?php echo $movie->title; ?></h1>
+	<h1><?php echo $movie->title; ?></h1>
 
+	<form action='/movies/<?php echo $movie->id; ?>' method='post'>
 		<div>
-			<?php echo $movie->genre; ?>
+			<input name='_method' type='hidden' value='put'>
 		</div>
 
 		<div>
-			<?php echo $movie->release_date; ?>
+			<input name='title' type='text' value='<?php echo $movie->title; ?>' placeholder='Title'>
 		</div>
 
 		<div>
-			<?php echo $movie->rating; ?>
+			<input name='genre' type='text' value='<?php echo $movie->genre; ?>' placeholder='Genre'>
 		</div>
 
 		<div>
-			<?php echo $movie->runtime; ?>
+			<input name='release_date' type='date' value='<?php echo $movie->release_date; ?>' placeholder='Release Date'>
 		</div>
 
 		<div>
-			<?php echo $movie->director; ?>
+			<input name='rating' type='text' value='<?php echo $movie->rating; ?>' placeholder='Rating'>
 		</div>
 
 		<div>
-			<?php echo $movie->writer; ?>
+			<input name='runtime' type='text' value='<?php echo $movie->runtime; ?>' placeholder='Runtime'>
 		</div>
 
 		<div>
-			<?php echo $movie->cast; ?>
+			<input name='director' type='text' value='<?php echo $movie->director; ?>' placeholder='Director'>
 		</div>
 
 		<div>
-			<?php echo $movie->synopsis; ?>
+			<input name='writer' type='text' value='<?php echo $movie->writer; ?>' placeholder='Writer'>
 		</div>
-	</article>
+
+		<div>
+			<input name='cast' type='text' value='<?php echo $movie->cast; ?>' placeholder='Cast'>
+		</div>
+
+		<div>
+			<input name='synopsis' type='text' value='<?php echo $movie->synopsis; ?>' placeholder='Synopsis'>
+		</div>
+
+		<div>
+			<button type='submit'>Save</button>
+		</div>
+	</form>
 
 </body>
 </html>
