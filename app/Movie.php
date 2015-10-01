@@ -24,8 +24,14 @@ class Movie extends Model {
 		'synopsis',
 	];
 
+	// Relationships to other models.
+
 	public function user(){
 		return $this->belongsTo('App\User');
+	}
+
+	public function genres(){
+		return $this->belongsToMany('App\Genre');
 	}
 
 }
