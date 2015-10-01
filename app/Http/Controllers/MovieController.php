@@ -86,9 +86,9 @@ class MovieController extends Controller {
 
 		$movie->update($request->all());
 
-		// return view('movies.viewReadOne')->with('movie', $movie)->with('user', $user);
+		return view('movies.viewReadOne')->with('movie', $movie)->with('user', $user);
 
-		return redirect('movies');
+		// return redirect('movies');
 
 	}
 
