@@ -40,13 +40,20 @@ class MovieController extends Controller {
 
 		$movies = Movie::where('user_id', '=', $user->id)->latest()->get();
 
-		return view('movies.viewReadAll')->with('movies', $movies)->with('user', $user);
+		return view('movies.viewReadAll')->with('movies', $movies);
 
 	}
 
 	// View single movie's profile.
 
-	public function viewReadOne(){
+	public function viewReadOne($id){
+
+		$user = Auth::user();
+
+		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
+
+		return view('movies.viewReadOne')->with('movie', $movie);
+
 
 	}
 
