@@ -10,6 +10,8 @@ use App\User;
 
 class UserController extends Controller {
 
+	// View a user's profile.
+
 	public function viewReadOne($id){
 
 		$user = User::findOrFail($id);
@@ -17,6 +19,8 @@ class UserController extends Controller {
 		return view('user.viewReadOne')->with('user', $user);
 
 	}
+
+	// Update a user's information in the database.
 
 	public function actionUpdate($id, Requests\UpdateUserRequest $request){
 
