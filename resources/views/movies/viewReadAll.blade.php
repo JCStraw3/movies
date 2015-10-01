@@ -6,10 +6,16 @@
 
 	<h1>Movies</h1>
 
+	<?php if (Session::has('flash_message')): ?>
+		<div><?php echo (Session::get('flash_message')); ?></div>
+	<?php endif; ?>
+
 	<?php foreach ($movies as $movie): ?>
 
 		<article class='movie'>
-			<h2><?php echo $movie->title; ?></h2>
+			<h2>
+				<a href='/movies/<?php echo $movie->id; ?>'><?php echo $movie->title; ?></a>
+			</h2>
 
 			<div>
 				<?php echo $movie->genre; ?>

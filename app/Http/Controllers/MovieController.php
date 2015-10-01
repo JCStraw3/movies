@@ -66,6 +66,8 @@ class MovieController extends Controller {
 
 		Auth::user()->movies()->save($movie);
 
+		\Session::flash('flash_message', 'You have successfully created a movie.');
+
 		return redirect('movies');
 
 	}
@@ -80,6 +82,8 @@ class MovieController extends Controller {
 
 		$movie->update($request->all());
 
+		\Session::flash('flash_message', 'You have successfully updated this movie.');
+
 		return view('movies.viewReadOne')->with('movie', $movie)->with('user', $user);
 
 	}
@@ -93,6 +97,8 @@ class MovieController extends Controller {
 		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
 
 		$movie->delete($movie);
+
+		\Session::flash('flash_message', 'You have successfully deleted a movie.');
 
 		return redirect('movies');
 

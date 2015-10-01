@@ -28,6 +28,8 @@ class UserController extends Controller {
 
 		$user->update($request->all());
 
+		\Session::flash('flash_message', 'You have successfully updated your profile.');
+
 		return view('user.viewReadOne')->with('user', $user);
 
 	}

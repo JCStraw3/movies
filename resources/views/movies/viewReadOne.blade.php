@@ -6,6 +6,10 @@
 
 	<h1><?php echo $movie->title; ?></h1>
 
+	<?php if (Session::has('flash_message')): ?>
+		<div><?php echo (Session::get('flash_message')); ?></div>
+	<?php endif; ?>
+
 	<form action='/movies/<?php echo $movie->id; ?>' method='post'>
 		<div>
 			<input name='_method' type='hidden' value='put'>
