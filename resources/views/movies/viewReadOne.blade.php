@@ -47,9 +47,16 @@
 			<input name='synopsis' type='text' value='<?php echo $movie->synopsis; ?>' placeholder='Synopsis'>
 		</div>
 
+		<br />
+
 		<div>
 			<button type='submit'>Save</button>
 		</div>
+	</form>
+
+	<form action='/movies/<?php echo $movie->id; ?>' method='post'>
+		<input name='_method' type='hidden' value='delete'>
+		<button type='submit'>Delete Movie</button>
 	</form>
 
 </body>

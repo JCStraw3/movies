@@ -42,6 +42,13 @@
 			<div>
 				<?php echo $movie->synopsis; ?>
 			</div>
+			
+			<br />
+
+			<form action='/movies/<?php echo $movie->id; ?>' method='post'>
+				<input name='_method' type='hidden' value='delete'>
+				<button type='submit'>Delete Movie</button>
+			</form>
 		</article>
 
 	<?php endforeach; ?>

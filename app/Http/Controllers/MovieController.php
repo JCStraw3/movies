@@ -56,12 +56,6 @@ class MovieController extends Controller {
 
 	}
 
-	// View page to update a movie's information.
-
-	public function viewUpdate(){
-
-	}
-
 // Actions.
 
 	// Create a movie in the database.
@@ -88,13 +82,19 @@ class MovieController extends Controller {
 
 		return view('movies.viewReadOne')->with('movie', $movie)->with('user', $user);
 
-		// return redirect('movies');
-
 	}
 
 	// Delete a movie from the database.
 
-	public function actionDelete(){
+	public function actionDelete($id){
+
+		$user = Auth::user();
+
+		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
+
+		$movie->delete($movie);
+
+		return redirect('movies');
 
 	}
 	
