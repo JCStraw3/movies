@@ -79,7 +79,7 @@ class MovieController extends Controller {
 
 	public function actionCreate(Requests\CreateMovieRequest $request){
 
-		// Saving request into movie variable.
+		// Set request into movie variable.
 
 		$movie = new Movie($request->all());
 
@@ -113,17 +113,37 @@ class MovieController extends Controller {
 
 	public function actionUpdate($id, Requests\UpdateMovieRequest $request){
 
+		// Set authenticated user into user variable.
+
 		$user = Auth::user();
+
+		// Find by id the id sent via the form and set into movie variable.
 
 		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
 
+		// Save request to the database.
+
 		$movie->update($request->all());
+
+		// Syncing genres to movies via pivot table.
+
+		$genres = $request->input('genres');
+
+		$movie->genres()->sync($genres);
+
+		// Syncing ratings to movies via pivot table.
+
+		$ratings = $request->input('ratings');
+
+		$movie->ratings()->sync($ratings);
+
+		// Send flash message.
 
 		\Session::flash('flash_message', 'You have successfully updated this movie.');
 
-		return view('movies.viewReadOne')
-			->with('movie', $movie)
-			->with('user', $user);
+		// Redirecting to movies page.
+
+		return redirect('movies');
 
 	}
 
@@ -131,13 +151,23 @@ class MovieController extends Controller {
 
 	public function actionDelete($id){
 
+		// Set authenticated user into user variable.
+
 		$user = Auth::user();
+
+		// Find by id the id sent via the form and set into movie variable.
 
 		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
 
+		// Delete movie from database.
+
 		$movie->delete($movie);
 
+		// Send flash message.
+
 		\Session::flash('flash_message', 'You have successfully deleted a movie.');
+
+		// Redirect to movies page.
 
 		return redirect('movies');
 
