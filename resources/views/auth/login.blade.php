@@ -13,6 +13,8 @@
 			<input name='password' type='password' placeholder='Password'>
 		</div>
 
+		<br />
+
 		<div>
 			<button type='submit'>Login</button>
 		</div>

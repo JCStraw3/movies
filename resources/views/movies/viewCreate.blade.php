@@ -10,7 +10,11 @@
 		</div>
 
 		<div>
-			<input name='genre' type='text' placeholder='Genre'>
+			<select name='genres[]' multiple='multiple'>
+				<?php foreach ($genres as $genre): ?>
+					<option value='<?php echo $genre->id; ?>'><?php echo $genre->name; ?></option>
+				<?php endforeach; ?>
+			</select>
 		</div>
 
 		<div>
@@ -18,7 +22,11 @@
 		</div>
 
 		<div>
-			<input name='rating' type='text' placeholder='Rating'>
+			<select name='ratings'>
+				<?php foreach ($ratings as $rating): ?>
+					<option value='<?php echo $rating->id; ?>'><?php echo $rating->name; ?></option>
+				<?php endforeach; ?>
+			</select>
 		</div>
 
 		<div>
@@ -26,27 +34,7 @@
 		</div>
 
 		<div>
-			<input name='director' type='text' placeholder='Director'>
-		</div>
-
-		<div>
-			<input name='writer' type='text' placeholder='Writer'>
-		</div>
-
-		<div>
-			<input name='cast' type='text' placeholder='Cast'>
-		</div>
-
-		<div>
 			<input name='synopsis' type='text' placeholder='Synopsis'>
-		</div>
-		
-		<div>
-			<select name='genres[]' multiple='multiple'>
-				<?php foreach ($genres as $genre): ?>
-					<option value='<?php echo $genre->id; ?>'><?php echo $genre->name; ?></option>
-				<?php endforeach; ?>
-			</select>
 		</div>
 		
 		<br />

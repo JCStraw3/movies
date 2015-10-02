@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 use App\Movie;
 use App\Genre;
+use App\Rating;
 
 use Auth;
 
@@ -31,7 +32,12 @@ class MovieController extends Controller {
 
 		$genres = Genre::all();
 
-		return view('movies.viewCreate')->with('genres', $genres)->with('user', $user);
+		$ratings = Rating::all();
+
+		return view('movies.viewCreate')
+			->with('genres', $genres)
+			->with('ratings', $ratings)
+			->with('user', $user);
 
 	}
 
@@ -43,7 +49,8 @@ class MovieController extends Controller {
 
 		$movies = Movie::where('user_id', '=', $user->id)->latest()->get();
 
-		return view('movies.viewReadAll')->with('movies', $movies);
+		return view('movies.viewReadAll')
+			->with('movies', $movies);
 
 	}
 
@@ -57,7 +64,12 @@ class MovieController extends Controller {
 
 		$genres = Genre::all();
 
-		return view('movies.viewReadOne')->with('movie', $movie)->with('genres', $genres);
+		$ratings = Rating::all();
+
+		return view('movies.viewReadOne')
+			->with('movie', $movie)
+			->with('genres', $genres)
+			->with('ratings', $ratings);
 
 	}
 
@@ -67,15 +79,31 @@ class MovieController extends Controller {
 
 	public function actionCreate(Requests\CreateMovieRequest $request){
 
+		// Saving request into movie variable.
+
 		$movie = new Movie($request->all());
 
+		// Saving movie variable to authenticated user.
+
 		Auth::user()->movies()->save($movie);
+
+		// Attaching genres to movies via pivot table.
 
 		$genres = $request->input('genres');
 
 		$movie->genres()->attach($genres);
 
+		// Attaching ratings to movies via pivot table.
+
+		$ratings = $request->input('ratings');
+
+		$movie->ratings()->attach($ratings);
+
+		// Sending flash message.
+
 		\Session::flash('flash_message', 'You have successfully created a movie.');
+
+		// Redirecting to movies page.
 
 		return redirect('movies');
 
@@ -93,7 +121,9 @@ class MovieController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated this movie.');
 
-		return view('movies.viewReadOne')->with('movie', $movie)->with('user', $user);
+		return view('movies.viewReadOne')
+			->with('movie', $movie)
+			->with('user', $user);
 
 	}
 

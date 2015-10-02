@@ -14,13 +14,8 @@ class Movie extends Model {
 
 	protected $fillable = [
 		'title',
-		'genre',
 		'release_date',
-		'rating',
 		'runtime',
-		'director',
-		'writer',
-		'cast',
 		'synopsis',
 	];
 
@@ -34,6 +29,12 @@ class Movie extends Model {
 
 	public function genres(){
 		return $this->belongsToMany('App\Genre');
+	}
+
+	// Movie has many ratings.
+
+	public function ratings(){
+		return $this->belongsToMany('App\Rating');
 	}
 
 }

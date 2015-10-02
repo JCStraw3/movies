@@ -21,6 +21,8 @@
 			<input name='password_confirmation' type='password' placeholder='Confirm Password'>
 		</div>
 
+		<br />
+
 		<div>
 			<button type='submit'>Register</button>
 		</div>

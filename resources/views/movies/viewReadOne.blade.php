@@ -19,38 +19,6 @@
 			<input name='title' type='text' value='<?php echo $movie->title; ?>' placeholder='Title'>
 		</div>
 
-		<div>
-			<input name='genre' type='text' value='<?php echo $movie->genre; ?>' placeholder='Genre'>
-		</div>
-
-		<div>
-			<input name='release_date' type='date' value='<?php echo $movie->release_date; ?>' placeholder='Release Date'>
-		</div>
-
-		<div>
-			<input name='rating' type='text' value='<?php echo $movie->rating; ?>' placeholder='Rating'>
-		</div>
-
-		<div>
-			<input name='runtime' type='text' value='<?php echo $movie->runtime; ?>' placeholder='Runtime'>
-		</div>
-
-		<div>
-			<input name='director' type='text' value='<?php echo $movie->director; ?>' placeholder='Director'>
-		</div>
-
-		<div>
-			<input name='writer' type='text' value='<?php echo $movie->writer; ?>' placeholder='Writer'>
-		</div>
-
-		<div>
-			<input name='cast' type='text' value='<?php echo $movie->cast; ?>' placeholder='Cast'>
-		</div>
-
-		<div>
-			<input name='synopsis' type='text' value='<?php echo $movie->synopsis; ?>' placeholder='Synopsis'>
-		</div>
-
 		<?php if (!$movie->genres->isEmpty()): ?>
 			<div>
 				<select name='genres[]' multiple='multiple'>
@@ -60,6 +28,28 @@
 				</select>
 			</div>
 		<?php endif; ?>
+
+		<div>
+			<input name='release_date' type='date' value='<?php echo $movie->release_date; ?>' placeholder='Release Date'>
+		</div>
+
+		<?php if (!$movie->ratings->isEmpty()): ?>
+			<div>
+				<select name='ratings'>
+					<?php foreach ($ratings as $rating): ?>
+						<option value='<?php echo $rating->id; ?>'><?php echo $rating->name; ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+		<?php endif; ?>
+
+		<div>
+			<input name='runtime' type='text' value='<?php echo $movie->runtime; ?>' placeholder='Runtime'>
+		</div>
+
+		<div>
+			<input name='synopsis' type='text' value='<?php echo $movie->synopsis; ?>' placeholder='Synopsis'>
+		</div>
 
 		<br />
 

@@ -23,6 +23,14 @@
 			<input name='email' type='email' value='<?php echo $user->email ?>' placeholder='Email'>
 		</div>
 
+		<div>
+			<input name='gender' type='text' value='<?php echo $user->gender ?>' placeholder='Gender'>
+		</div>
+
+		<div>
+			<input name='birthday' type='date' value='<?php echo $user->birthday ?>' placeholder='Birthday'>
+		</div>
+
 		<br />
 
 		<div>

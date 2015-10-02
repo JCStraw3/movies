@@ -18,7 +18,9 @@
 			</h2>
 
 			<div>
-				<?php echo $movie->genre; ?>
+				<?php foreach ($movie->genres as $genre): ?>
+					<?php echo $genre->name; ?>,
+				<?php endforeach; ?>
 			</div>
 
 			<div>
@@ -26,7 +28,9 @@
 			</div>
 
 			<div>
-				<?php echo $movie->rating; ?>
+				<?php foreach ($movie->ratings as $rating): ?>
+					<?php echo $rating->name; ?>,
+				<?php endforeach; ?>
 			</div>
 
 			<div>
@@ -34,25 +38,7 @@
 			</div>
 
 			<div>
-				<?php echo $movie->director; ?>
-			</div>
-
-			<div>
-				<?php echo $movie->writer; ?>
-			</div>
-
-			<div>
-				<?php echo $movie->cast; ?>
-			</div>
-
-			<div>
 				<?php echo $movie->synopsis; ?>
-			</div>
-
-			<div>
-				<?php foreach ($movie->genres as $genre): ?>
-					<?php echo $genre->name; ?>,
-				<?php endforeach; ?>
 			</div>
 			
 			<br />
