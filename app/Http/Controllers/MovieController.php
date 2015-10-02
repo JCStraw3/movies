@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Movie;
+use App\Genre;
 
 use Auth;
 
@@ -28,7 +29,9 @@ class MovieController extends Controller {
 
 		$user = Auth::user();
 
-		return view('movies.viewCreate')->with('user', $user);
+		$genres = Genre::all();
+
+		return view('movies.viewCreate')->with('genres', $genres)->with('user', $user);
 
 	}
 
@@ -52,7 +55,9 @@ class MovieController extends Controller {
 
 		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
 
-		return view('movies.viewReadOne')->with('movie', $movie);
+		$genres = Genre::all();
+
+		return view('movies.viewReadOne')->with('movie', $movie)->with('genres', $genres);
 
 	}
 
@@ -65,6 +70,10 @@ class MovieController extends Controller {
 		$movie = new Movie($request->all());
 
 		Auth::user()->movies()->save($movie);
+
+		$genres = $request->input('genres');
+
+		$movie->genres()->attach($genres);
 
 		\Session::flash('flash_message', 'You have successfully created a movie.');
 

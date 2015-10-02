@@ -40,6 +40,16 @@
 		<div>
 			<input name='synopsis' type='text' placeholder='Synopsis'>
 		</div>
+		
+		<div>
+			<select name='genres[]' multiple='multiple'>
+				<?php foreach ($genres as $genre): ?>
+					<option value='<?php echo $genre->id; ?>'><?php echo $genre->name; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+		
+		<br />
 
 		<div>
 			<button type='submit'>Create Movie</button>

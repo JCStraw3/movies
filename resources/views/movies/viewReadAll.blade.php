@@ -48,6 +48,12 @@
 			<div>
 				<?php echo $movie->synopsis; ?>
 			</div>
+
+			<div>
+				<?php foreach ($movie->genres as $genre): ?>
+					<?php echo $genre->name; ?>,
+				<?php endforeach; ?>
+			</div>
 			
 			<br />
 

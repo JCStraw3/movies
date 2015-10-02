@@ -51,6 +51,16 @@
 			<input name='synopsis' type='text' value='<?php echo $movie->synopsis; ?>' placeholder='Synopsis'>
 		</div>
 
+		<?php if (!$movie->genres->isEmpty()): ?>
+			<div>
+				<select name='genres[]' multiple='multiple'>
+					<?php foreach ($movie->genres as $genre): ?>
+						<option value='<?php echo $genre->id; ?>'><?php echo $genre->name; ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+		<?php endif; ?>
+
 		<br />
 
 		<div>
