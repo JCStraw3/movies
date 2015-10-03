@@ -10,6 +10,7 @@ use App\Movie;
 use App\Genre;
 use App\Rating;
 use App\Director;
+use App\Writer;
 
 use Auth;
 
@@ -37,10 +38,13 @@ class MovieController extends Controller {
 
 		$directors = Director::all();
 
+		$writers = Writer::all();
+
 		return view('movies.viewCreate')
 			->with('genres', $genres)
 			->with('ratings', $ratings)
 			->with('directors', $directors)
+			->with('writers', $writers)
 			->with('user', $user);
 
 	}
@@ -72,11 +76,14 @@ class MovieController extends Controller {
 
 		$directors = Director::all();
 
+		$writers = Writer::all();
+
 		return view('movies.viewReadOne')
 			->with('movie', $movie)
 			->with('genres', $genres)
 			->with('ratings', $ratings)
-			->with('directors', $directors);
+			->with('directors', $directors)
+			->with('writers', $writers);
 
 	}
 
@@ -111,6 +118,12 @@ class MovieController extends Controller {
 		$directors = $request->input('directors');
 
 		$movie->directors()->attach($directors);
+
+		// Attaching writers to movies via pivot table.
+
+		$writers = $request->input('writers');
+
+		$movie->writers()->attach($writers);
 
 		// Sending flash message.
 
@@ -155,6 +168,12 @@ class MovieController extends Controller {
 		$directors = $request->input('directors');
 
 		$movie->directors()->sync($directors);
+
+		// Syncing writers to movies via pivot table.
+
+		$writers = $request->input('writers');
+
+		$movie->writers()->sync($writers);
 
 		// Send flash message.
 

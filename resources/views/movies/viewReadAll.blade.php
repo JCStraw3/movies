@@ -44,6 +44,12 @@
 			</div>
 
 			<div>
+				<?php foreach ($movie->writers as $writer): ?>
+					<?php echo $writer->name; ?>,
+				<?php endforeach; ?>
+			</div>
+
+			<div>
 				<?php echo $movie->synopsis; ?>
 			</div>
 			

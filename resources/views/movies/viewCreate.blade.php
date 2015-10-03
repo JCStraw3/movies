@@ -42,6 +42,14 @@
 		</div>
 
 		<div>
+			<select name='writers[]' multiple='multiple'>
+				<?php foreach ($writers as $writer): ?>
+					<option value='<?php echo $writer->id; ?>'><?php echo $writer->name; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+
+		<div>
 			<input name='synopsis' type='text' placeholder='Synopsis'>
 		</div>
 		

@@ -43,4 +43,10 @@ class Movie extends Model {
 		return $this->belongsToMany('App\Director');
 	}
 
+	// Movie can have many writers.
+
+	public function writers(){
+		return $this->belongsToMany('App\Writer');
+	}
+
 }
