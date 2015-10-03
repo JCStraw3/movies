@@ -49,4 +49,10 @@ class Movie extends Model {
 		return $this->belongsToMany('App\Writer');
 	}
 
+	// Movie can have many casts.
+
+	public function casts(){
+		return $this->belongsToMany('App\Cast');
+	}
+
 }

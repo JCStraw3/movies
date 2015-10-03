@@ -50,6 +50,12 @@
 			</div>
 
 			<div>
+				<?php foreach ($movie->casts as $cast): ?>
+					<?php echo $cast->name; ?>,
+				<?php endforeach; ?>
+			</div>
+
+			<div>
 				<?php echo $movie->synopsis; ?>
 			</div>
 			

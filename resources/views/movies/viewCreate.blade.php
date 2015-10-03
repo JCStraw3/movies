@@ -50,6 +50,14 @@
 		</div>
 
 		<div>
+			<select name='casts[]' multiple='multiple'>
+				<?php foreach ($casts as $cast): ?>
+					<option value='<?php echo $cast->id; ?>'><?php echo $cast->name; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+
+		<div>
 			<input name='synopsis' type='text' placeholder='Synopsis'>
 		</div>
 		
