@@ -29,12 +29,18 @@
 
 			<div>
 				<?php foreach ($movie->ratings as $rating): ?>
-					<?php echo $rating->name; ?>,
+					<?php echo $rating->name; ?>
 				<?php endforeach; ?>
 			</div>
 
 			<div>
 				<?php echo $movie->runtime; ?>
+			</div>
+
+			<div>
+				<?php foreach ($movie->directors as $director): ?>
+					<?php echo $director->name; ?>,
+				<?php endforeach; ?>
 			</div>
 
 			<div>

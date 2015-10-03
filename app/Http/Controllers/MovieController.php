@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Movie;
 use App\Genre;
 use App\Rating;
+use App\Director;
 
 use Auth;
 
@@ -34,9 +35,12 @@ class MovieController extends Controller {
 
 		$ratings = Rating::all();
 
+		$directors = Director::all();
+
 		return view('movies.viewCreate')
 			->with('genres', $genres)
 			->with('ratings', $ratings)
+			->with('directors', $directors)
 			->with('user', $user);
 
 	}
@@ -66,10 +70,13 @@ class MovieController extends Controller {
 
 		$ratings = Rating::all();
 
+		$directors = Director::all();
+
 		return view('movies.viewReadOne')
 			->with('movie', $movie)
 			->with('genres', $genres)
-			->with('ratings', $ratings);
+			->with('ratings', $ratings)
+			->with('directors', $directors);
 
 	}
 
@@ -98,6 +105,12 @@ class MovieController extends Controller {
 		$ratings = $request->input('ratings');
 
 		$movie->ratings()->attach($ratings);
+
+		// Attaching directors to movies via pivot table.
+
+		$directors = $request->input('directors');
+
+		$movie->directors()->attach($directors);
 
 		// Sending flash message.
 
@@ -136,6 +149,12 @@ class MovieController extends Controller {
 		$ratings = $request->input('ratings');
 
 		$movie->ratings()->sync($ratings);
+
+		// Syncing directors to movies via pivot table.
+
+		$directors = $request->input('directors');
+
+		$movie->directors()->sync($directors);
 
 		// Send flash message.
 

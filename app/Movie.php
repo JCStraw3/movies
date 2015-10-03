@@ -37,4 +37,10 @@ class Movie extends Model {
 		return $this->belongsToMany('App\Rating');
 	}
 
+	// Movie can have many directors.
+
+	public function directors(){
+		return $this->belongsToMany('App\Director');
+	}
+
 }

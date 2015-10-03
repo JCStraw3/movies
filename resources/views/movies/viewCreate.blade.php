@@ -34,6 +34,14 @@
 		</div>
 
 		<div>
+			<select name='directors[]' multiple='multiple'>
+				<?php foreach ($directors as $director): ?>
+					<option value='<?php echo $director->id; ?>'><?php echo $director->name; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+
+		<div>
 			<input name='synopsis' type='text' placeholder='Synopsis'>
 		</div>
 		
