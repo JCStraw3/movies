@@ -74,6 +74,17 @@ class MovieController extends Controller {
 
 		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
 
+		return view('movies.viewReadOne')
+			->with('movie', $movie);
+
+	}
+
+	public function viewUpdate($id){
+
+		$user = Auth::user();
+
+		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
+
 		$genres = Genre::all();
 
 		$ratings = Rating::all();
@@ -84,7 +95,7 @@ class MovieController extends Controller {
 
 		$casts = Cast::all();
 
-		return view('movies.viewReadOne')
+		return view('movies.viewUpdate')
 			->with('movie', $movie)
 			->with('genres', $genres)
 			->with('ratings', $ratings)
