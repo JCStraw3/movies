@@ -12,11 +12,7 @@
 
 	<hr />
 
-	@if (Session::has('flash_message'))
-
-		{{ Session::get('flash_message') }}
-
-	@endif
+	@include('partials.flash')
 
 	<article class='movie'>
 		<h2>

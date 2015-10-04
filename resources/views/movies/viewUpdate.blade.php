@@ -85,4 +85,6 @@
 		<button type='submit'>Delete Movie</button>
 	</form>
 
+	@include('errors.list')
+
 @endsection

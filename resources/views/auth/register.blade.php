@@ -28,4 +28,6 @@
 		</div>
 	</form>
 
+	@include('errors.list')
+
 @endsection
