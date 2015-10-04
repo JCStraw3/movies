@@ -16,7 +16,17 @@ class UserController extends Controller {
 
 		$user = User::findOrFail($id);
 
-		return view('user.viewReadOne')->with('user', $user);
+		return view('user.viewReadOne')
+			->with('user', $user);
+
+	}
+
+	public function viewUpdate($id){
+
+		$user = User::findOrFail($id);
+
+		return view('user.viewUpdate')
+			->with('user', $user);
 
 	}
 
@@ -30,7 +40,8 @@ class UserController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated your profile.');
 
-		return view('user.viewReadOne')->with('user', $user);
+		return view('user.viewReadOne')
+			->with('user', $user);
 
 	}
 

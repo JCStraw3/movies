@@ -29,6 +29,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // User routes.
 
 Route::get('user/{id}', 'UserController@viewReadOne');
+Route::get('user/{id}/edit', 'UserController@viewUpdate');
 Route::put('user/{id}', 'UserController@actionUpdate');
 
 // Movies routes.

@@ -20,7 +20,7 @@
 		</div>
 
 		<div>
-			<select name='genres[]' multiple='multiple'>
+			<select name='genres[]' multiple>
 				<?php foreach ($genres as $genre): ?>
 					<option value='<?php echo $genre->id; ?>'><?php echo $genre->name; ?></option>
 				<?php endforeach; ?>
@@ -44,7 +44,7 @@
 		</div>
 
 		<div>
-			<select name='directors[]' multiple='multiple'>
+			<select name='directors[]' multiple>
 				<?php foreach ($directors as $director): ?>
 					<option value='<?php echo $director->id; ?>'><?php echo $director->name; ?></option>
 				<?php endforeach; ?>
@@ -52,7 +52,7 @@
 		</div>
 
 		<div>
-			<select name='writers[]' multiple='multiple'>
+			<select name='writers[]' multiple>
 				<?php foreach ($writers as $writer): ?>
 					<option value='<?php echo $writer->id; ?>'><?php echo $writer->name; ?></option>
 				<?php endforeach; ?>
@@ -60,7 +60,7 @@
 		</div>
 
 		<div>
-			<select name='casts[]' multiple='multiple'>
+			<select name='casts[]' multiple>
 				<?php foreach ($casts as $cast): ?>
 					<option value='<?php echo $cast->id; ?>'><?php echo $cast->name; ?></option>
 				<?php endforeach; ?>
