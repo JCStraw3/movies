@@ -1,8 +1,12 @@
-<html>
-<head>
-	<title>Movies</title>
-</head>
-<body>
+@extends('app')
+
+@section('title', 'Create a new movie')
+
+@section('content')
+
+	<h1>Create a new movie</h1>
+
+	<hr />
 
 	<form action='/movies' method='post'>
 		<div>
@@ -11,9 +15,9 @@
 
 		<div>
 			<select name='genres[]' multiple>
-				<?php foreach ($genres as $genre): ?>
-					<option value='<?php echo $genre->id; ?>'><?php echo $genre->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($genres as $genre)
+					<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
@@ -23,9 +27,9 @@
 
 		<div>
 			<select name='ratings'>
-				<?php foreach ($ratings as $rating): ?>
-					<option value='<?php echo $rating->id; ?>'><?php echo $rating->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($ratings as $rating)
+					<option value='{{ $rating->id }}'>{{ $rating->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
@@ -35,25 +39,25 @@
 
 		<div>
 			<select name='directors[]' multiple>
-				<?php foreach ($directors as $director): ?>
-					<option value='<?php echo $director->id; ?>'><?php echo $director->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($directors as $director)
+					<option value='{{ $director->id }}'>{{ $director->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
 		<div>
 			<select name='writers[]' multiple>
-				<?php foreach ($writers as $writer): ?>
-					<option value='<?php echo $writer->id; ?>'><?php echo $writer->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($writers as $writer)
+					<option value='{{ $writer->id }}'>{{ $writer->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
 		<div>
 			<select name='casts[]' multiple>
-				<?php foreach ($casts as $cast): ?>
-					<option value='<?php echo $cast->id; ?>'><?php echo $cast->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($casts as $cast)
+					<option value='{{ $cast->id }}'>{{ $cast->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
@@ -68,5 +72,4 @@
 		</div>
 	</form>
 
-</body>
-</html>
+@endsection

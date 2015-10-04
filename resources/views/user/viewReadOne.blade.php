@@ -1,30 +1,33 @@
-<html>
-<head>
-	<title>Movies</title>
-</head>
-<body>
+@extends('app')
 
-	<h1>Hello, <?php echo $user->name; ?></h1>
+@section('title', 'Profile')
 
-	<?php if (Session::has('flash_message')): ?>
-		<div><?php echo (Session::get('flash_message')); ?></div>
-	<?php endif; ?>
+@section('content')
+
+	<h1>Hello, {{ $user->name }}</h1>
+
+	<hr />
+
+	@if (Session::has('flash_message'))
+
+		{{ Session::get('flash_message') }}
+
+	@endif
 
 	<div>
-		<?php echo $user->name; ?>
+		{{ $user->name }}
 	</div>
 
 	<div>
-		<?php echo $user->email; ?>
+		{{ $user->email }}
 	</div>
 
 	<div>
-		<?php echo $user->gender; ?>
+		{{ $user->gender }}
 	</div>
 
 	<div>
-		<?php echo $user->birthday; ?>
+		{{ $user->birthday }}
 	</div>
 
-</body>
-</html>
+@endsection

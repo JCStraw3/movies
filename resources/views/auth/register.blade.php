@@ -1,8 +1,8 @@
-<html>
-<head>
-	<title>Movies</title>
-</head>
-<body>
+@extends('app')
+
+@section('title', 'Register')
+
+@section('content')
 
 	<form action='/auth/register' method='post'>
 		<div>
@@ -28,5 +28,4 @@
 		</div>
 	</form>
 
-</body>
-</html>
+@endsection

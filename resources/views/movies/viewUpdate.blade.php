@@ -1,74 +1,76 @@
-<html>
-<head>
-	<title>Movies</title>
-</head>
-<body>
+@extends('app')
 
-	<h1><?php echo $movie->title; ?></h1>
+@section('title')
 
-	<?php if (Session::has('flash_message')): ?>
-		<div><?php echo (Session::get('flash_message')); ?></div>
-	<?php endif; ?>
+	Edit {{ $movie->title }}
 
-	<form action='/movies/<?php echo $movie->id; ?>' method='post'>
+@endsection
+
+@section('content')
+
+	<h1>{{ $movie->title }}</h1>
+
+	<hr />
+
+	<form action='/movies/{{ $movie->id }}' method='post'>
 		<div>
 			<input name='_method' type='hidden' value='put'>
 		</div>
 
 		<div>
-			<input name='title' type='text' value='<?php echo $movie->title; ?>' placeholder='Title'>
+			<input name='title' type='text' value='{{ $movie->title }}' placeholder='Title'>
 		</div>
 
 		<div>
 			<select name='genres[]' multiple>
-				<?php foreach ($genres as $genre): ?>
-					<option value='<?php echo $genre->id; ?>'><?php echo $genre->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($genres as $genre)
+					<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
 		<div>
-			<input name='release_date' type='date' value='<?php echo $movie->release_date; ?>' placeholder='Release Date'>
+			<input name='release_date' type='date' value='{{ $movie->release_date }}' placeholder='Release Date'>
 		</div>
 
 		<div>
 			<select name='ratings[]'>
-				<?php foreach ($ratings as $rating): ?>
-					<option value='<?php echo $rating->id; ?>'><?php echo $rating->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($ratings as $rating)
+					<option value='{{ $rating->id }}'>{{ $rating->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
 		<div>
-			<input name='runtime' type='text' value='<?php echo $movie->runtime; ?>' placeholder='Runtime'>
+			<input name='runtime' type='text' value='{{ $movie->runtime }}' placeholder='Runtime'>
 		</div>
 
 		<div>
 			<select name='directors[]' multiple>
-				<?php foreach ($directors as $director): ?>
-					<option value='<?php echo $director->id; ?>'><?php echo $director->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($directors as $director)
+					<option value='{{ $director->id }}'>{{ $director->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
 		<div>
 			<select name='writers[]' multiple>
-				<?php foreach ($writers as $writer): ?>
-					<option value='<?php echo $writer->id; ?>'><?php echo $writer->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($writers as $writer)
+					<option value='{{ $writer->id }}'>{{ $writer->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
 		<div>
 			<select name='casts[]' multiple>
-				<?php foreach ($casts as $cast): ?>
-					<option value='<?php echo $cast->id; ?>'><?php echo $cast->name; ?></option>
-				<?php endforeach; ?>
+				@foreach ($casts as $cast)
+					<option value='{{ $cast->id }}'>{{ $cast->name }}</option>
+				@endforeach
 			</select>
 		</div>
 
 		<div>
-			<input name='synopsis' type='text' value='<?php echo $movie->synopsis; ?>' placeholder='Synopsis'>
+			<input name='synopsis' type='text' value='{{ $movie->synopsis }}' placeholder='Synopsis'>
 		</div>
 
 		<br />
@@ -78,10 +80,9 @@
 		</div>
 	</form>
 
-	<form action='/movies/<?php echo $movie->id; ?>' method='post'>
+	<form action='/movies/{{ $movie->id }}' method='post'>
 		<input name='_method' type='hidden' value='delete'>
 		<button type='submit'>Delete Movie</button>
 	</form>
 
-</body>
-</html>
+@endsection

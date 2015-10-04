@@ -1,26 +1,24 @@
-<html>
-<head>
-	<title>Movies</title>
-</head>
-<body>
+@extends('app')
 
-	<h1>Hello, <?php echo $user->name; ?></h1>
+@section('title', 'Edit profile')
 
-	<?php if (Session::has('flash_message')): ?>
-		<div><?php echo (Session::get('flash_message')); ?></div>
-	<?php endif; ?>
+@section('content')
 
-	<form action='/user/<?php echo $user->id; ?>' method='post'>
+	<h1>Hello, {{ $user->name }}</h1>
+
+	<hr />
+
+	<form action='/user/{{ $user->id }}' method='post'>
 		<div>
 			<input name='_method' type='hidden' value='put'>
 		</div>
 
 		<div>
-			<input name='name' type='text' value='<?php echo $user->name ?>' placeholder='Name'>
+			<input name='name' type='text' value='{{ $user->name }}' placeholder='Name'>
 		</div>
 
 		<div>
-			<input name='email' type='email' value='<?php echo $user->email ?>' placeholder='Email'>
+			<input name='email' type='email' value='{{ $user->email }}' placeholder='Email'>
 		</div>
 
 		<div>
@@ -31,7 +29,7 @@
 		</div>
 
 		<div>
-			<input name='birthday' type='date' value='<?php echo $user->birthday ?>' placeholder='Birthday'>
+			<input name='birthday' type='date' value='{{ $user->birthday }}' placeholder='Birthday'>
 		</div>
 
 		<br />
@@ -41,5 +39,4 @@
 		</div>
 	</form>
 
-</body>
-</html>
+@endsection
