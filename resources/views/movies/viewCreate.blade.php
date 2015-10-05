@@ -1,12 +1,14 @@
 @extends('app')
 
+<!-- Title -->
+
 @section('title', 'Create a new movie')
+
+<!-- Content -->
 
 @section('content')
 
-	<h1>Create a new movie</h1>
-
-	<hr />
+	<!-- Create a new movie form -->
 
 	<form action='/movies' method='post'>
 		<div>
@@ -71,6 +73,8 @@
 			<button type='submit'>Create Movie</button>
 		</div>
 	</form>
+
+	<!-- Errors -->
 
 	@include('errors.list')
 

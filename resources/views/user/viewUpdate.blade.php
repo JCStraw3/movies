@@ -1,12 +1,14 @@
 @extends('app')
 
+<!-- Title -->
+
 @section('title', 'Edit profile')
+
+<!-- Content -->
 
 @section('content')
 
-	<h1>Hello, {{ $user->name }}</h1>
-
-	<hr />
+	<!-- User update form -->
 
 	<form action='/user/{{ $user->id }}' method='post'>
 		<div>
@@ -38,6 +40,8 @@
 			<button type='submit'>Save</button>
 		</div>
 	</form>
+
+	<!-- Errors -->
 
 	@include('errors.list')
 

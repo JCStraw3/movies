@@ -1,8 +1,14 @@
 @extends('app')
 
+<!-- Title -->
+
 @section('title', 'Login')
 
+<!-- Content -->
+
 @section('content')
+
+	<!-- User login form -->
 
 	<form action='/auth/login' method='post'>
 		<div>
@@ -19,6 +25,8 @@
 			<button type='submit'>Login</button>
 		</div>
 	</form>
+
+	<!-- Errors -->
 
 	@include('errors.list')
 

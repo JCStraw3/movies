@@ -1,14 +1,18 @@
 @extends('app')
 
+<!-- Title -->
+
 @section('title', 'Movies')
+
+<!-- Content -->
 
 @section('content')
 
-	<h1>Movies</h1>
-
-	<hr />
+	<!-- Flash messaging -->
 
 	@include('partials.flash')
+
+	<!-- Movies -->
 
 	@foreach ($movies as $movie)
 

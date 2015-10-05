@@ -1,6 +1,6 @@
 @extends('app')
 
-<!-- Title of page -->
+<!-- Title -->
 
 @section('title')
 
@@ -8,15 +8,15 @@
 
 @endsection
 
-<!-- Read one movie -->
+<!-- Content -->
 
 @section('content')
 
-	<h1>Movies</h1>
-
-	<hr />
+	<!-- Flash messaging -->
 
 	@include('partials.flash')
+
+	<!-- Movie -->
 
 	<article class='movie'>
 		<h2>

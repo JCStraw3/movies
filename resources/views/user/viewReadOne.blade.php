@@ -1,14 +1,18 @@
 @extends('app')
 
+<!-- Title -->
+
 @section('title', 'Profile')
+
+<!-- Content -->
 
 @section('content')
 
-	<h1>Hello, {{ $user->name }}</h1>
-
-	<hr />
+	<!-- Flash messaging -->
 
 	@include('partials.flash')
+
+	<!-- User profile -->
 
 	<div>
 		{{ $user->name }}

@@ -1,8 +1,14 @@
 @extends('app')
 
+<!-- Title -->
+
 @section('title', 'Register')
 
+<!-- Content -->
+
 @section('content')
+
+	<!-- User register form -->
 
 	<form action='/auth/register' method='post'>
 		<div>
@@ -27,6 +33,8 @@
 			<button type='submit'>Register</button>
 		</div>
 	</form>
+
+	<!-- Errors -->
 
 	@include('errors.list')
 

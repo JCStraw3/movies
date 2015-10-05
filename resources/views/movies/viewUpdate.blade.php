@@ -1,16 +1,18 @@
 @extends('app')
 
+<!-- Title -->
+
 @section('title')
 
 	Edit {{ $movie->title }}
 
 @endsection
 
+<!-- Content -->
+
 @section('content')
 
-	<h1>{{ $movie->title }}</h1>
-
-	<hr />
+	<!-- Update a movie form -->
 
 	<form action='/movies/{{ $movie->id }}' method='post'>
 		<div>
@@ -84,6 +86,8 @@
 		<input name='_method' type='hidden' value='delete'>
 		<button type='submit'>Delete Movie</button>
 	</form>
+
+	<!-- Errors -->
 
 	@include('errors.list')
 
