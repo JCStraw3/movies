@@ -27,3 +27,23 @@
 	</div>
 
 @endsection
+
+<!-- Toolbar -->
+
+@section('toolbar')
+
+	<nav id='toolbar'>
+
+		<div>
+
+			<span>{{ $user->name }}</span>
+
+			<a href='/movies/create'><button>New Movie</button></a>
+
+			<a href='/user/{{ $user->id }}/edit'><button>Edit profile</button></a>
+
+		</div>
+
+	</nav>
+
+@endsection

@@ -70,3 +70,19 @@
 	@endforeach
 
 @endsection
+
+<!-- Toolbar -->
+
+@section('toolbar')
+
+	<nav id='toolbar'>
+
+		<div>
+
+			<a href='/movies/create'><button>New Movie</button></a>
+
+		</div>
+
+	</nav>
+
+@endsection

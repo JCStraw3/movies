@@ -1,10 +1,14 @@
 @extends('app')
 
+<!-- Title of page -->
+
 @section('title')
 
 	{{ $movie->title }}
 
 @endsection
+
+<!-- Read one movie -->
 
 @section('content')
 
@@ -63,7 +67,7 @@
 		
 		<br />
 
-		<button><a href='/movies/{{ $movie->id }}/edit'>Edit Movie</a></button>
+		<button><a href='/movies/{{ $movie->id }}/edit'>Edit</a></button>
 
 		<br />
 
@@ -71,8 +75,33 @@
 
 		<form action='/movies/{{ $movie->id }}' method='post'>
 			<input name='_method' type='hidden' value='delete'>
-			<button type='submit'>Delete Movie</button>
+			<button type='submit'>Delete</button>
 		</form>
 	</article>
+
+@endsection
+
+<!-- Toolbar -->
+
+@section('toolbar')
+
+	<nav id='toolbar'>
+
+		<div>
+
+			<span>{{ $movie->title }}</span>
+
+			<a href='/movies/create'><button>New Movie</button></a>
+
+			<a href='/movies/{{ $movie->id }}/edit'><button>Edit</button></a>
+
+			<form action='/movies/{{ $movie->id }}' method='post'>
+				<input name='_method' type='hidden' value='delete'>
+				<button type='submit'>Delete</button>
+			</form>
+
+		</div>
+
+	</nav>
 
 @endsection

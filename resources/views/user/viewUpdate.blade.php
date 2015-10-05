@@ -42,3 +42,21 @@
 	@include('errors.list')
 
 @endsection
+
+<!-- Toolbar -->
+
+@section('toolbar')
+
+	<nav id='toolbar'>
+
+		<div>
+
+			<span>{{ $user->name }}</span>
+
+			<a href='/movies/create'><button>New Movie</button></a>
+
+		</div>
+
+	</nav>
+
+@endsection

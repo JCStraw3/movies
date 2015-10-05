@@ -4,8 +4,24 @@
 
 @section('content')
 
-	<h1>Welcome!</h1>
+	<h1>Welcome to movies</h1>
 
-	{{ $name = 'Jessica' }}
+	<div>
+
+		<a href='auth/register'>
+			<button>Register</button>
+		</a>
+
+	</div>
+
+	<br />
+
+	<div>
+
+		<a href='auth/login'>
+			<button>Login</button>
+		</a>
+
+	</div>
 
 @endsection

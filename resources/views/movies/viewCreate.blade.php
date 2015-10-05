@@ -75,3 +75,19 @@
 	@include('errors.list')
 
 @endsection
+
+<!-- Toolbar -->
+
+@section('toolbar')
+
+	<nav id='toolbar'>
+
+		<div>
+
+			<span>Create a new movie</span>
+
+		</div>
+
+	</nav>
+
+@endsection

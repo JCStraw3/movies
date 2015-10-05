@@ -4,7 +4,9 @@
 </head>
 <body>
 
-	@include('partials.header')
+	@include('partials.nav')
+
+	@yield('toolbar')
 
 	@yield('content')
 
