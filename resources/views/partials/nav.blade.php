@@ -1,16 +1,24 @@
-<nav id='navbar'>
+<nav id='navbar' class='navbar navbar-inverse navbar-fixed-top'>
 
-	<div>
+	<div class='container-fluid'>
 
-		<a href='/movies'>Movies</a>
+		<ul class='nav navbar-nav navbar-left'>
+			<li><a href='/movies' class='navbar-brand'>Movies</a></li>
+		</ul>
 
-		@if ($user)
-			<a href='/user/{{ $user->id }}'>{{ $user->name }}</a>
-		@endif
+		<ul class='nav navbar-nav navbar-right'>
+			<li>
+				@if ($user)
+					<a href='/user/{{ $user->id }}'>{{ $user->name }}</a>
+				@endif
+			</li>
 
-		@if ($user)
-			<a href='/auth/logout'>Logout</a>
-		@endif
+			<li>
+				@if ($user)
+					<a id='button' href='/auth/logout'><button class='btn btn-danger'>Logout</button></a>
+				@endif
+			</li>
+		</ul>
 
 	</div>
 

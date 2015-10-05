@@ -84,11 +84,13 @@
 
 @section('toolbar')
 
-	<nav id='toolbar'>
+	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
 
-		<div>
+		<div class='container-fluid'>
 
-			<span>Create a new movie</span>
+			<ul>
+				<p class='navbar-text'>Create a new movie</p>
+			</ul>
 
 		</div>
 

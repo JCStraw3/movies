@@ -36,15 +36,23 @@
 
 @section('toolbar')
 
-	<nav id='toolbar'>
+	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
 
-		<div>
+		<div class='container-fluid'>
 
-			<span>{{ $user->name }}</span>
+			<ul class='nav navbar-nav navbar-left'>
+				<p class='navbar-text'>{{ $user->name }}</p>
+			</ul>
 
-			<a href='/movies/create'><button>New Movie</button></a>
+			<ul class='nav navbar-nav navbar-right'>
+				<li>
+					<a id='button' href='/user/{{ $user->id }}/edit'><button class='btn btn-primary'>Edit profile</button></a>
+				</li>
 
-			<a href='/user/{{ $user->id }}/edit'><button>Edit profile</button></a>
+				<li>
+					<a id='button' href='/movies/create'><button class='btn btn-primary'>New Movie</button></a>
+				</li>
+			</ul>
 
 		</div>
 

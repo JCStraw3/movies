@@ -85,20 +85,30 @@
 
 @section('toolbar')
 
-	<nav id='toolbar'>
+	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
 
-		<div>
+		<div class='container-fluid'>
 
-			<span>{{ $movie->title }}</span>
+			<ul class='nav navbar-nav navbar-left'>
+				<p class='navbar-text'>{{ $movie->title }}</p>
+			</ul>
 
-			<a href='/movies/create'><button>New Movie</button></a>
+			<ul class='nav navbar-nav navbar-right'>
+				<li>
+					<a id='button' href='/movies/{{ $movie->id }}/edit'><button class='btn btn-primary'>Edit</button></a>
+				</li>
 
-			<a href='/movies/{{ $movie->id }}/edit'><button>Edit</button></a>
+				<li>
+					<form action='/movies/{{ $movie->id }}' method='post'>
+						<input name='_method' type='hidden' value='delete'>
+						<button type='submit' class='btn btn-danger'>Delete</button>
+					</form>
+				</li>
 
-			<form action='/movies/{{ $movie->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
-				<button type='submit'>Delete</button>
-			</form>
+				<li>
+					<a id='button' href='/movies/create'><button class='btn btn-primary'>New Movie</button></a>
+				</li>
+			</ul>
 
 		</div>
 

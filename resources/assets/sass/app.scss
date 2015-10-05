@@ -1,2 +1,37 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+body {
+	color: red;
+	margin-top: 120px;
+}
 
+#navbar {
+	background-color: rgb(168,0,168);
+	border-color: rgb(168,0,168);
+	margin: 0;
+}
+
+#toolbar {
+	top: 51px;
+	background-color: rgb(45,176,123);
+	border-color: rgb(45,176,123);
+	margin: 0;
+}
+
+#button {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #ffffff;
+}
+
+.navbar-inverse .navbar-text {
+	color: #ffffff;
+}
+
+.navbar form {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 15px;
+	padding-right: 15px;
+}

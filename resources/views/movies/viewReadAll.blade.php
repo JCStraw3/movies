@@ -79,11 +79,13 @@
 
 @section('toolbar')
 
-	<nav id='toolbar'>
+	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
 
-		<div>
+		<div class='container-fluid'>
 
-			<a href='/movies/create'><button>New Movie</button></a>
+			<ul class='nav navbar-nav navbar-right'>
+				<li><a id='button' href='/movies/create'><button class='btn btn-primary'>New Movie</button></a></li>
+			</ul>
 
 		</div>
 
