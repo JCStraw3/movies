@@ -1,7 +1,11 @@
+<!DOCTYPE html>
+
 <html>
+
 <head>
 	<title>Movies - @yield('title')</title>
 </head>
+
 <body>
 
 	@include('partials.nav')
@@ -13,4 +17,5 @@
 	@include('partials.footer')
 
 </body>
+
 </html>

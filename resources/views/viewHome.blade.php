@@ -4,7 +4,7 @@
 
 @section('content')
 
-	<h1>Welcome to movies</h1>
+	<h1>Movies</h1>
 
 	<div>
 
