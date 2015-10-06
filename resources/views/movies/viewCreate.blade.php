@@ -8,81 +8,85 @@
 
 @section('content')
 
+	<!-- Errors -->
+
+	@include('errors.list')
+
 	<!-- Create a new movie form -->
 
 	<div class='container'>
 
-		<form action='/movies' method='post'>
-			<div>
-				<input name='title' type='text' placeholder='Title'>
-			</div>
+		<article id='form'>
+			<h2 id='h2' class='centered'>New Movie</h2>
 
-			<div>
-				<select name='genres[]' multiple>
-					@foreach ($genres as $genre)
-						<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
-					@endforeach
-				</select>
-			</div>
+			<hr />
 
-			<div>
-				<input name='release_date' type='date' placeholder='Release Date'>
-			</div>
+			<form action='/movies' method='post'>
+				<div class='form-group'>
+					<input class='form-control' name='title' type='text' placeholder='Title (Required)'>
+				</div>
 
-			<div>
-				<select name='ratings'>
-					@foreach ($ratings as $rating)
-						<option value='{{ $rating->id }}'>{{ $rating->name }}</option>
-					@endforeach
-				</select>
-			</div>
+				<div class='form-group'>
+					<select class='form-control' name='genres[]' multiple>
+						@foreach ($genres as $genre)
+							<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-			<div>
-				<input name='runtime' type='text' placeholder='Runtime'>
-			</div>
+				<div class='form-group'>
+					<input class='form-control' name='release_date' type='date' placeholder='Release Date'>
+				</div>
 
-			<div>
-				<select name='directors[]' multiple>
-					@foreach ($directors as $director)
-						<option value='{{ $director->id }}'>{{ $director->name }}</option>
-					@endforeach
-				</select>
-			</div>
+				<div class='form-group'>
+					<select class='form-control' name='ratings'>
+						@foreach ($ratings as $rating)
+							<option value='{{ $rating->id }}'>{{ $rating->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-			<div>
-				<select name='writers[]' multiple>
-					@foreach ($writers as $writer)
-						<option value='{{ $writer->id }}'>{{ $writer->name }}</option>
-					@endforeach
-				</select>
-			</div>
+				<div class='form-group'>
+					<input class='form-control' name='runtime' type='text' placeholder='Runtime'>
+				</div>
 
-			<div>
-				<select name='casts[]' multiple>
-					@foreach ($casts as $cast)
-						<option value='{{ $cast->id }}'>{{ $cast->name }}</option>
-					@endforeach
-				</select>
-			</div>
+				<div class='form-group'>
+					<select class='form-control' name='directors[]' multiple>
+						@foreach ($directors as $director)
+							<option value='{{ $director->id }}'>{{ $director->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-			<div>
-				<textarea name='synopsis' placeholder='Synopsis'></textarea>
-			</div>
-			
-			<br />
+				<div class='form-group'>
+					<select class='form-control' name='writers[]' multiple>
+						@foreach ($writers as $writer)
+							<option value='{{ $writer->id }}'>{{ $writer->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-			<div>
-				<button type='submit'>Create Movie</button>
-			</div>
-		</form>
+				<div class='form-group'>
+					<select class='form-control' name='casts[]' multiple>
+						@foreach ($casts as $cast)
+							<option value='{{ $cast->id }}'>{{ $cast->name }}</option>
+						@endforeach
+					</select>
+				</div>
+
+				<div class='form-group'>
+					<textarea class='form-control' name='synopsis' placeholder='Synopsis'></textarea>
+				</div>
+				
+				<br />
+
+				<div>
+					<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Movie</button>
+				</div>
+			</form>
+		</article>
 
 	</div>
-
-	
-
-	<!-- Errors -->
-
-	@include('errors.list')
 
 @endsection
 

@@ -67,6 +67,14 @@ article {
 	background-color: #ffffff;
 }
 
+#form {
+	margin-left: 20em;
+	margin-right: 20em;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: 2em;
+}
+
 #h2 {
 	margin-top: 0;
 }
@@ -78,4 +86,8 @@ hr {
 
 p {
 	margin-bottom: 3px;
+}
+
+textarea.form-control {
+	height: 10em;
 }

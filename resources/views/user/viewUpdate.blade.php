@@ -8,42 +8,52 @@
 
 @section('content')
 
-	<!-- User update form -->
-
-	<form action='/user/{{ $user->id }}' method='post'>
-		<div>
-			<input name='_method' type='hidden' value='put'>
-		</div>
-
-		<div>
-			<input name='name' type='text' value='{{ $user->name }}' placeholder='Name'>
-		</div>
-
-		<div>
-			<input name='email' type='email' value='{{ $user->email }}' placeholder='Email'>
-		</div>
-
-		<div>
-			<select name='gender'>
-				<option value='female'>Female</option>
-				<option value='male'>Male</option>
-			</select>
-		</div>
-
-		<div>
-			<input name='birthday' type='date' value='{{ $user->birthday }}' placeholder='Birthday'>
-		</div>
-
-		<br />
-
-		<div>
-			<button type='submit'>Save</button>
-		</div>
-	</form>
-
 	<!-- Errors -->
 
 	@include('errors.list')
+
+	<!-- User update form -->
+
+	<div class='container'>
+
+		<article id='form'>
+			<h2 id='h2' class='centered'>Edit Profile</h2>
+
+			<hr />
+
+			<form action='/user/{{ $user->id }}' method='post'>
+				<div>
+					<input name='_method' type='hidden' value='put'>
+				</div>
+
+				<div class='form-group'>
+					<input class='form-control' name='name' type='text' value='{{ $user->name }}' placeholder='Name'>
+				</div>
+
+				<div class='form-group'>
+					<input class='form-control' name='email' type='email' value='{{ $user->email }}' placeholder='Email'>
+				</div>
+
+				<div class='form-group'>
+					<select class='form-control' name='gender'>
+						<option value='female'>Female</option>
+						<option value='male'>Male</option>
+					</select>
+				</div>
+
+				<div class='form-control' class='form-group'>
+					<input name='birthday' type='date' value='{{ $user->birthday }}' placeholder='Birthday'>
+				</div>
+
+				<br />
+
+				<div>
+					<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Save</button>
+				</div>
+			</form>
+		</article>
+
+	</div>
 
 @endsection
 
