@@ -1,48 +1,7 @@
+/*Basic app CSS*/
 body {
   background-color: #f4f4f4;
   margin-top: 100px; }
-
-#navbar {
-  background-color: #a800a8;
-  border-color: #a800a8;
-  margin: 0; }
-
-#toolbar {
-  top: 51px;
-  background-color: #2db07b;
-  border-color: #2db07b;
-  margin: 0; }
-
-#button {
-  padding-top: 8px;
-  padding-bottom: 8px; }
-
-.navbar-inverse .navbar-nav > li > a {
-  color: #ffffff; }
-
-.navbar-inverse .navbar-text {
-  color: #ffffff; }
-
-.navbar form {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px; }
-
-.centered {
-  text-align: center; }
-
-#delete {
-  padding: 0;
-  margin: 0;
-  display: inline;
-  text-align: right; }
-
-#delete button {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 0; }
 
 article {
   margin-left: 20em;
@@ -55,24 +14,71 @@ article {
   padding: 2em;
   background-color: #ffffff; }
 
+p {
+  margin-bottom: 3px; }
+
+a {
+  text-decoration: none; }
+
+hr {
+  margin-top: .5em;
+  margin-bottom: .5em; }
+
+textarea.form-control {
+  height: 10em;
+  max-width: 522px; }
+
+/*Navigation bar CSS*/
+#navbar {
+  background-color: #a800a8;
+  border-color: #a800a8;
+  margin: 0; }
+
+.navbar-inverse .navbar-text {
+  color: #ffffff; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff; }
+
+.navbar form {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+/*Toolbar CSS*/
+#toolbar {
+  top: 51px;
+  background-color: #2db07b;
+  border-color: #2db07b;
+  margin: 0; }
+
+/*Class CSS*/
+.centered {
+  text-align: center; }
+
+/*Heading CSS*/
 #h1 {
   margin-top: 0; }
 
 #h2 {
   margin-top: 0; }
 
-hr {
-  margin-top: .5em;
-  margin-bottom: .5em; }
+/*Button CSS*/
+#button {
+  padding-top: 8px;
+  padding-bottom: 8px; }
 
-p {
-  margin-bottom: 3px; }
+#delete {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  text-align: right; }
 
-textarea.form-control {
-  height: 10em;
-  max-width: 522px; }
-
-a {
-  text-decoration: none; }
+#delete button {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 0; }
 
 /*# sourceMappingURL=app.css.map */
