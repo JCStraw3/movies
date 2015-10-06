@@ -18,7 +18,7 @@
 
 	<!-- Movie -->
 
-	<div class='container-fluid'>
+	<div class='container'>
 
 		<article class='movie'>
 			<h2 id='h2' class='centered'>

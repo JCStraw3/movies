@@ -1,7 +1,6 @@
 body {
   background-color: #f4f4f4;
-  margin-top: 100px;
-  margin-bottom: 50px; }
+  margin-top: 100px; }
 
 #navbar {
   background-color: #a800a8;
@@ -46,23 +45,20 @@ body {
   padding-bottom: 0; }
 
 article {
-  margin-left: 30em;
-  margin-right: 30em;
+  margin-left: 20em;
+  margin-right: 20em;
   margin-top: 2em;
   margin-bottom: 2em;
   border-style: solid;
   border-color: silver;
   border-width: 1px;
-  padding: 1em;
+  padding: 2em;
   background-color: #ffffff; }
 
-#form {
-  margin-left: 20em;
-  margin-right: 20em;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 2em; }
-
+/*#form {
+	margin-left: 20em;
+	margin-right: 20em;
+}*/
 #h2 {
   margin-top: 0; }
 

@@ -14,7 +14,7 @@
 
 	<!-- User profile -->
 
-	<div class='container-fluid'>
+	<div class='container'>
 
 		<article class='user-profile'>
 			<h2 id='h2' class='centered'>

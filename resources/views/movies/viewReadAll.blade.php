@@ -14,7 +14,7 @@
 
 	<!-- Movies -->
 
-	<div class='container-fluid'>
+	<div class='container'>
 
 		@foreach ($movies as $movie)
 
