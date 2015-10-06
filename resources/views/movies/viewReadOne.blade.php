@@ -20,7 +20,7 @@
 
 	<div class='container'>
 
-		<article class='movie'>
+		<article id='movie'>
 
 			<h2 id='h2' class='centered'>
 				{{ $movie->title }}
@@ -28,8 +28,10 @@
 
 			<hr />
 
-			<div class='stats centered'>
+			<div class='centered'>
 				<p>
+					<span> | </span>
+
 					@foreach ($movie->ratings as $rating)
 						{{ $rating->name }}
 					@endforeach
@@ -41,13 +43,19 @@
 					<span> | </span>
 
 					{{ $movie->release_date }}
+
+					<span> | </span>
 				</p>
 			</div>
 
-			<div class='genre centered'>
+			<div class='centered'>
 				<p>
+					<span> | </span>
+
 					@foreach ($movie->genres as $genre)
-						{{ $genre->name }},
+						<a href='/genres/{{ $genre->id }}'>{{ $genre->name }}</a>
+
+						<span> | </span>
 					@endforeach
 				</p>
 			</div>

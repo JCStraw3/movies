@@ -100,7 +100,7 @@
 
 		<div class='container-fluid'>
 
-			<ul>
+			<ul class='nav navbar-nav navbar-left'>
 				<p class='navbar-text'>Create a new movie</p>
 			</ul>
 

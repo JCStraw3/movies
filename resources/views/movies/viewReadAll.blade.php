@@ -18,7 +18,7 @@
 
 		@foreach ($movies as $movie)
 
-			<article class='movie'>
+			<article id='movie'>
 
 				<ul id='delete'>
 					<form action='/movies/{{ $movie->id }}' method='post'>
@@ -35,6 +35,8 @@
 
 				<div class='stats centered'>
 					<p>
+						<span> | </span>
+
 						@foreach ($movie->ratings as $rating)
 							{{ $rating->name }}
 						@endforeach
@@ -46,13 +48,19 @@
 						<span> | </span>
 
 						{{ $movie->release_date }}
+
+						<span> | </span>
 					</p>
 				</div>
 
 				<div class='genre centered'>
 					<p>
+						<span> | </span>
+
 						@foreach ($movie->genres as $genre)
-							{{ $genre->name }},
+							<a href='/genres/{{ $genre->id }}'>{{ $genre->name }}</a>
+
+							<span> | </span>
 						@endforeach
 					</p>
 				</div>

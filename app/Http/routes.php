@@ -41,3 +41,8 @@ Route::get('movies/{id}/edit', 'MovieController@viewUpdate');
 Route::post('movies', 'MovieController@actionCreate');
 Route::put('movies/{id}', 'MovieController@actionUpdate');
 Route::delete('movies/{id}', 'MovieController@actionDelete');
+
+// Genre routes.
+
+Route::get('genres', 'GenreController@viewReadAll');
+Route::get('genres/{id}', 'GenreController@viewReadOne');
