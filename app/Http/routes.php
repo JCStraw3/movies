@@ -46,3 +46,23 @@ Route::delete('movies/{id}', 'MovieController@actionDelete');
 
 Route::get('genres', 'GenreController@viewReadAll');
 Route::get('genres/{id}', 'GenreController@viewReadOne');
+
+// Rating routes.
+
+Route::get('ratings', 'RatingController@viewReadAll');
+Route::get('ratings/{id}', 'RatingController@viewReadOne');
+
+// Director routes.
+
+Route::get('directors', 'DirectorController@viewReadAll');
+Route::get('directors/{id}', 'DirectorController@viewReadOne');
+
+// Writer routes.
+
+Route::get('writers', 'WriterController@viewReadAll');
+Route::get('writers/{id}', 'WriterController@viewReadOne');
+
+// Cast routes.
+
+Route::get('cast', 'CastController@viewReadAll');
+Route::get('cast/{id}', 'CastController@viewReadOne');

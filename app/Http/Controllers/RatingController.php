@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Genre;
+use App\Rating;
 
-use Auth;
-
-class GenreController extends Controller{
+class RatingController extends Controller {
 
 // Middleware
 
@@ -22,25 +20,22 @@ class GenreController extends Controller{
 
 // Views
 
-	// View all genres.
-
 	public function viewReadAll(){
 
-		$genres = Genre::orderBy('name', 'asc')->get();
+		$ratings = Rating::all();
 
-		return view('genres.viewReadAll')
-			->with('genres', $genres);
+		return view('ratings.viewReadAll')
+			->with('ratings', $ratings);
 
 	}
-
-	// View all movies attached to a genre.
 
 	public function viewReadOne($id){
 
-		$genre = Genre::findOrFail($id);
+		$rating = Rating::findOrFail($id);
 
-		return view('genres.viewReadOne')
-			->with('genre', $genre);
+		return view('ratings.viewReadOne')
+			->with('rating', $rating);
 
 	}
+
 }

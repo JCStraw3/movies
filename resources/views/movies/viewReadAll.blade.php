@@ -38,12 +38,12 @@
 						<span> | </span>
 
 						@foreach ($movie->ratings as $rating)
-							{{ $rating->name }}
+							<a href='/ratings/{{ $rating->id }}'>{{ $rating->name }}</a>
 						@endforeach
 
 						<span> | </span>
 
-						{{ $movie->runtime }}
+						{{ $movie->runtime }} min
 
 						<span> | </span>
 

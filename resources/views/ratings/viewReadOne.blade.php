@@ -2,7 +2,7 @@
 
 <!-- Title -->
 
-@section('title', 'Genres')
+@section('title', 'Ratings')
 
 <!-- Content -->
 
@@ -10,17 +10,30 @@
 
 	<div class='container'>
 
-		@foreach ($genres as $genre)
+		<article id='rating'>
 
-			<article id='genre'>
+			<h2 id='h2' class='centered'>
+				{{ $rating->name }}
+			</h2>
 
-				<h2 id='h2' class='centered'>
-					<a href='/genres/{{ $genre->id }}'>{{ $genre->name }}</a>
-				</h2>
+			<hr />
 
-			</article>
+			<div>
+				@foreach ($rating->movies as $movie)
 
-		@endforeach
+					<br />
+
+					<div>
+						<h4>
+							<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+						</h4>
+
+						<p>{{ $movie->synopsis }}</p>
+					</div>
+				@endforeach
+			</div>
+
+		</article>
 
 	</div>
 
@@ -35,7 +48,7 @@
 		<div class='container-fluid'>
 
 			<ul class='nav navbar-nav navbar-left'>
-				<li><a href='/genres'>Genres</a></li>
+				<li><a href='/ratings'>Ratings</a></li>
 			</ul>
 
 			<ul class='nav navbar-nav navbar-right'>
