@@ -66,6 +66,14 @@ article {
 	background-color: #ffffff;
 }
 
+#form {
+
+}
+
+#h1 {
+	margin-top: 0;
+}
+
 #h2 {
 	margin-top: 0;
 }
@@ -81,4 +89,9 @@ p {
 
 textarea.form-control {
 	height: 10em;
+	max-width: 522px;
+}
+
+a {
+	text-decoration: none;
 }

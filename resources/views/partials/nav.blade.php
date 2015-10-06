@@ -3,7 +3,7 @@
 	<div class='container-fluid'>
 
 		<ul class='nav navbar-nav navbar-left'>
-			<li><a href='/movies' class='navbar-brand'>Movies</a></li>
+			<li><a href='/' class='navbar-brand'>Movies</a></li>
 		</ul>
 
 		<ul class='nav navbar-nav navbar-right'>

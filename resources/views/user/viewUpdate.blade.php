@@ -17,6 +17,7 @@
 	<div class='container'>
 
 		<article id='form'>
+
 			<h2 id='h2' class='centered'>Edit Profile</h2>
 
 			<hr />
@@ -51,6 +52,7 @@
 					<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Save</button>
 				</div>
 			</form>
+			
 		</article>
 
 	</div>

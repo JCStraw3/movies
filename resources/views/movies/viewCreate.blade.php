@@ -17,6 +17,7 @@
 	<div class='container'>
 
 		<article id='form'>
+
 			<h2 id='h2' class='centered'>New Movie</h2>
 
 			<hr />
@@ -84,6 +85,7 @@
 					<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Movie</button>
 				</div>
 			</form>
+			
 		</article>
 
 	</div>

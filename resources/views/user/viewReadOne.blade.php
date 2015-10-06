@@ -17,6 +17,7 @@
 	<div class='container'>
 
 		<article class='user-profile'>
+
 			<h2 id='h2' class='centered'>
 				{{ $user->name }}
 			</h2>
@@ -50,6 +51,7 @@
 					{{ $user->birthday }}
 				</p>
 			</div>
+			
 		</article>
 
 	</div>

@@ -94,6 +94,7 @@
 				<div>
 					{{ $movie->synopsis }}
 				</div>
+				
 			</article>
 
 		@endforeach

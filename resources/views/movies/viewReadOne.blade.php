@@ -21,6 +21,7 @@
 	<div class='container'>
 
 		<article class='movie'>
+
 			<h2 id='h2' class='centered'>
 				{{ $movie->title }}
 			</h2>
@@ -88,6 +89,7 @@
 			<div>
 				{{ $movie->synopsis }}
 			</div>
+			
 		</article>
 
 	</div>

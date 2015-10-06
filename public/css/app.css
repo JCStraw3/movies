@@ -55,10 +55,9 @@ article {
   padding: 2em;
   background-color: #ffffff; }
 
-/*#form {
-	margin-left: 20em;
-	margin-right: 20em;
-}*/
+#h1 {
+  margin-top: 0; }
+
 #h2 {
   margin-top: 0; }
 
@@ -70,6 +69,10 @@ p {
   margin-bottom: 3px; }
 
 textarea.form-control {
-  height: 10em; }
+  height: 10em;
+  max-width: 522px; }
+
+a {
+  text-decoration: none; }
 
 /*# sourceMappingURL=app.css.map */
