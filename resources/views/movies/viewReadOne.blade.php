@@ -18,66 +18,79 @@
 
 	<!-- Movie -->
 
-	<article class='movie'>
-		<h2>
-			{{ $movie->title }}
-		</h2>
+	<div class='container-fluid'>
 
-		<div>
-			@foreach ($movie->genres as $genre)
-				{{ $genre->name }},
-			@endforeach
-		</div>
+		<article class='movie'>
+			<h2 id='h2' class='centered'>
+				{{ $movie->title }}
+			</h2>
 
-		<div>
-			{{ $movie->release_date }}
-		</div>
+			<hr />
 
-		<div>
-			@foreach ($movie->ratings as $rating)
-				{{ $rating->name }}
-			@endforeach
-		</div>
+			<div class='stats centered'>
+				<p>
+					@foreach ($movie->ratings as $rating)
+						{{ $rating->name }}
+					@endforeach
 
-		<div>
-			{{ $movie->runtime }}
-		</div>
+					<span> | </span>
 
-		<div>
-			@foreach ($movie->directors as $director)
-				{{ $director->name }},
-			@endforeach
-		</div>
+					{{ $movie->runtime }}
 
-		<div>
-			@foreach ($movie->writers as $writer)
-				{{ $writer->name }},
-			@endforeach
-		</div>
+					<span> | </span>
 
-		<div>
-			@foreach ($movie->casts as $cast)
-				{{ $cast->name }},
-			@endforeach
-		</div>
+					{{ $movie->release_date }}
+				</p>
+			</div>
 
-		<div>
-			{{ $movie->synopsis }}
-		</div>
-		
-		<br />
+			<div class='genre centered'>
+				<p>
+					@foreach ($movie->genres as $genre)
+						{{ $genre->name }},
+					@endforeach
+				</p>
+			</div>
 
-		<button><a href='/movies/{{ $movie->id }}/edit'>Edit</a></button>
+			<hr />
 
-		<br />
+			<div>
+				<p>
+					Director(s):
 
-		<br />
+					@foreach ($movie->directors as $director)
+						{{ $director->name }},
+					@endforeach
+				</p>
+			</div>
 
-		<form action='/movies/{{ $movie->id }}' method='post'>
-			<input name='_method' type='hidden' value='delete'>
-			<button type='submit'>Delete</button>
-		</form>
-	</article>
+			<div>
+				<p>
+					Writer(s):
+
+					@foreach ($movie->writers as $writer)
+						{{ $writer->name }},
+					@endforeach
+				</p>
+			</div>
+
+			<div>
+				<p>
+					Cast:
+
+					@foreach ($movie->casts as $cast)
+						{{ $cast->name }},
+					@endforeach
+				</p>
+			</div>
+
+			<hr />
+
+			<div>
+				{{ $movie->synopsis }}
+			</div>
+		</article>
+
+	</div>
 
 @endsection
 
@@ -95,7 +108,7 @@
 
 			<ul class='nav navbar-nav navbar-right'>
 				<li>
-					<a id='button' href='/movies/{{ $movie->id }}/edit'><button class='btn btn-primary'>Edit</button></a>
+					<a id='button' href='/movies/{{ $movie->id }}/edit'><button class='btn btn-info'>Edit</button></a>
 				</li>
 
 				<li>

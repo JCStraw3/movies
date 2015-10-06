@@ -14,64 +14,93 @@
 
 	<!-- Movies -->
 
-	@foreach ($movies as $movie)
+	<div class='container-fluid'>
 
-		<article class='movie'>
-			<h2>
-				<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
-			</h2>
+		@foreach ($movies as $movie)
 
-			<div>
-				@foreach ($movie->genres as $genre)
-					{{ $genre->name }},
-				@endforeach
-			</div>
+			<article class='movie'>
 
-			<div>
-				{{ $movie->release_date }}
-			</div>
+				<ul id='delete'>
+					<form action='/movies/{{ $movie->id }}' method='post'>
+						<input name='_method' type='hidden' value='delete'>
+						<button type='submit' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-remove'></span></button>
+					</form>
+				</ul>
 
-			<div>
-				@foreach ($movie->ratings as $rating)
-					{{ $rating->name }}
-				@endforeach
-			</div>
+				<h2 id='h2' class='centered'>
+					<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+				</h2>
 
-			<div>
-				{{ $movie->runtime }}
-			</div>
+				<hr />
 
-			<div>
-				@foreach ($movie->directors as $director)
-					{{ $director->name }},
-				@endforeach
-			</div>
+				<div class='stats centered'>
+					<p>
+						@foreach ($movie->ratings as $rating)
+							{{ $rating->name }}
+						@endforeach
 
-			<div>
-				@foreach ($movie->writers as $writer)
-					{{ $writer->name }},
-				@endforeach
-			</div>
+						<span> | </span>
 
-			<div>
-				@foreach ($movie->casts as $cast)
-					{{ $cast->name }},
-				@endforeach
-			</div>
+						{{ $movie->runtime }}
 
-			<div>
-				{{ $movie->synopsis }}
-			</div>
-			
-			<br />
+						<span> | </span>
 
-			<form action='/movies/{{ $movie->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
-				<button type='submit'>Delete Movie</button>
-			</form>
-		</article>
+						{{ $movie->release_date }}
+					</p>
+				</div>
 
-	@endforeach
+				<div class='genre centered'>
+					<p>
+						@foreach ($movie->genres as $genre)
+							{{ $genre->name }},
+						@endforeach
+					</p>
+				</div>
+
+				<hr />
+
+				<div>
+					<p>
+						Director(s):
+
+						@foreach ($movie->directors as $director)
+							{{ $director->name }},
+						@endforeach
+					</p>
+				</div>
+
+				<div>
+					<p>
+						Writer(s):
+
+						@foreach ($movie->writers as $writer)
+							{{ $writer->name }},
+						@endforeach
+					</p>
+				</div>
+
+				<div>
+					<p>
+						Cast:
+
+						@foreach ($movie->casts as $cast)
+							{{ $cast->name }},
+						@endforeach
+					</p>
+				</div>
+
+				<hr />
+
+				<div>
+					{{ $movie->synopsis }}
+				</div>
+			</article>
+
+		@endforeach
+
+	</div>
+
+	
 
 @endsection
 

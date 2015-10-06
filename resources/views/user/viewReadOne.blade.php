@@ -14,20 +14,44 @@
 
 	<!-- User profile -->
 
-	<div>
-		{{ $user->name }}
-	</div>
+	<div class='container-fluid'>
 
-	<div>
-		{{ $user->email }}
-	</div>
+		<article class='user-profile'>
+			<h2 id='h2' class='centered'>
+				{{ $user->name }}
+			</h2>
 
-	<div>
-		{{ $user->gender }}
-	</div>
+			<hr />
 
-	<div>
-		{{ $user->birthday }}
+			<div>
+				<p>
+					Email:
+
+					{{ $user->email }}
+				</p>
+			</div>
+
+			<hr />
+
+			<div>
+				<p>
+					Gender:
+
+					{{ $user->gender }}
+				</p>
+			</div>
+
+			<hr />
+
+			<div>
+				<p>
+					Birthday:
+
+					{{ $user->birthday }}
+				</p>
+			</div>
+		</article>
+
 	</div>
 
 @endsection
@@ -46,7 +70,7 @@
 
 			<ul class='nav navbar-nav navbar-right'>
 				<li>
-					<a id='button' href='/user/{{ $user->id }}/edit'><button class='btn btn-primary'>Edit profile</button></a>
+					<a id='button' href='/user/{{ $user->id }}/edit'><button class='btn btn-info'>Edit profile</button></a>
 				</li>
 
 				<li>

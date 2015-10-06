@@ -1,6 +1,7 @@
 body {
-  color: red;
-  margin-top: 120px; }
+  background-color: #f4f4f4;
+  margin-top: 100px;
+  margin-bottom: 50px; }
 
 #navbar {
   background-color: #a800a8;
@@ -28,5 +29,41 @@ body {
   padding-bottom: 8px;
   padding-left: 15px;
   padding-right: 15px; }
+
+.centered {
+  text-align: center; }
+
+#delete {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  text-align: right; }
+
+#delete button {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 0; }
+
+article {
+  margin-left: 30em;
+  margin-right: 30em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-style: solid;
+  border-color: silver;
+  border-width: 1px;
+  padding: 1em;
+  background-color: #ffffff; }
+
+#h2 {
+  margin-top: 0; }
+
+hr {
+  margin-top: .5em;
+  margin-bottom: .5em; }
+
+p {
+  margin-bottom: 3px; }
 
 /*# sourceMappingURL=app.css.map */
