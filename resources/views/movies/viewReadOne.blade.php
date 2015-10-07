@@ -20,15 +20,16 @@
 
 	<div class='container'>
 
-		<article id='movie'>
+		<div class='card'>
 
-			<h2 id='h2' class='centered'>
-				{{ $movie->title }}
-			</h2>
+			<div class='text-center'>
 
-			<hr />
+				<h2>
+					{{ $movie->title }}
+				</h2>
 
-			<div class='centered'>
+				<hr />
+
 				<p>
 					<span> | </span>
 
@@ -46,9 +47,7 @@
 
 					<span> | </span>
 				</p>
-			</div>
 
-			<div class='centered'>
 				<p>
 					<span> | </span>
 
@@ -98,7 +97,7 @@
 				{{ $movie->synopsis }}
 			</div>
 			
-		</article>
+		</div>
 
 	</div>
 
@@ -108,31 +107,29 @@
 
 @section('toolbar')
 
-	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
+	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='container-fluid'>
+		<div class='nav navbar-nav navbar-left'>
 
-			<ul class='nav navbar-nav navbar-left'>
-				<p class='navbar-text'>{{ $movie->title }}</p>
-			</ul>
+			<div class='navbar-form'>
+				<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+			</div>
+			
+		</div>
 
-			<ul class='nav navbar-nav navbar-right'>
-				<li>
-					<a id='button' href='/movies/{{ $movie->id }}/edit'><button class='btn btn-info'>Edit</button></a>
-				</li>
+		<div class='nav navbar-nav navbar-right'>
 
-				<li>
-					<form action='/movies/{{ $movie->id }}' method='post'>
-						<input name='_method' type='hidden' value='delete'>
-						<button type='submit' class='btn btn-danger'>Delete</button>
-					</form>
-				</li>
+			<div class='navbar-form'>
+				<a class='btn btn-info' href='/movies/{{ $movie->id }}/edit'>Edit</a>
 
-				<li>
-					<a id='button' href='/movies/create'><button class='btn btn-primary'>New Movie</button></a>
-				</li>
-			</ul>
+				<form action='/movies/{{ $movie->id }}' method='post'>
+					<input name='_method' type='hidden' value='delete'>
+					<button type='submit' class='btn btn-danger'>Delete</button>
+				</form>
 
+				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+			</div>
+			
 		</div>
 
 	</nav>

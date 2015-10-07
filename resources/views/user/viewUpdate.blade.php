@@ -16,9 +16,11 @@
 
 	<div class='container'>
 
-		<article id='form'>
+		<div class='card'>
 
-			<h2 id='h2' class='centered'>Edit Profile</h2>
+			<div class='text-center'>
+				<h2>Edit Profile</h2>
+			</div>
 
 			<hr />
 
@@ -42,8 +44,8 @@
 					</select>
 				</div>
 
-				<div class='form-control' class='form-group'>
-					<input name='birthday' type='date' value='{{ $user->birthday }}' placeholder='Birthday'>
+				<div class='form-group'>
+					<input class='form-control' name='birthday' type='date' value='{{ $user->birthday }}' placeholder='Birthday'>
 				</div>
 
 				<br />
@@ -53,7 +55,7 @@
 				</div>
 			</form>
 			
-		</article>
+		</div>
 
 	</div>
 
@@ -63,20 +65,14 @@
 
 @section('toolbar')
 
-	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
+	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='container-fluid'>
+		<div class='nav navbar-nav navbar-right'>
 
-			<ul class='nav navbar-nav navbar-left'>
-				<p class='navbar-text'>{{ $user->name }}</p>
-			</ul>
-
-			<ul class='nav navbar-nav navbar-right'>
-				<li>
-					<a id='button' href='/movies/create'><button class='btn btn-primary'>New Movie</button></a>
-				</li>
-			</ul>
-
+			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+			</div>
+			
 		</div>
 
 	</nav>

@@ -114,7 +114,11 @@
 	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
 		<div class='nav navbar-nav navbar-right'>
-			<div class='navbar-form'><a class='btn btn-primary' href='/movies/create'>New Movie</a></div>
+
+			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+			</div>
+			
 		</div>
 
 	</nav>

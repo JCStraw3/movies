@@ -16,11 +16,11 @@
 
 	<div class='container'>
 
-		<article class='user-profile'>
+		<div class='card'>
 
-			<h2 id='h2' class='centered'>
-				{{ $user->name }}
-			</h2>
+			<div class='text-center'>
+				<h2>{{ $user->name }}</h2>
+			</div>
 
 			<hr />
 
@@ -52,7 +52,7 @@
 				</p>
 			</div>
 			
-		</article>
+		</div>
 
 	</div>
 
@@ -62,24 +62,16 @@
 
 @section('toolbar')
 
-	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
+	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='container-fluid'>
+		<div class='nav navbar-nav navbar-right'>
 
-			<ul class='nav navbar-nav navbar-left'>
-				<p class='navbar-text'>{{ $user->name }}</p>
-			</ul>
+			<div class='navbar-form'>
+				<a class='btn btn-info' href='/user/{{ $user->id }}/edit'>Edit profile</a>
 
-			<ul class='nav navbar-nav navbar-right'>
-				<li>
-					<a id='button' href='/user/{{ $user->id }}/edit'><button class='btn btn-info'>Edit profile</button></a>
-				</li>
-
-				<li>
-					<a id='button' href='/movies/create'><button class='btn btn-primary'>New Movie</button></a>
-				</li>
-			</ul>
-
+				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+			</div>
+			
 		</div>
 
 	</nav>

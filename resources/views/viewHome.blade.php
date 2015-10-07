@@ -10,31 +10,27 @@
 
 	<div class='container'>
 
-		<article>
+		<div class='card'>
 
-			<h1 id='h1' class='centered'>
-				Movies
-			</h1>
+			<div class='text-center'>
+				<h1>Movies</h1>
+			</div>
 
 			<hr />
 
 			<br />
 
 			<div>
-				<a id='button' href='/auth/register'>
-					<button class='btn btn-group btn-group-justified btn-primary'>Register</button>
-				</a>
+				<a class='btn btn-group btn-group-justified btn-primary' href='/auth/register'>Register</a>
 			</div>
 
 			<br />
 
 			<div>
-				<a id='button' href='/auth/login'>
-					<button class='btn btn-group btn-group-justified btn-primary'>Login</button>
-				</a>
+				<a class='btn btn-group btn-group-justified btn-primary' href='/auth/login'>Login</a>
 			</div>
 
-		</article>
+		</div>
 
 	</div>
 
@@ -44,20 +40,16 @@
 
 @section('toolbar')
 
-	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
+	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='container-fluid'>
+		<div class='nav navbar-nav navbar-right'>
 
-			<ul class='nav navbar-nav navbar-right'>
-				<li>
-					<a id='button' href='/auth/login'><button class='btn btn-primary'>Login</button></a>
-				</li>
+			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/auth/login'>Login</a>
 
-				<li>
-					<a id='button' href='/auth/register'><button class='btn btn-primary'>Register</button></a>
-				</li>
-			</ul>
-
+				<a class='btn btn-primary' href='/auth/register'>Register</a>
+			</div>
+			
 		</div>
 
 	</nav>

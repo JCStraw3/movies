@@ -16,9 +16,11 @@
 
 	<div class='container'>
 
-		<article id='form'>
+		<div class='card'>
 
-			<h2 id='h2' class='centered'>Login</h2>
+			<div class='text-center'>
+				<h2>Login</h2>
+			</div>
 
 			<hr />
 
@@ -38,7 +40,7 @@
 				</div>
 			</form>
 			
-		</article>
+		</div>
 
 	</div>
 
@@ -48,20 +50,16 @@
 
 @section('toolbar')
 
-	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
+	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='container-fluid'>
+		<div class='nav navbar-nav navbar-right'>
 
-			<ul class='nav navbar-nav navbar-right'>
-				<li>
-					<a id='button' href='/auth/login'><button class='btn btn-primary'>Login</button></a>
-				</li>
+			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/auth/login'>Login</a>
 
-				<li>
-					<a id='button' href='/auth/register'><button class='btn btn-primary'>Register</button></a>
-				</li>
-			</ul>
-
+				<a class='btn btn-primary' href='/auth/register'>Register</a>
+			</div>
+			
 		</div>
 
 	</nav>
