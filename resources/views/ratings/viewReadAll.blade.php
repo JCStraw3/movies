@@ -12,13 +12,13 @@
 
 		@foreach ($ratings as $rating)
 
-			<article id='rating'>
+			<div class='card'>
 
-				<h2 id='h2' class='centered'>
-					<a href='/ratings/{{ $rating->id }}'>{{ $rating->name }}</a>
-				</h2>
+				<div class='text-center'>
+					<a href='/ratings/{{ $rating->id }}'><h2>{{ $rating->name }}</h2></a>
+				</div>
 
-			</article>
+			</div>
 
 		@endforeach
 
@@ -30,18 +30,22 @@
 
 @section('toolbar')
 
-	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
+	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='container-fluid'>
+		<div class='nav navbar-nav navbar-left'>
 
-			<ul class='nav navbar-nav navbar-left'>
-				<li><a href='/ratings'>Ratings</a></li>
-			</ul>
+			<div class='navbar-form'>
+				<a href='/ratings'>Ratings</a>
+			</div>
+			
+		</div>
 
-			<ul class='nav navbar-nav navbar-right'>
-				<li><a id='button' href='/movies/create'><button class='btn btn-primary'>New Movie</button></a></li>
-			</ul>
+		<div class='nav navbar-nav navbar-right'>
 
+			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+			</div>
+			
 		</div>
 
 	</nav>
