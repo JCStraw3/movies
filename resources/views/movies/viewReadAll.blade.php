@@ -18,22 +18,20 @@
 
 		@foreach ($movies as $movie)
 
-			<article id='movie'>
+			<div class='card'>
 
-				<ul id='delete'>
-					<form action='/movies/{{ $movie->id }}' method='post'>
-						<input name='_method' type='hidden' value='delete'>
-						<button type='submit' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-remove'></span></button>
-					</form>
-				</ul>
+				<form class='pull-right' action='/movies/{{ $movie->id }}' method='post'>
+					<input name='_method' type='hidden' value='delete'>
+					<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+				</form>
 
-				<h2 id='h2' class='centered'>
-					<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
-				</h2>
+				<div class='clearfix'></div>
 
-				<hr />
+				<div class='text-center'>
+					<a href='/movies/{{ $movie->id }}'><h2>{{ $movie->title }}</h2></a>
+				
+					<hr />
 
-				<div class='stats centered'>
 					<p>
 						<span> | </span>
 
@@ -51,9 +49,7 @@
 
 						<span> | </span>
 					</p>
-				</div>
 
-				<div class='genre centered'>
 					<p>
 						<span> | </span>
 
@@ -103,13 +99,11 @@
 					{{ $movie->synopsis }}
 				</div>
 				
-			</article>
+			</div>
 
 		@endforeach
 
 	</div>
-
-	
 
 @endsection
 
@@ -117,14 +111,10 @@
 
 @section('toolbar')
 
-	<nav id='toolbar' class='navbar navbar-inverse navbar-fixed-top'>
+	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='container-fluid'>
-
-			<ul class='nav navbar-nav navbar-right'>
-				<li><a id='button' href='/movies/create'><button class='btn btn-primary'>New Movie</button></a></li>
-			</ul>
-
+		<div class='nav navbar-nav navbar-right'>
+			<div class='navbar-form'><a class='btn btn-primary' href='/movies/create'>New Movie</a></div>
 		</div>
 
 	</nav>

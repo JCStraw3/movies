@@ -1,20 +1,12 @@
-/*Basic app CSS*/
+// Basic tags
 
 body {
 	background-color: rgb(244,244,244);
 	margin-top: 100px;
 }
 
-article {
-	margin-left: 20em;
-	margin-right: 20em;
-	margin-top: 2em;
-	margin-bottom: 2em;
-	border-style: solid;
-	border-color: rgb(192,192,192);
-	border-width: 1px;
-	padding: 2em;
-	background-color: #ffffff;
+h1, h2 {
+	margin-top: 0;
 }
 
 p {
@@ -35,20 +27,33 @@ textarea.form-control {
 	max-width: 522px;
 }
 
-/*Navigation bar CSS*/
+// Card class
 
-#navbar {
-	background-color: rgb(168,0,168);
-	border-color: rgb(168,0,168);
+.card {
+	margin-left: 20em;
+	margin-right: 20em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	border-style: solid;
+	border-color: rgb(192,192,192);
+	border-width: 1px;
+	padding: 2em;
+	background-color: #ffffff;
+}
+
+// Navbar classes
+
+$navbar-color: rgb(168,0,168);
+
+.navbar {
+	background-color: $navbar-color;
+	border-color: $navbar-color;
 	margin: 0;
 }
 
-.navbar-inverse .navbar-text {
-	color: #ffffff;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-	color: #ffffff;
+.navbar-inverse a {
+	color: #ffffff !important;
+	margin-right: 12px;
 }
 
 .navbar form {
@@ -58,48 +63,13 @@ textarea.form-control {
 	padding-right: 15px;
 }
 
-/*Toolbar CSS*/
+// Toolbar class
 
-#toolbar {
+$toolbar-color: rgb(45,176,123);
+
+.toolbar {
 	top: 51px;
-	background-color: rgb(45,176,123);
-	border-color: rgb(45,176,123);
+	background-color: $toolbar-color;
+	border-color: $toolbar-color;
 	margin: 0;
-}
-
-/*Class CSS*/
-
-.centered {
-	text-align: center;
-}
-
-/*Heading CSS*/
-
-#h1 {
-	margin-top: 0;
-}
-
-#h2 {
-	margin-top: 0;
-}
-
-/*Button CSS*/
-
-#button {
-	padding-top: 8px;
-	padding-bottom: 8px;
-}
-
-#delete {
-	padding: 0;
-	margin: 0;
-	display: inline;
-	text-align: right;
-}
-
-#delete button {
-	padding-left: 5px;
-	padding-right: 5px;
-	padding-top: 2px;
-	padding-bottom: 0;
 }

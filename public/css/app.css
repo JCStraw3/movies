@@ -1,18 +1,9 @@
-/*Basic app CSS*/
 body {
   background-color: #f4f4f4;
   margin-top: 100px; }
 
-article {
-  margin-left: 20em;
-  margin-right: 20em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  border-style: solid;
-  border-color: silver;
-  border-width: 1px;
-  padding: 2em;
-  background-color: #ffffff; }
+h1, h2 {
+  margin-top: 0; }
 
 p {
   margin-bottom: 3px; }
@@ -28,17 +19,25 @@ textarea.form-control {
   height: 10em;
   max-width: 522px; }
 
-/*Navigation bar CSS*/
-#navbar {
+.card {
+  margin-left: 20em;
+  margin-right: 20em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-style: solid;
+  border-color: silver;
+  border-width: 1px;
+  padding: 2em;
+  background-color: #ffffff; }
+
+.navbar {
   background-color: #a800a8;
   border-color: #a800a8;
   margin: 0; }
 
-.navbar-inverse .navbar-text {
-  color: #ffffff; }
-
-.navbar-inverse .navbar-nav > li > a {
-  color: #ffffff; }
+.navbar-inverse a {
+  color: #ffffff !important;
+  margin-right: 12px; }
 
 .navbar form {
   padding-top: 8px;
@@ -46,39 +45,10 @@ textarea.form-control {
   padding-left: 15px;
   padding-right: 15px; }
 
-/*Toolbar CSS*/
-#toolbar {
+.toolbar {
   top: 51px;
   background-color: #2db07b;
   border-color: #2db07b;
   margin: 0; }
-
-/*Class CSS*/
-.centered {
-  text-align: center; }
-
-/*Heading CSS*/
-#h1 {
-  margin-top: 0; }
-
-#h2 {
-  margin-top: 0; }
-
-/*Button CSS*/
-#button {
-  padding-top: 8px;
-  padding-bottom: 8px; }
-
-#delete {
-  padding: 0;
-  margin: 0;
-  display: inline;
-  text-align: right; }
-
-#delete button {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 0; }
 
 /*# sourceMappingURL=app.css.map */
