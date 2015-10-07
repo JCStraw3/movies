@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Rating;
+use App\Director;
 
-class RatingController extends Controller {
+class DirectorController extends Controller {
 
 // Middleware
 
@@ -20,25 +20,25 @@ class RatingController extends Controller {
 
 // Views
 
-	// View all ratings.
+	// View all directors.
 
 	public function viewReadAll(){
 
-		$ratings = Rating::all();
+		$directors = Director::all();
 
-		return view('ratings.viewReadAll')
-			->with('ratings', $ratings);
+		return view('directors.viewReadAll')
+			->with('directors', $directors);
 
 	}
 
-	// View all movies attached to rating.
+	// View all movies attached to director.
 
 	public function viewReadOne($id){
 
-		$rating = Rating::findOrFail($id);
+		$director = Director::findOrFail($id);
 
-		return view('ratings.viewReadOne')
-			->with('rating', $rating);
+		return view('directors.viewReadOne')
+			->with('director', $director);
 
 	}
 

@@ -72,7 +72,7 @@
 						Director(s):
 
 						@foreach ($movie->directors as $director)
-							{{ $director->name }},
+							<a href='/directors/{{ $director->id }}'>{{ $director->name }}</a>,
 						@endforeach
 					</p>
 				</div>
