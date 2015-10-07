@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Rating;
+use App\Writer;
 
-class RatingController extends Controller {
+class WriterController extends Controller {
 
 // Middleware
 
@@ -20,25 +20,25 @@ class RatingController extends Controller {
 
 // Views
 
-	// View all ratings.
+	// View all writers.
 
 	public function viewReadAll(){
 
-		$ratings = Rating::orderBy('name', 'asc')->get();
+		$writers = Writer::orderBy('name', 'asc')->get();
 
-		return view('ratings.viewReadAll')
-			->with('ratings', $ratings);
+		return view('writers.viewReadAll')
+			->with('writers', $writers);
 
 	}
 
-	// View all movies attached to rating.
+	// View all movies attached to writer.
 
 	public function viewReadOne($id){
 
-		$rating = Rating::findOrFail($id);
+		$writer = Writer::findOrFail($id);
 
-		return view('ratings.viewReadOne')
-			->with('rating', $rating);
+		return view('writers.viewReadOne')
+			->with('writer', $writer);
 
 	}
 

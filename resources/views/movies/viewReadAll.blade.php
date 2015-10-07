@@ -82,7 +82,7 @@
 						Writer(s):
 
 						@foreach ($movie->writers as $writer)
-							{{ $writer->name }},
+							<a href='/writers/{{ $writer->id }}'>{{ $writer->name }}</a>,
 						@endforeach
 					</p>
 				</div>
@@ -92,7 +92,7 @@
 						Cast:
 
 						@foreach ($movie->casts as $cast)
-							{{ $cast->name }},
+							<a href='/cast/{{ $cast->id }}'>{{ $cast->name }}</a>,
 						@endforeach
 					</p>
 				</div>

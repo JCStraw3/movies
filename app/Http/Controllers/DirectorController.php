@@ -24,7 +24,7 @@ class DirectorController extends Controller {
 
 	public function viewReadAll(){
 
-		$directors = Director::all();
+		$directors = Director::orderBy('name', 'asc')->get();
 
 		return view('directors.viewReadAll')
 			->with('directors', $directors);
