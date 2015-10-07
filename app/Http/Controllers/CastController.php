@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Writer;
+use App\Cast;
 
-class WriterController extends Controller {
+class CastController extends Controller {
 
 // Middleware
 
@@ -20,25 +20,25 @@ class WriterController extends Controller {
 
 // Views
 
-	// View all writers.
+	// View all casts.
 
 	public function viewReadAll(){
 
-		$writers = Writer::orderBy('name', 'asc')->get();
+		$casts = Cast::orderBy('name', 'asc')->get();
 
-		return view('writers.viewReadAll')
-			->with('writers', $writers);
+		return view('casts.viewReadAll')
+			->with('casts', $casts);
 
 	}
 
-	// View all movies attached to writer.
+	// View all movies attached to a cast.
 
 	public function viewReadOne($id){
 
-		$writer = Writer::findOrFail($id);
+		$cast = Cast::findOrFail($id);
 
-		return view('writers.viewReadOne')
-			->with('writer', $writer);
+		return view('casts.viewReadOne')
+			->with('cast', $cast);
 
 	}
 

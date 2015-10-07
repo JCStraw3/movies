@@ -43,4 +43,5 @@ class GenreController extends Controller{
 			->with('genre', $genre);
 
 	}
+	
 }
