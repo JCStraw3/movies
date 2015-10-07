@@ -3,8 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMoviesTable extends Migration
-{
+class CreateMoviesTable extends Migration {
     /**
      * Run the migrations.
      *
@@ -30,4 +29,5 @@ class CreateMoviesTable extends Migration
     public function down(){
         Schema::drop('movies');
     }
+    
 }

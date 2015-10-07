@@ -98,6 +98,16 @@
 				<div>
 					{{ $movie->synopsis }}
 				</div>
+
+				<br />
+
+				<div>
+					@foreach ($movie->states as $state)
+						<a class='label label-primary pull-right' href='/states/{{ $state->id }}'>{{ $state->name }}</a>
+					@endforeach
+				</div>
+				
+				<br />
 				
 			</div>
 

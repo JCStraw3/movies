@@ -12,6 +12,7 @@ use App\Rating;
 use App\Director;
 use App\Writer;
 use App\Cast;
+use App\State;
 
 use Auth;
 
@@ -43,12 +44,15 @@ class MovieController extends Controller {
 
 		$casts = Cast::all();
 
+		$states = State::all();
+
 		return view('movies.viewCreate')
 			->with('genres', $genres)
 			->with('ratings', $ratings)
 			->with('directors', $directors)
 			->with('writers', $writers)
 			->with('casts', $casts)
+			->with('states', $states)
 			->with('user', $user);
 
 	}
@@ -95,13 +99,16 @@ class MovieController extends Controller {
 
 		$casts = Cast::all();
 
+		$states = State::all();
+
 		return view('movies.viewUpdate')
 			->with('movie', $movie)
 			->with('genres', $genres)
 			->with('ratings', $ratings)
 			->with('directors', $directors)
 			->with('writers', $writers)
-			->with('casts', $casts);
+			->with('casts', $casts)
+			->with('states', $states);
 
 	}
 
@@ -148,6 +155,12 @@ class MovieController extends Controller {
 		$casts = $request->input('casts');
 
 		$movie->casts()->attach($casts);
+
+		// Attaching states to movies via pivot table
+
+		$states = $request->input('states');
+
+		$movie->states()->attach($states);
 
 		// Sending flash message.
 
@@ -204,6 +217,12 @@ class MovieController extends Controller {
 		$casts = $request->input('casts');
 
 		$movie->casts()->sync($casts);
+
+		// Syncing states to movies via pivot table
+
+		$states = $request->input('states');
+
+		$movie->states()->sync($states);
 
 		// Send flash message.
 

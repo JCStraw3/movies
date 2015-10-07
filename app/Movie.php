@@ -55,4 +55,10 @@ class Movie extends Model {
 		return $this->belongsToMany('App\Cast');
 	}
 
+	// Movie can have many states.
+
+	public function states(){
+		return $this->belongsToMany('App\State');
+	}
+
 }

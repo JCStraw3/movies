@@ -89,6 +89,14 @@
 					<textarea class='form-control' name='synopsis' placeholder='Synopsis'>{{ $movie->synopsis }}</textarea>
 				</div>
 
+				<div class='form-group'>
+					<select class='form-control' name='states[]' multiple>
+						@foreach ($states as $state)
+							<option value='{{ $state->id }}'>{{ $state->name }}</option>
+						@endforeach
+					</select>
+				</div>
+
 				<br />
 
 				<div>
