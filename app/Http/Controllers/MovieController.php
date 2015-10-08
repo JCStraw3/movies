@@ -63,7 +63,9 @@ class MovieController extends Controller {
 
 		$user = Auth::user();
 
-		$movies = Movie::where('user_id', '=', $user->id)->latest()->get();
+		$movies = Movie::where('user_id', '=', $user->id)
+			->orderBy('title', 'asc')
+			->get();
 
 		return view('movies.viewReadAll')
 			->with('movies', $movies);

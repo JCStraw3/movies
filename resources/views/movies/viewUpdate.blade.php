@@ -38,7 +38,7 @@
 				</div>
 
 				<div class='form-group'>
-					<select class='form-control' name='genres[]' multiple>
+					<select id='genre' class='form-control' name='genres[]' multiple>
 						@foreach ($genres as $genre)
 							<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
 						@endforeach
@@ -62,7 +62,7 @@
 				</div>
 
 				<div class='form-group'>
-					<select class='form-control' name='directors[]' multiple>
+					<select id='director' class='form-control' name='directors[]' multiple>
 						@foreach ($directors as $director)
 							<option value='{{ $director->id }}'>{{ $director->name }}</option>
 						@endforeach
@@ -70,7 +70,7 @@
 				</div>
 
 				<div class='form-group'>
-					<select class='form-control' name='writers[]' multiple>
+					<select id='writer' class='form-control' name='writers[]' multiple>
 						@foreach ($writers as $writer)
 							<option value='{{ $writer->id }}'>{{ $writer->name }}</option>
 						@endforeach
@@ -78,7 +78,7 @@
 				</div>
 
 				<div class='form-group'>
-					<select class='form-control' name='casts[]' multiple>
+					<select id='cast' class='form-control' name='casts[]' multiple>
 						@foreach ($casts as $cast)
 							<option value='{{ $cast->id }}'>{{ $cast->name }}</option>
 						@endforeach
@@ -90,7 +90,7 @@
 				</div>
 
 				<div class='form-group'>
-					<select class='form-control' name='states[]' multiple>
+					<select id='state' class='form-control' name='states[]' multiple>
 						@foreach ($states as $state)
 							<option value='{{ $state->id }}'>{{ $state->name }}</option>
 						@endforeach
@@ -108,6 +108,36 @@
 
 	</div>
 
+	<script type='text/javascript'>
+		$('#genre').select2({
+			placeholder: 'Genre',
+		});
+	</script>
+
+	<script type='text/javascript'>
+		$('#director').select2({
+			placeholder: 'Director',
+		});
+	</script>
+
+	<script type='text/javascript'>
+		$('#writer').select2({
+			placeholder: 'Writer',
+		});
+	</script>
+
+	<script type='text/javascript'>
+		$('#cast').select2({
+			placeholder: 'Cast',
+		});
+	</script>
+
+	<script type='text/javascript'>
+		$('#state').select2({
+			placeholder: 'State',
+		});
+	</script>
+
 @endsection
 
 <!-- Toolbar -->
@@ -118,9 +148,22 @@
 
 		<div class='nav navbar-nav navbar-left'>
 
-			<div class='navbar-form'>
-				<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+			<div class='navbar-form btn-group'>
+				<button class='btn btn-info dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+					Menu <span class='caret'></span>
+				</button>
+				<ul class='dropdown-menu'>
+					<li><a href='/movies'>Movies</a></li>
+					<li><a href='/genres'>Genres</a></li>
+					<li><a href='/ratings'>Ratings</a></li>
+					<li><a href='/directors'>Directors</a></li>
+					<li><a href='/writers'>Writers</a></li>
+					<li><a href='/cast'>Cast</a></li>
+					<li><a href='/states'>Labels</a></li>
+				</ul>
 			</div>
+				
+			<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
 			
 		</div>
 
