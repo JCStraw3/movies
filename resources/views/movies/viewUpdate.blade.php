@@ -38,7 +38,7 @@
 				</div>
 
 				<div class='form-group'>
-					<select id='genre' class='form-control' name='genre[]' multiple>
+					<select id='genre' class='form-control' name='genres[]' multiple>
 						@foreach ($genres as $genre)
 							<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
 						@endforeach
