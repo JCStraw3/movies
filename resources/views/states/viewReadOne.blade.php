@@ -66,7 +66,7 @@
 				</ul>
 			</div>
 
-			<a href='/states'>States</a>
+			<a href='/states'>Labels</a>
 			
 		</div>
 

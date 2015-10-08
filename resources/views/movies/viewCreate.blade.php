@@ -102,6 +102,8 @@
 
 	</div>
 
+	{{-- Select 2 scripts --}}
+
 	<script type='text/javascript'>
 		$('#genre').select2({
 			placeholder: 'Genre',

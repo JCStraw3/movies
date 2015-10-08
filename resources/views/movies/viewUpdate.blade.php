@@ -38,7 +38,7 @@
 				</div>
 
 				<div class='form-group'>
-					<select id='genre' class='form-control' name='genres[]' multiple>
+					<select id='genre' class='form-control' name='genre[]' multiple>
 						@foreach ($genres as $genre)
 							<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
 						@endforeach
@@ -107,6 +107,8 @@
 		</div>
 
 	</div>
+
+	{{-- Select 2 scripts --}}
 
 	<script type='text/javascript'>
 		$('#genre').select2({
