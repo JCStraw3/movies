@@ -15,7 +15,7 @@ class CreateMoviesTable extends Migration {
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->date('release_date');
-            $table->string('runtime');
+            $table->tinyInteger('runtime')->unsigned();
             $table->text('synopsis');
             $table->timestamps();
         });

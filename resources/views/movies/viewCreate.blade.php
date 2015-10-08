@@ -82,9 +82,9 @@
 					</div>
 
 					<div class='form-group'>
-						<select id='state' class='form-control' name='states[]' multiple>
-							@foreach ($states as $state)
-								<option value='{{ $state->id }}'>{{ $state->name }}</option>
+						<select id='label' class='form-control' name='labels[]' multiple>
+							@foreach ($labels as $label)
+								<option value='{{ $label->id }}'>{{ $label->name }}</option>
 							@endforeach
 						</select>
 					</div>
@@ -129,8 +129,8 @@
 	</script>
 
 	<script type='text/javascript'>
-		$('#state').select2({
-			placeholder: 'State',
+		$('#label').select2({
+			placeholder: 'Label',
 		});
 	</script>
 
@@ -155,7 +155,7 @@
 					<li><a href='/directors'>Directors</a></li>
 					<li><a href='/writers'>Writers</a></li>
 					<li><a href='/cast'>Cast</a></li>
-					<li><a href='/states'>Labels</a></li>
+					<li><a href='/labels'>Labels</a></li>
 				</ul>
 			</div>
 			

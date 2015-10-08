@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\State;
+use App\Label;
 
-class StateController extends Controller {
+class LabelController extends Controller {
 
 // Middleware
 
@@ -20,25 +20,25 @@ class StateController extends Controller {
 
 // Views
 
-	// View all states.
+	// View all labels.
 
 	public function viewReadAll(){
 
-		$states = State::orderBy('id', 'asc')->get();
+		$labels = Label::orderBy('id', 'asc')->get();
 
-		return view('states.viewReadAll')
-			->with('states', $states);
+		return view('labels.viewReadAll')
+			->with('labels', $labels);
 
 	}
 
-	// View all movies attached to state.
+	// View all movies attached to label.
 
 	public function viewReadOne($id){
 
-		$state = State::findOrFail($id);
+		$label = Label::findOrFail($id);
 
-		return view('states.viewReadOne')
-			->with('state', $state);
+		return view('labels.viewReadOne')
+			->with('label', $label);
 
 	}
 

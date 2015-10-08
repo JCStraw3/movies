@@ -77,7 +77,7 @@
 					<li><a href='/directors'>Directors</a></li>
 					<li><a href='/writers'>Writers</a></li>
 					<li><a href='/cast'>Cast</a></li>
-					<li><a href='/states'>Labels</a></li>
+					<li><a href='/labels'>Labels</a></li>
 				</ul>
 			</div>
 			

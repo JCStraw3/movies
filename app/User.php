@@ -46,8 +46,46 @@ class User extends Model implements AuthenticatableContract,
         'remember_token'
     ];
 
+    // A user has many movies.
+
     public function movies(){
         return $this->hasMany('App\Movie');
+    }
+
+    // A user has many genres.
+
+    public function genres(){
+        return $this->hasMany('App\Genre');
+    }
+
+    // A user has many ratings.
+
+    public function ratings(){
+        return $this->hasMany('App\Rating');
+    }
+
+    // A user has many directors.
+
+    public function directors(){
+        return $this->hasMany('App\Director');
+    }
+
+    // A user has many writers.
+
+    public function writers(){
+        return $this->hasMany('App\Writer');
+    }
+
+    // A user has many casts.
+
+    public function casts(){
+        return $this->hasMany('App\Cast');
+    }
+
+    // A user has many labels.
+
+    public function labels(){
+        return $this->hasMany('App\Label');
     }
     
 }

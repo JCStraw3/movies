@@ -67,7 +67,7 @@ Route::get('writers/{id}', 'WriterController@viewReadOne');
 Route::get('cast', 'CastController@viewReadAll');
 Route::get('cast/{id}', 'CastController@viewReadOne');
 
-// States routes.
+// Labels routes.
 
-Route::get('states', 'StateController@viewReadAll');
-Route::get('states/{id}', 'StateController@viewReadOne');
+Route::get('labels', 'LabelController@viewReadAll');
+Route::get('labels/{id}', 'LabelController@viewReadOne');

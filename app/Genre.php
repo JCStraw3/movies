@@ -15,6 +15,12 @@ class Genre extends Model {
 	protected $fillable = [
 		'name',
 	];
+	
+	// Genre belongs to one user.
+
+	public function user(){
+		return $this->belongsTo('App\User');
+	}
 
 	// Genres can be attached to many movies.
 

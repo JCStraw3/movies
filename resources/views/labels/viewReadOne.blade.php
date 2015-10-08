@@ -2,7 +2,11 @@
 
 <!-- Title -->
 
-@section('title', 'States')
+@section('title')
+
+	{{ $label->name }}
+
+@endsection
 
 <!-- Content -->
 
@@ -10,17 +14,30 @@
 
 	<div class='container'>
 
-		@foreach ($states as $state)
+		<div class='card'>
 
-			<div class='card'>
-
-				<div class='text-center'>
-					<a href='/states/{{ $state->id }}'><h2>{{ $state->name }}</h2></a>
-				</div>
-
+			<div class='text-center'>
+				<h2>{{ $label->name }}</h2>
 			</div>
 
-		@endforeach
+			<hr />
+
+			<div>
+				@foreach ($label->movies as $movie)
+
+					<br />
+
+					<div>
+						<h4>
+							<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+						</h4>
+
+						<p>{{ $movie->synopsis }}</p>
+					</div>
+				@endforeach
+			</div>
+
+		</div>
 
 	</div>
 
@@ -45,11 +62,11 @@
 					<li><a href='/directors'>Directors</a></li>
 					<li><a href='/writers'>Writers</a></li>
 					<li><a href='/cast'>Cast</a></li>
-					<li><a href='/states'>Labels</a></li>
+					<li><a href='/labels'>Labels</a></li>
 				</ul>
 			</div>
 
-			<a href='/states'>Labels</a>
+			<a href='/labels'>Labels</a>
 			
 		</div>
 

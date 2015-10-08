@@ -55,10 +55,10 @@ class Movie extends Model {
 		return $this->belongsToMany('App\Cast');
 	}
 
-	// Movie can have many states.
+	// Movie can have many labels.
 
-	public function states(){
-		return $this->belongsToMany('App\State');
+	public function labels(){
+		return $this->belongsToMany('App\Label');
 	}
 
 }

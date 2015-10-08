@@ -15,6 +15,12 @@ class Rating extends Model {
 	protected $fillable = [
 		'name',
 	];
+	
+	// Rating belongs to one user.
+
+	public function user(){
+		return $this->belongsTo('App\User');
+	}
 
 	// Rating can be attached to many movies.
 

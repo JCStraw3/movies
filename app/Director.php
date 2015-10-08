@@ -15,6 +15,12 @@ class Director extends Model {
 	protected $fillable = [
 		'name',
 	];
+	
+	// Director belongs to one user.
+
+	public function user(){
+		return $this->belongsTo('App\User');
+	}
 
 	// Director can be attached to many movies.
 

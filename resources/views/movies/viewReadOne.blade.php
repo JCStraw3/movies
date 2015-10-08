@@ -100,8 +100,8 @@
 			<br />
 
 			<div>
-				@foreach ($movie->states as $state)
-					<a class='label label-primary pull-right' href='/states/{{ $state->id }}'>{{ $state->name }}</a>
+				@foreach ($movie->labels as $label)
+					<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
 				@endforeach
 			</div>
 			
@@ -132,7 +132,7 @@
 					<li><a href='/directors'>Directors</a></li>
 					<li><a href='/writers'>Writers</a></li>
 					<li><a href='/cast'>Cast</a></li>
-					<li><a href='/states'>Labels</a></li>
+					<li><a href='/labels'>Labels</a></li>
 				</ul>
 			</div>
 				

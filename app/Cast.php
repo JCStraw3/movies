@@ -15,6 +15,12 @@ class Cast extends Model {
 	protected $fillable = [
 		'name',
 	];
+	
+	// Cast belongs to one user.
+
+	public function user(){
+		return $this->belongsTo('App\User');
+	}
 
 	// Cast can be attached to many movies.
 

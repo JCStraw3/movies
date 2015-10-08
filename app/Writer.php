@@ -15,6 +15,12 @@ class Writer extends Model {
 	protected $fillable = [
 		'name',
 	];
+	
+	// Writer belongs to one user.
+
+	public function user(){
+		return $this->belongsTo('App\User');
+	}
 
 	// Writer can be attached to many movies.
 
