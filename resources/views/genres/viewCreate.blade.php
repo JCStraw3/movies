@@ -74,6 +74,8 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/genres/create'>New Genre</a>
+
 				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
 			</div>
 			

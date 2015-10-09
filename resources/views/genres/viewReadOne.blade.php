@@ -79,6 +79,8 @@
 					<input name='_method' type='hidden' value='delete'>
 					<button type='submit' class='btn btn-danger'>Delete</button>
 				</form>
+				
+				<a class='btn btn-primary' href='/genres/create'>New Genre</a>
 
 				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
 			</div>

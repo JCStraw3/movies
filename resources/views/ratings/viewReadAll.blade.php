@@ -56,6 +56,8 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/ratings/create'>New Rating</a>
+				
 				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
 			</div>
 			

@@ -24,7 +24,7 @@
 
 				<hr />
 
-				<form action='/genres' method='post'>
+				<form action='/ratings' method='post'>
 					<div class='form-group'>
 						<input class='form-control' name='name' type='text' placeholder='Name'>
 					</div>
@@ -32,7 +32,7 @@
 					<br />
 
 					<div>
-						<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Genre</button>
+						<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Rating</button>
 					</div>
 				</form>
 
@@ -67,13 +67,15 @@
 				</ul>
 			</div>
 
-			<a href='/genres'>Genres</a>
+			<a href='/ratings'>Ratings</a>
 			
 		</div>
 
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/ratings/create'>New Rating</a>
+
 				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
 			</div>
 			
