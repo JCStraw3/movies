@@ -2,32 +2,43 @@
 
 <!-- Title -->
 
-@section('title', 'Genres')
+@section('title', 'Create a new genre')
 
 <!-- Content -->
 
 @section('content')
 
+	<!-- Errors -->
+
+	@include('errors.list')
+
+	<!-- Create a new genre form -->
+
 	<div class='container'>
 
-		@foreach ($genres as $genre)
+		<div class='card'>
 
-			<div class='card'>
+			<div class='text-center'>
 
-				<form class='pull-right' action='/genres/{{ $genre->id }}' method='post'>
-					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+				<h2>New Genre</h2>
+
+				<hr />
+
+				<form action='/genres' method='post'>
+					<div class='form-group'>
+						<input class='form-control' name='name' type='text' placeholder='Name'>
+					</div>
+					
+					<br />
+
+					<div>
+						<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Genre</button>
+					</div>
 				</form>
 
-				<div class='clearfix'></div>
-
-				<div class='text-center'>
-					<a href='/genres/{{ $genre->id }}'><h2>{{ $genre->name }}</h2></a>
-				</div>
-
 			</div>
-
-		@endforeach
+			
+		</div>
 
 	</div>
 
@@ -61,10 +72,8 @@
 		</div>
 
 		<div class='nav navbar-nav navbar-right'>
-			
-			<div class='navbar-form'>
-				<a class='btn btn-primary' href='/genres/create'>New Genre</a>
 
+			<div class='navbar-form'>
 				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
 			</div>
 			

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class UpdateMovieRequest extends Request
+class UpdateGenreRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,7 @@ class UpdateMovieRequest extends Request
      */
     public function rules(){
         return [
-            'title' => 'required',
+            'name' => 'required',
         ];
     }
-
 }

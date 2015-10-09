@@ -45,7 +45,12 @@ Route::delete('movies/{id}', 'MovieController@actionDelete');
 // Genre routes.
 
 Route::get('genres', 'GenreController@viewReadAll');
+Route::get('genres/create', 'GenreController@viewCreate');
 Route::get('genres/{id}', 'GenreController@viewReadOne');
+Route::get('genres/{id}/edit', 'GenreController@viewUpdate');
+Route::post('genres', 'GenreController@actionCreate');
+Route::put('genres/{id}', 'GenreController@actionUpdate');
+Route::delete('genres/{id}', 'GenreController@actionDelete');
 
 // Rating routes.
 

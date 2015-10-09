@@ -78,7 +78,8 @@ class MovieController extends Controller {
 
 		$user = Auth::user();
 
-		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
+		$movie = Movie::where('user_id', '=', $user->id)
+			->findOrFail($id);
 
 		return view('movies.viewReadOne')
 			->with('movie', $movie);
@@ -89,7 +90,8 @@ class MovieController extends Controller {
 
 		$user = Auth::user();
 
-		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
+		$movie = Movie::where('user_id', '=', $user->id)
+			->findOrFail($id);
 
 		$genres = Genre::all();
 
@@ -184,7 +186,8 @@ class MovieController extends Controller {
 
 		// Find by id the id sent via the form and set into movie variable.
 
-		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
+		$movie = Movie::where('user_id', '=', $user->id)
+			->findOrFail($id);
 
 		// Save request to the database.
 
@@ -246,7 +249,8 @@ class MovieController extends Controller {
 
 		// Find by id the id sent via the form and set into movie variable.
 
-		$movie = Movie::where('user_id', '=', $user->id)->findOrFail($id);
+		$movie = Movie::where('user_id', '=', $user->id)
+			->findOrFail($id);
 
 		// Delete movie from database.
 

@@ -23,14 +23,6 @@ class CreateMovieRequest extends Request
     public function rules(){
         return [
             'title' => 'required',
-            // 'genre' => 'required',
-            // 'release_date' => 'required',
-            // 'rating' => 'required',
-            // 'runtime' => 'required',
-            // 'director' => 'required',
-            // 'writer' => 'required',
-            // 'cast' => 'required',
-            // 'synopsis' => 'required',
         ];
     }
 
