@@ -34,7 +34,7 @@
 				</div>
 
 				<div class='form-group'>
-					<input class='form-control' name='title' type='text' value='{{ $movie->title }}' placeholder='Title'>
+					<input class='form-control' name='title' type='text' value='{{ $movie->title }}' placeholder='Title (Required)'>
 				</div>
 
 				<div class='form-group'>
@@ -112,31 +112,31 @@
 
 	<script type='text/javascript'>
 		$('#genre').select2({
-			placeholder: 'Genre',
+			placeholder: 'Genre (Required)',
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#director').select2({
-			placeholder: 'Director',
+			placeholder: 'Director (Required)',
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#writer').select2({
-			placeholder: 'Writer',
+			placeholder: 'Writer (Required)',
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#cast').select2({
-			placeholder: 'Cast',
+			placeholder: 'Cast (Required)',
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#label').select2({
-			placeholder: 'Label',
+			placeholder: 'Label (Required)',
 		});
 	</script>
 
