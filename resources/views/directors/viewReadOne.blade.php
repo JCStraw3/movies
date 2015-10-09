@@ -73,6 +73,15 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				<a class='btn btn-info' href='/directors/{{ $director->id }}/edit'>Edit Director</a>
+
+				<form action='/directors/{{ $director->id }}' method='post'>
+					<input name='_method' type='hidden' value='delete'>
+					<button type='submit' class='btn btn-danger'>Delete</button>
+				</form>
+				
+				<a class='btn btn-primary' href='/directors/create'>New Director</a>
+
 				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
 			</div>
 			

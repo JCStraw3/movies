@@ -24,7 +24,7 @@ class LabelController extends Controller {
 
 	public function viewReadAll(){
 
-		$labels = Label::orderBy('id', 'asc')->get();
+		$labels = Label::orderBy('name', 'asc')->get();
 
 		return view('labels.viewReadAll')
 			->with('labels', $labels);
