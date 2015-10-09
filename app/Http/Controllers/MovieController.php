@@ -35,21 +35,27 @@ class MovieController extends Controller {
 		$user = Auth::user();
 
 		$genres = Genre::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$ratings = Rating::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$directors = Director::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$writers = Writer::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$casts = Cast::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$labels = Label::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		return view('movies.viewCreate')
@@ -100,21 +106,27 @@ class MovieController extends Controller {
 			->findOrFail($id);
 
 		$genres = Genre::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$ratings = Rating::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$directors = Director::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$writers = Writer::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$casts = Cast::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		$labels = Label::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
 			->get();
 
 		return view('movies.viewUpdate')
