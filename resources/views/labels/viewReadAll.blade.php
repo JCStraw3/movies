@@ -14,6 +14,13 @@
 
 			<div class='card'>
 
+				<form class='pull-right' action='/labels/{{ $label->id }}' method='post'>
+					<input name='_method' type='hidden' value='delete'>
+					<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+				</form>
+
+				<div class='clearfix'></div>
+
 				<div class='text-center'>
 					<a href='/labels/{{ $label->id }}'><h2>{{ $label->name }}</h2></a>
 				</div>
@@ -56,6 +63,8 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/labels/create'>New Label</a>
+
 				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
 			</div>
 			
