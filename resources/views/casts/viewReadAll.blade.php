@@ -14,6 +14,13 @@
 
 			<div class='card'>
 
+				<form class='pull-right' action='/cast/{{ $cast->id }}' method='post'>
+					<input name='_method' type='hidden' value='delete'>
+					<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+				</form>
+
+				<div class='clearfix'></div>
+
 				<div class='text-center'>
 					<a href='/cast/{{ $cast->id }}'><h2>{{ $cast->name }}</h2></a>
 				</div>
@@ -56,6 +63,8 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				<a class='btn btn-primary' href='/cast/create'>New Cast</a>
+
 				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
 			</div>
 			

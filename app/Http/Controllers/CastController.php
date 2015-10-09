@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 
 use App\Cast;
 
+use Auth;
+
 class CastController extends Controller {
 
 // Middleware
@@ -20,11 +22,26 @@ class CastController extends Controller {
 
 // Views
 
+	// View the create page.
+
+	public function viewCreate(){
+
+		$user = Auth::user();
+
+		return view('casts.viewCreate')
+			->with('user', $user);
+
+	}
+
 	// View all casts.
 
 	public function viewReadAll(){
 
-		$casts = Cast::orderBy('name', 'asc')->get();
+		$user = Auth::user();
+
+		$casts = Cast::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
+			->get();
 
 		return view('casts.viewReadAll')
 			->with('casts', $casts);
@@ -35,10 +52,77 @@ class CastController extends Controller {
 
 	public function viewReadOne($id){
 
-		$cast = Cast::findOrFail($id);
+		$user = Auth::user();
+
+		$cast = Cast::where('user_id', '=', $user->id)
+			->findOrFail($id);
 
 		return view('casts.viewReadOne')
 			->with('cast', $cast);
+
+	}
+
+	// View page to update a cast.
+
+	public function viewUpdate($id){
+
+		$user = Auth::user();
+
+		$cast = Cast::where('user_id', '=', $user->id)
+			->findOrFail($id);
+
+		return view('casts.viewUpdate')
+			->with('cast', $cast);
+
+	}
+
+// Actions
+
+	// Create a cast in the database.
+
+	public function actionCreate(Requests\CreateCastRequest $request){
+
+		$cast = new Cast($request->all());
+
+		Auth::user()->casts()->save($cast);
+
+		\Session::flash('flash_message', 'You have successfully created a cast.');
+
+		return redirect('cast');
+
+	}
+
+	// Update a cast in the database.
+
+	public function actionUpdate($id, Requests\UpdateCastRequest $request){
+
+		$user = Auth::user();
+
+		$cast = Cast::where('user_id', '=', $user->id)
+			->findOrFail($id);
+
+		$cast->update($request->all());
+
+		\Session::flash('flash_message', 'You have successfully updated a cast.');
+
+		return redirect('cast');
+
+	}
+
+	// Delete a cast from the database.
+
+	public function actionDelete($id){
+
+		$user = Auth::user();
+
+		$cast = Cast::where('user_id', '=', $user->id)
+			->findOrFail($id);
+
+		$cast->delete($cast);
+
+		\Session::flash('flash_message', 'You have successfully deleted a cast.');
+
+		return redirect('cast');
 
 	}
 
