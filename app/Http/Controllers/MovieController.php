@@ -34,17 +34,23 @@ class MovieController extends Controller {
 
 		$user = Auth::user();
 
-		$genres = Genre::all();
+		$genres = Genre::where('user_id', '=', $user->id)
+			->get();
 
-		$ratings = Rating::all();
+		$ratings = Rating::where('user_id', '=', $user->id)
+			->get();
 
-		$directors = Director::all();
+		$directors = Director::where('user_id', '=', $user->id)
+			->get();
 
-		$writers = Writer::all();
+		$writers = Writer::where('user_id', '=', $user->id)
+			->get();
 
-		$casts = Cast::all();
+		$casts = Cast::where('user_id', '=', $user->id)
+			->get();
 
-		$labels = Label::all();
+		$labels = Label::where('user_id', '=', $user->id)
+			->get();
 
 		return view('movies.viewCreate')
 			->with('genres', $genres)
@@ -93,17 +99,23 @@ class MovieController extends Controller {
 		$movie = Movie::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
-		$genres = Genre::all();
+		$genres = Genre::where('user_id', '=', $user->id)
+			->get();
 
-		$ratings = Rating::all();
+		$ratings = Rating::where('user_id', '=', $user->id)
+			->get();
 
-		$directors = Director::all();
+		$directors = Director::where('user_id', '=', $user->id)
+			->get();
 
-		$writers = Writer::all();
+		$writers = Writer::where('user_id', '=', $user->id)
+			->get();
 
-		$casts = Cast::all();
+		$casts = Cast::where('user_id', '=', $user->id)
+			->get();
 
-		$labels = Label::all();
+		$labels = Label::where('user_id', '=', $user->id)
+			->get();
 
 		return view('movies.viewUpdate')
 			->with('movie', $movie)

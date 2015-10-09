@@ -18,7 +18,7 @@ class CreateLabelsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('movie_label', function (Blueprint $table){
+        Schema::create('label_movie', function (Blueprint $table){
             $table->integer('movie_id')->unsigned()->index();
             $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
 
@@ -36,6 +36,6 @@ class CreateLabelsTable extends Migration
      */
     public function down(){
         Schema::drop('labels');
-        Schema::drop('movie_label');
+        Schema::drop('label_movie');
     }
 }
