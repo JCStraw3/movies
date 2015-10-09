@@ -23,12 +23,6 @@ class UpdateMovieRequest extends Request
     public function rules(){
         return [
             'title' => 'required',
-            'genre' => 'required',
-            'rating' => 'required',
-            'director' => 'required',
-            'writer' => 'required',
-            'cast' => 'required',
-            'label' => 'required',
         ];
     }
 
