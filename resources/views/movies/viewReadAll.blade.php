@@ -140,7 +140,7 @@
 				</ul>
 			</div>
 
-			<span>You have {{ count($movies) }} movies.</span>
+			<span>You have {{ count($movies) }} movies</span>
 			
 		</div>
 
