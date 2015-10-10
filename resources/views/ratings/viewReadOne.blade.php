@@ -63,6 +63,10 @@
 			</div>
 
 			<a href='/ratings'>Ratings</a>
+
+			<span> | </span>
+
+			<span class='count'>{{ $rating->name }} has {{ count($rating->movies) }} movies</span>
 			
 		</div>
 

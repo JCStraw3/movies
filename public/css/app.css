@@ -58,4 +58,8 @@ textarea.form-control {
 .dropdown-menu {
   background-color: #72c9e2; }
 
+.count {
+  color: #ffffff !important;
+  margin-left: 12px; }
+
 /*# sourceMappingURL=app.css.map */

@@ -67,6 +67,10 @@
 			</div>
 
 			<a href='/writers'>Writers</a>
+
+			<span> | </span>
+
+			<span class='count'>{{ $writer->name }} has {{ count($writer->movies) }} movies</span>
 			
 		</div>
 

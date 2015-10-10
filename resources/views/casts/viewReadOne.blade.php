@@ -67,6 +67,10 @@
 			</div>
 
 			<a href='/cast'>Cast</a>
+
+			<span> | </span>
+
+			<span class='count'>{{ $cast->name }} has {{ count($cast->movies) }} movies</span>
 			
 		</div>
 

@@ -67,6 +67,10 @@
 			</div>
 
 			<a href='/genres'>Genres</a>
+
+			<span> | </span>
+
+			<span class='count'>{{ $genre->name }} has {{ count($genre->movies) }} movies</span>
 			
 		</div>
 
