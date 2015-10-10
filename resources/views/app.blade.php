@@ -17,10 +17,6 @@
 
 	@include('partials.nav')
 
-{{-- 	@section('toolbar')
-		@include('partials.toolbar')
-	@endsection --}}
-
 	@yield('toolbar')
 
 	@yield('content')

@@ -25,7 +25,8 @@ class Cast extends Model {
 	// Cast can be attached to many movies.
 
 	public function movies(){
-		return $this->belongsToMany('App\Movie');
+		return $this->belongsToMany('App\Movie')
+			->withTimestamps();
 	}
 
 }

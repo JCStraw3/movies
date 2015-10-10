@@ -25,7 +25,8 @@ class Writer extends Model {
 	// Writer can be attached to many movies.
 
 	public function movies(){
-		return $this->belongsToMany('App\Movie');
+		return $this->belongsToMany('App\Movie')
+			->withTimestamps();
 	}
 
 }

@@ -10,7 +10,7 @@ use App\Genre;
 
 use Auth;
 
-class GenreController extends Controller{
+class GenreController extends Controller {
 
 // Middleware
 
