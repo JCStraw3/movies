@@ -139,6 +139,8 @@
 					<li><a href='/labels'>Labels</a></li>
 				</ul>
 			</div>
+
+			<span>You have {{ count($movies) }} movies.</span>
 			
 		</div>
 
