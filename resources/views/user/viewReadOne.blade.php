@@ -62,7 +62,7 @@
 
 			<hr />
 
-				<img src='/public/uploads/84128.png'>
+				<img src='/user/{{ $user->id }}//uploads/{{ $user->image }}'>
 
 			
 		</div>

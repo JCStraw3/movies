@@ -36,12 +36,12 @@ class UserController extends Controller {
 
 	// View image page
 
-	public function viewImage($id){
+	public function viewImage(){
 
-		$user = User::findOrFail($id);
+		// $user = User::findOrFail($id);
 
-		return view('user.viewImage')
-			->with('user', $user);
+		return view('user.viewImage');
+			// ->with('user', $user);
 
 	}
 
@@ -70,6 +70,7 @@ class UserController extends Controller {
 
 		if(!$request->hasFile('image')){
 			\Session::flash('flash_message', 'No file selected.');
+
 		}
 
 		if(!$request->file('image')->isValid()){
@@ -82,14 +83,16 @@ class UserController extends Controller {
 
 		$fileName = rand(11111,99999).'.'.$extention;
 
-		$file = $request->file('image')->move($destinationPath, $fileName);
+		$request->file('image')->move($destinationPath, $fileName);
 
-		$user->image = $file;
+		$user->image = $fileName;
 
 		$user->save();
 
-		return view('user.viewReadOne')
-			->with('user', $user);
+		var_dump($user->image);
+
+		// return view('user.viewReadOne')
+		// 	->with('user', $user);
 
 	}
 
