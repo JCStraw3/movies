@@ -10,6 +10,8 @@ use App\User;
 
 class UserController extends Controller {
 
+// Views.
+
 	// View a user's profile.
 
 	public function viewReadOne($id){
@@ -21,6 +23,8 @@ class UserController extends Controller {
 
 	}
 
+	// View page to update a user's profile.
+
 	public function viewUpdate($id){
 
 		$user = User::findOrFail($id);
@@ -29,6 +33,19 @@ class UserController extends Controller {
 			->with('user', $user);
 
 	}
+
+	// View image page
+
+	public function viewImage($id){
+
+		$user = User::findOrFail($id);
+
+		return view('user.viewImage')
+			->with('user', $user);
+
+	}
+
+// Actions.
 
 	// Update a user's information in the database.
 
@@ -39,6 +56,37 @@ class UserController extends Controller {
 		$user->update($request->all());
 
 		\Session::flash('flash_message', 'You have successfully updated your profile.');
+
+		return view('user.viewReadOne')
+			->with('user', $user);
+
+	}
+
+	// Upload an image.
+
+	public function actionUploadImage($id, Requests\UploadImageRequest $request){
+
+		$user = User::findOrFail($id);
+
+		if(!$request->hasFile('image')){
+			\Session::flash('flash_message', 'No file selected.');
+		}
+
+		if(!$request->file('image')->isValid()){
+			\Session::flash('flash_message', 'File is not valid.');
+		}
+
+		$destinationPath = 'uploads';
+
+		$extention = $request->file('image')->getClientOriginalExtension();
+
+		$fileName = rand(11111,99999).'.'.$extention;
+
+		$file = $request->file('image')->move($destinationPath, $fileName);
+
+		$user->image = $file;
+
+		$user->save();
 
 		return view('user.viewReadOne')
 			->with('user', $user);

@@ -30,6 +30,8 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::get('user/{id}', 'UserController@viewReadOne');
 Route::get('user/{id}/edit', 'UserController@viewUpdate');
+Route::get('user/{id}/uploads/{image}', 'UserController@viewImage');
+Route::post('user/{id}', 'UserController@actionUploadImage');
 Route::put('user/{id}', 'UserController@actionUpdate');
 
 // Movies routes.

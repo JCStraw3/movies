@@ -51,6 +51,19 @@
 					{{ $user->birthday }}
 				</p>
 			</div>
+
+			<hr />
+
+			<form action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
+			    Select image to upload:
+			    <input name='image' type='file'>
+			    <input name='submit' type='submit' value='Upload Image'>
+			</form>
+
+			<hr />
+
+				<img src='/public/uploads/84128.png'>
+
 			
 		</div>
 

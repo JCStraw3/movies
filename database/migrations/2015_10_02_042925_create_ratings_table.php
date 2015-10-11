@@ -34,6 +34,6 @@ class CreateRatingsTable extends Migration
      */
     public function down(){
         Schema::drop('ratings');
-        Schema::drop('movie_rating')
+        Schema::drop('movie_rating');
     }
 }

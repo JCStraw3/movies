@@ -34,6 +34,7 @@ class User extends Model implements AuthenticatableContract,
         'password',
         'gender',
         'birthday',
+        'image',
     ];
 
     /**
