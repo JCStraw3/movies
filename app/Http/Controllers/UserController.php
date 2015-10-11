@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 
+use Uuid;
+
 class UserController extends Controller {
 
 // Views.
@@ -46,8 +48,7 @@ class UserController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated your profile.');
 
-		return view('user.viewReadOne')
-			->with('user', $user);
+		return redirect('/user/'.$id);
 
 	}
 
@@ -60,17 +61,20 @@ class UserController extends Controller {
 		if(!$request->hasFile('image')){
 			\Session::flash('flash_message', 'No file selected.');
 
+			return redirect('/user/'.$id);
 		}
 
 		if(!$request->file('image')->isValid()){
 			\Session::flash('flash_message', 'File is not valid.');
+
+			return redirect('/user/'.$id);
 		}
 
 		$destinationPath = 'uploads';
 
 		$extention = $request->file('image')->getClientOriginalExtension();
 
-		$fileName = rand(11111,99999).'.'.$extention;
+		$fileName = Uuid::generate(4).'.'.$extention;
 
 		$request->file('image')->move($destinationPath, $fileName);
 
@@ -78,8 +82,7 @@ class UserController extends Controller {
 
 		$user->save();
 
-		return view('user.viewReadOne')
-			->with('user', $user);
+		return redirect('/user/'.$id);
 
 	}
 

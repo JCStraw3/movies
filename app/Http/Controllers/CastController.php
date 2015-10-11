@@ -88,7 +88,7 @@ class CastController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully created a cast.');
 
-		return redirect('cast');
+		return redirect('/cast/'.$cast->id);
 
 	}
 
@@ -105,7 +105,7 @@ class CastController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated a cast.');
 
-		return redirect('cast');
+		return redirect('/cast/'.$cast->id);
 
 	}
 

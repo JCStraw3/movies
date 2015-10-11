@@ -54,15 +54,19 @@
 
 			<hr />
 
-			<form action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
-			    Select image to upload:
-			    <input name='image' type='file'>
-			    <input name='submit' type='submit' value='Upload Image'>
-			</form>
+			<div class='text-center'>
 
-			<hr />
+				<img src='/uploads/{{ $user->image }}'>
 
-			<img src='/uploads/{{ $user->image }}'>
+				<hr />
+
+				<form action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
+					Select image to upload:
+					<input name='image' type='file'>
+					<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
+				</form>
+
+			</div>
 			
 		</div>
 

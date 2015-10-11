@@ -88,7 +88,7 @@ class GenreController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully created a genre.');
 
-		return redirect('genres');
+		return redirect('/genres/'.$genre->id);
 
 	}
 
@@ -105,7 +105,7 @@ class GenreController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated a genre.');
 
-		return redirect('genres');
+		return redirect('/genres/'.$genre->id);
 
 	}
 

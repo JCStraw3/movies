@@ -88,7 +88,7 @@ class WriterController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully created a writer.');
 
-		return redirect('writers');
+		return redirect('/writers/'.$writer->id);
 
 	}
 
@@ -105,7 +105,7 @@ class WriterController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated a writer.');
 
-		return redirect('writers');
+		return redirect('/writers/'.$writer->id);
 
 	}
 

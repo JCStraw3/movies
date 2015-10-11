@@ -22,7 +22,6 @@ class UploadImageRequest extends Request
      */
     public function rules(){
         return [
-            // 'image' => 'required';
         ];
     }
 }

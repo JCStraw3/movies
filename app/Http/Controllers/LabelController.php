@@ -88,7 +88,7 @@ class LabelController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully created a label.');
 
-		return redirect('labels');
+		return redirect('/labels/'.$label->id);
 
 	}
 
@@ -105,7 +105,7 @@ class LabelController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated a label.');
 
-		return redirect('labels');
+		return redirect('/labels/'.$label->id);
 
 	}
 

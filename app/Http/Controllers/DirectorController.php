@@ -88,7 +88,7 @@ class DirectorController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully created a director.');
 
-		return redirect('directors');
+		return redirect('/directors/'.$director->id);
 
 	}
 
@@ -105,7 +105,7 @@ class DirectorController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated a director.');
 
-		return redirect('directors');
+		return redirect('/directors/'.$director->id);
 
 	}
 

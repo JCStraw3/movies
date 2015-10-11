@@ -196,7 +196,7 @@ class MovieController extends Controller {
 
 		// Redirecting to movies page.
 
-		return redirect('movies');
+		return redirect('/movies/'.$movie->id);
 
 	}
 
@@ -259,7 +259,7 @@ class MovieController extends Controller {
 
 		// Redirecting to movies page.
 
-		return redirect('movies');
+		return redirect('/movies/'.$movie->id);
 
 	}
 

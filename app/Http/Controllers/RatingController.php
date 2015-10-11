@@ -88,7 +88,7 @@ class RatingController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully created a rating.');
 
-		return redirect('ratings');
+		return redirect('/ratings/'.$rating->id);
 
 	}
 
@@ -105,7 +105,7 @@ class RatingController extends Controller {
 
 		\Session::flash('flash_message', 'You have successfully updated a rating.');
 
-		return redirect('ratings');
+		return redirect('/ratings/'.$rating->id);
 
 	}
 
