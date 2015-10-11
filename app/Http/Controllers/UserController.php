@@ -34,17 +34,6 @@ class UserController extends Controller {
 
 	}
 
-	// View image page
-
-	public function viewImage(){
-
-		// $user = User::findOrFail($id);
-
-		return view('user.viewImage');
-			// ->with('user', $user);
-
-	}
-
 // Actions.
 
 	// Update a user's information in the database.
@@ -89,10 +78,8 @@ class UserController extends Controller {
 
 		$user->save();
 
-		var_dump($user->image);
-
-		// return view('user.viewReadOne')
-		// 	->with('user', $user);
+		return view('user.viewReadOne')
+			->with('user', $user);
 
 	}
 

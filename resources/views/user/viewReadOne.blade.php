@@ -62,8 +62,7 @@
 
 			<hr />
 
-				<img src='/user/{{ $user->id }}//uploads/{{ $user->image }}'>
-
+			<img src='/uploads/{{ $user->image }}'>
 			
 		</div>
 
