@@ -20,10 +20,8 @@ class CreateRatingsTable extends Migration
 
         Schema::create('movie_rating', function (Blueprint $table){
             $table->integer('movie_id')->unsigned()->index();
-            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
 
             $table->integer('rating_id')->unsigned()->index();
-            $table->foreign('rating_id')->references('id')->on('ratings')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -36,5 +34,6 @@ class CreateRatingsTable extends Migration
      */
     public function down(){
         Schema::drop('ratings');
+        Schema::drop('movie_rating')
     }
 }

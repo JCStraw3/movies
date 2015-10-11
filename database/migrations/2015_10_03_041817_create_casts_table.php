@@ -5,7 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCastsTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -21,10 +20,8 @@ class CreateCastsTable extends Migration
 
         Schema::create('cast_movie', function (Blueprint $table){
             $table->integer('movie_id')->unsigned()->index();
-            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
 
             $table->integer('cast_id')->unsigned()->index();
-            $table->foreign('cast_id')->references('id')->on('casts')->onDelete('cascade');
 
             $table->timestamps();
         });

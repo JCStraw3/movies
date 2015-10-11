@@ -20,10 +20,8 @@ class CreateWritersTable extends Migration
 
         Schema::create('movie_writer', function (Blueprint $table){
             $table->integer('movie_id')->unsigned()->index();
-            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
 
             $table->integer('writer_id')->unsigned()->index();
-            $table->foreign('writer_id')->references('id')->on('writers')->onDelete('cascade');
 
             $table->timestamps();
         });

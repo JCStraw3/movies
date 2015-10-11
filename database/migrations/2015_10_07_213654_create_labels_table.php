@@ -20,10 +20,8 @@ class CreateLabelsTable extends Migration
 
         Schema::create('label_movie', function (Blueprint $table){
             $table->integer('movie_id')->unsigned()->index();
-            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
 
             $table->integer('label_id')->unsigned()->index();
-            $table->foreign('label_id')->references('id')->on('labels')->onDelete('cascade');
 
             $table->timestamps();
         });
