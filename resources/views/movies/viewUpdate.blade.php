@@ -39,6 +39,12 @@
 
 				<div class='form-group'>
 					<select id='genre' class='form-control' name='genres[]' multiple>
+						@if($movie->genres)
+							@foreach ($movie->genres as $genre)
+								<option value='{{ $genre->id }}' selected>{{ $genre->name }}</option>
+							@endforeach
+						@endif
+
 						@foreach ($genres as $genre)
 							<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
 						@endforeach
@@ -51,6 +57,12 @@
 
 				<div class='form-group'>
 					<select class='form-control' name='ratings[]'>
+						@if($movie->ratings)
+							@foreach ($movie->ratings as $rating)
+								<option value='{{ $rating->id }}' selected>{{ $rating->name }}</option>
+							@endforeach
+						@endif
+
 						@foreach ($ratings as $rating)
 							<option value='{{ $rating->id }}'>{{ $rating->name }}</option>
 						@endforeach
@@ -63,6 +75,12 @@
 
 				<div class='form-group'>
 					<select id='director' class='form-control' name='directors[]' multiple>
+						@if($movie->directors)
+							@foreach ($movie->directors as $director)
+								<option value='{{ $director->id }}' selected>{{ $director->name }}</option>
+							@endforeach
+						@endif
+
 						@foreach ($directors as $director)
 							<option value='{{ $director->id }}'>{{ $director->name }}</option>
 						@endforeach
@@ -71,6 +89,12 @@
 
 				<div class='form-group'>
 					<select id='writer' class='form-control' name='writers[]' multiple>
+						@if($movie->writers)
+							@foreach ($movie->writers as $writer)
+								<option value='{{ $writer->id }}' selected>{{ $writer->name }}</option>
+							@endforeach
+						@endif
+
 						@foreach ($writers as $writer)
 							<option value='{{ $writer->id }}'>{{ $writer->name }}</option>
 						@endforeach
@@ -79,6 +103,12 @@
 
 				<div class='form-group'>
 					<select id='cast' class='form-control' name='casts[]' multiple>
+						@if($movie->casts)
+							@foreach ($movie->casts as $cast)
+								<option value='{{ $cast->id }}' selected>{{ $cast->name }}</option>
+							@endforeach
+						@endif
+
 						@foreach ($casts as $cast)
 							<option value='{{ $cast->id }}'>{{ $cast->name }}</option>
 						@endforeach
@@ -91,6 +121,12 @@
 
 				<div class='form-group'>
 					<select id='label' class='form-control' name='labels[]' multiple>
+						@if($movie->labels)
+							@foreach ($movie->labels as $label)
+								<option value='{{ $label->id }}' selected>{{ $label->name }}</option>
+							@endforeach
+						@endif
+
 						@foreach ($labels as $label)
 							<option value='{{ $label->id }}'>{{ $label->name }}</option>
 						@endforeach
