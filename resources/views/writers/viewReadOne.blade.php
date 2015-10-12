@@ -94,16 +94,16 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
-				<a class='btn btn-info' href='/writers/{{ $writer->id }}/edit'>Edit Writer</a>
+				<a class='btn btn-info' href='/writers/{{ $writer->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
 
 				<form action='/writers/{{ $writer->id }}' method='post'>
 					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger'>Delete</button>
+					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
 				</form>
 				
-				<a class='btn btn-primary' href='/writers/create'>New Writer</a>
+				<a class='btn btn-primary' href='/writers/create'><span class='glyphicon glyphicon-plus'></span> Writer</a>
 
-				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>

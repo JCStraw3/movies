@@ -90,16 +90,16 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
-				<a class='btn btn-info' href='/ratings/{{ $rating->id }}/edit'>Edit Rating</a>
+				<a class='btn btn-info' href='/ratings/{{ $rating->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
 
 				<form action='/ratings/{{ $rating->id }}' method='post'>
 					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger'>Delete</button>
+					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
 				</form>
 				
-				<a class='btn btn-primary' href='/ratings/create'>New Rating</a>
+				<a class='btn btn-primary' href='/ratings/create'><span class='glyphicon glyphicon-plus'></span> Rating</a>
 
-				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>

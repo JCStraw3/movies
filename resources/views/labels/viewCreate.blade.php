@@ -74,9 +74,9 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
-				<a class='btn btn-primary' href='/labels/create'>New Label</a>
+				<a class='btn btn-primary' href='/labels/create'><span class='glyphicon glyphicon-plus'></span> Label</a>
 
-				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>

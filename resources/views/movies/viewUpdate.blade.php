@@ -213,7 +213,7 @@
 					<button type='submit' class='btn btn-danger'>Delete</button>
 				</form>
 
-				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>

@@ -63,9 +63,9 @@
 		<div class='nav navbar-nav navbar-right'>
 			
 			<div class='navbar-form'>
-				<a class='btn btn-primary' href='/genres/create'>New Genre</a>
+				<a class='btn btn-primary' href='/genres/create'><span class='glyphicon glyphicon-plus'></span> Genre</a>
 
-				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>
