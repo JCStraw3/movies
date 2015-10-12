@@ -24,19 +24,17 @@
 
 			<hr />
 
-			<div class="media">
+			<div class='media'>
 
-				<div class="media-left">
+				<div class='media-left'>
 
 					@if($user->image)
-						<img class='img' src='/uploads/{{ $user->image }}'>
+						<img class='media-object' src='/uploads/{{ $user->image }}'>
 					@endif
 					
 					<br />
-					
-					<br />
 
-					<form action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
+					<form class='media-object-form' action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
 						Select image to upload:
 						<input name='image' type='file'>
 						<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
@@ -44,7 +42,7 @@
 
 				</div>
 
-				<div class="media-body">
+				<div class='media-body'>
 
 					<div>
 						<p>
