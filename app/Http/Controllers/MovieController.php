@@ -16,6 +16,8 @@ use App\Label;
 
 use Auth;
 
+use Uuid;
+
 class MovieController extends Controller {
 
 // Middleware
@@ -260,6 +262,43 @@ class MovieController extends Controller {
 		// Redirecting to movies page.
 
 		return redirect('/movies/'.$movie->id);
+
+	}
+
+	// Upload a movie poster.
+
+	public function actionUploadImage($id, Requests\UploadImageRequest $request){
+
+		$user = Auth::user();
+
+		$movie = Movie::where('user_id', '=', $user->id)
+			->findOrFail($id);
+
+		if(!$request->hasFile('image')){
+			\Session::flash('flash_message', 'No file selected.');
+
+			return redirect('/movies/'.$id);
+		}
+
+		if(!$request->file('image')->isValid()){
+			\Session::flash('flash_message', 'File is not valid.');
+
+			return redirect('/movies/'.$id);
+		}
+
+		$destinationPath = 'uploads';
+
+		$extension = $request->file('image')->getClientOriginalExtension();
+
+		$fileName = Uuid::generate(4).'.'.$extension;
+
+		$request->file('image')->move($destinationPath, $fileName);
+
+		$movie->image = $fileName;
+
+		$movie->save();
+
+		return redirect('/movies/'.$id);
 
 	}
 

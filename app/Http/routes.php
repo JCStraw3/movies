@@ -40,6 +40,7 @@ Route::get('movies/create', 'MovieController@viewCreate');
 Route::get('movies/{id}', 'MovieController@viewReadOne');
 Route::get('movies/{id}/edit', 'MovieController@viewUpdate');
 Route::post('movies', 'MovieController@actionCreate');
+Route::post('movies/{id}', 'MovieController@actionUploadImage');
 Route::put('movies/{id}', 'MovieController@actionUpdate');
 Route::delete('movies/{id}', 'MovieController@actionDelete');
 

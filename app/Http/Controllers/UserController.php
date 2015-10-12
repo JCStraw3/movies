@@ -72,9 +72,9 @@ class UserController extends Controller {
 
 		$destinationPath = 'uploads';
 
-		$extention = $request->file('image')->getClientOriginalExtension();
+		$extension = $request->file('image')->getClientOriginalExtension();
 
-		$fileName = Uuid::generate(4).'.'.$extention;
+		$fileName = Uuid::generate(4).'.'.$extension;
 
 		$request->file('image')->move($destinationPath, $fileName);
 
