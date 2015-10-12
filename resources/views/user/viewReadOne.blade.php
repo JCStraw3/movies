@@ -24,47 +24,55 @@
 
 			<hr />
 
-			<div>
-				<p>
-					Email:
+			<div class="media">
 
-					{{ $user->email }}
-				</p>
-			</div>
+				<div class="media-left">
 
-			<hr />
+					<img class='img-user' src='/uploads/{{ $user->image }}'>
 
-			<div>
-				<p>
-					Gender:
+					<hr />
 
-					{{ $user->gender }}
-				</p>
-			</div>
+					<form action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
+						Select image to upload:
+						<input name='image' type='file'>
+						<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
+					</form>
 
-			<hr />
+				</div>
 
-			<div>
-				<p>
-					Birthday:
+				<div class="media-body">
 
-					{{ $user->birthday }}
-				</p>
-			</div>
+					<div>
+						<p>
+							Email:
 
-			<hr />
+							{{ $user->email }}
+						</p>
+					</div>
 
-			<div class='text-center'>
+					<hr />
 
-				<img src='/uploads/{{ $user->image }}'>
+					<div>
+						<p>
+							Gender:
 
-				<hr />
+							{{ $user->gender }}
+						</p>
+					</div>
 
-				<form action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
-					Select image to upload:
-					<input name='image' type='file'>
-					<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
-				</form>
+					<hr />
+
+					<div>
+						<p>
+							Birthday:
+
+							{{ $user->birthday }}
+						</p>
+					</div>
+
+					<hr />
+
+				</div>
 
 			</div>
 			
