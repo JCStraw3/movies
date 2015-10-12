@@ -61,62 +61,78 @@
 
 			<hr />
 
-			<div>
-				<p>
-					Director(s):
+			<div class='media'>
 
-					@foreach ($movie->directors as $director)
-						<a href='/directors/{{ $director->id }}'>{{ $director->name }}</a>,
-					@endforeach
-				</p>
+				<div class='media-left'>
+
+					@if($movie->image)
+						<img class='img' src='/uploads/{{ $movie->image }}'>
+					@endif
+					
+					<br />
+					
+					<br />
+
+					<form class='img-form' action='/movies/{{ $movie->id }}' method='post' enctype='multipart/form-data'>
+						Select image to upload:
+						<input name='image' type='file'>
+						<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
+					</form>
+
+				</div>
+
+				<div class='media-body'>
+
+					<div>
+						<p>
+							Director(s):
+
+							@foreach ($movie->directors as $director)
+								<a href='/directors/{{ $director->id }}'>{{ $director->name }}</a>,
+							@endforeach
+						</p>
+					</div>
+
+					<div>
+						<p>
+							Writer(s):
+
+							@foreach ($movie->writers as $writer)
+								<a href='/writers/{{ $writer->id }}'>{{ $writer->name }}</a>,
+							@endforeach
+						</p>
+					</div>
+
+					<div>
+						<p>
+							Cast:
+
+							@foreach ($movie->casts as $cast)
+								<a href='/cast/{{ $cast->id }}'>{{ $cast->name }}</a>,
+							@endforeach
+						</p>
+					</div>
+
+					<hr />
+
+					<div>
+						{{ $movie->synopsis }}
+					</div>
+
+					<br />
+
+					<div>
+						@foreach ($movie->labels as $label)
+							<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
+						@endforeach
+					</div>
+					
+					<br />
+
+				</div>
+
 			</div>
 
-			<div>
-				<p>
-					Writer(s):
-
-					@foreach ($movie->writers as $writer)
-						<a href='/writers/{{ $writer->id }}'>{{ $writer->name }}</a>,
-					@endforeach
-				</p>
-			</div>
-
-			<div>
-				<p>
-					Cast:
-
-					@foreach ($movie->casts as $cast)
-						<a href='/cast/{{ $cast->id }}'>{{ $cast->name }}</a>,
-					@endforeach
-				</p>
-			</div>
-
-			<hr />
-
-			<div>
-				{{ $movie->synopsis }}
-			</div>
-
-			<br />
-
-			<div>
-				@foreach ($movie->labels as $label)
-					<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
-				@endforeach
-			</div>
-			
-			<br />
-
-			<img class='img-movie' src='/uploads/{{ $movie->image }}'>
-
-			<hr />
-
-			<form action='/movies/{{ $movie->id }}' method='post' enctype='multipart/form-data'>
-				Select image to upload:
-				<input name='image' type='file'>
-				<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
-			</form>
-			
 		</div>
 
 	</div>

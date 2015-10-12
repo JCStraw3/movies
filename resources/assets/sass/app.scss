@@ -95,8 +95,18 @@ $toolbar-color: rgb(45,176,123);
 	margin-left: 12px;
 }
 
-// Image class
+// Image classes
 
-.img-user {
-	width: 261px;
+.img {
+	max-width: 256px;
+	padding-right: 5px;
+}
+
+.img-form {
+	max-width:256px;
+}
+
+.media-left {
+	width: 266px;
+	padding-right: 15px;
 }

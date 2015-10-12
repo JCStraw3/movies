@@ -62,7 +62,15 @@ textarea.form-control {
   color: #ffffff !important;
   margin-left: 12px; }
 
-.img-user {
-  width: 261px; }
+.img {
+  max-width: 256px;
+  padding-right: 5px; }
+
+.img-form {
+  max-width: 256px; }
+
+.media-left {
+  width: 266px;
+  padding-right: 15px; }
 
 /*# sourceMappingURL=app.css.map */

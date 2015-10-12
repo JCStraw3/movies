@@ -63,51 +63,67 @@
 
 				<hr />
 
-				<div>
-					<p>
-						Director(s):
+				<div class='media'>
 
-						@foreach ($movie->directors as $director)
-							<a href='/directors/{{ $director->id }}'>{{ $director->name }}</a>,
-						@endforeach
-					</p>
+					@if($movie->image)
+
+						<div class='media-left'>
+							<img class='img' src='/uploads/{{ $movie->image }}'>
+						</div>
+
+					@endif
+
+					<div class='media-body'>
+
+						<div>
+							<p>
+								Director(s):
+
+								@foreach ($movie->directors as $director)
+									<a href='/directors/{{ $director->id }}'>{{ $director->name }}</a>,
+								@endforeach
+							</p>
+						</div>
+
+						<div>
+							<p>
+								Writer(s):
+
+								@foreach ($movie->writers as $writer)
+									<a href='/writers/{{ $writer->id }}'>{{ $writer->name }}</a>,
+								@endforeach
+							</p>
+						</div>
+
+						<div>
+							<p>
+								Cast:
+
+								@foreach ($movie->casts as $cast)
+									<a href='/cast/{{ $cast->id }}'>{{ $cast->name }}</a>,
+								@endforeach
+							</p>
+						</div>
+
+						<hr />
+
+						<div>
+							{{ $movie->synopsis }}
+						</div>
+
+						<br />
+
+						<div>
+							@foreach ($movie->labels as $label)
+								<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
+							@endforeach
+						</div>
+						
+						<br />
+
+					</div>
+
 				</div>
-
-				<div>
-					<p>
-						Writer(s):
-
-						@foreach ($movie->writers as $writer)
-							<a href='/writers/{{ $writer->id }}'>{{ $writer->name }}</a>,
-						@endforeach
-					</p>
-				</div>
-
-				<div>
-					<p>
-						Cast:
-
-						@foreach ($movie->casts as $cast)
-							<a href='/cast/{{ $cast->id }}'>{{ $cast->name }}</a>,
-						@endforeach
-					</p>
-				</div>
-
-				<hr />
-
-				<div>
-					{{ $movie->synopsis }}
-				</div>
-
-				<br />
-
-				<div>
-					@foreach ($movie->labels as $label)
-						<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
-					@endforeach
-				</div>
-				
-				<br />
 				
 			</div>
 

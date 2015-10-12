@@ -28,9 +28,13 @@
 
 				<div class="media-left">
 
-					<img class='img-user' src='/uploads/{{ $user->image }}'>
-
-					<hr />
+					@if($user->image)
+						<img class='img' src='/uploads/{{ $user->image }}'>
+					@endif
+					
+					<br />
+					
+					<br />
 
 					<form action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
 						Select image to upload:
