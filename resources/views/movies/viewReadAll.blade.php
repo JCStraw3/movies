@@ -68,7 +68,7 @@
 					@if($movie->image)
 
 						<div class='media-left'>
-							<img class='img' src='/uploads/{{ $movie->image }}'>
+							<img class='media-object' src='/uploads/{{ $movie->image }}'>
 						</div>
 
 					@endif
