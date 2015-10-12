@@ -97,13 +97,14 @@ $toolbar-color: rgb(45,176,123);
 
 // Image classes
 
-.media-object {
+.media-object, .media-object-form {
 	max-width: 256px;
 	padding-right: 5px;
 }
 
-.media-object-form {
-	max-width:256px;
+.media-object-small {
+	max-width: 75px;
+	padding-top: 2px;
 }
 
 .media-left {

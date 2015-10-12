@@ -23,13 +23,30 @@
 
 					<br />
 
-					<div>
-						<h4>
-							<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
-						</h4>
+					<div class='media'>
 
-						<p>{{ $movie->synopsis }}</p>
+						@if($movie->image)
+
+							<div class='media-left'>
+								<img class='media-object-small' src='/uploads/{{ $movie->image }}'>
+							</div>
+
+						@endif
+
+						<div class='media-body'>
+
+							<div>
+								<h4 class='media-heading'>
+									<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+								</h4>
+
+								<p>{{ $movie->synopsis }}</p>
+							</div>
+
+						</div>
+
 					</div>
+					
 				@endforeach
 			</div>
 
