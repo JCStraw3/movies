@@ -94,15 +94,19 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				{{-- Edit label --}}
 				<a class='btn btn-info' href='/labels/{{ $label->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
 
+				{{-- Delete label --}}
 				<form action='/labels/{{ $label->id }}' method='post'>
 					<input name='_method' type='hidden' value='delete'>
 					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
 				</form>
 				
+				{{-- Add new label --}}
 				<a class='btn btn-primary' href='/labels/create'><span class='glyphicon glyphicon-plus'></span> Label</a>
 
+				{{-- Add new movie --}}
 				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			

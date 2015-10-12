@@ -94,15 +94,19 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				{{-- Edit genre --}}
 				<a class='btn btn-info' href='/genres/{{ $genre->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
 
+				{{-- Delete genre --}}
 				<form action='/genres/{{ $genre->id }}' method='post'>
 					<input name='_method' type='hidden' value='delete'>
 					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
 				</form>
 				
+				{{-- Add new genre --}}
 				<a class='btn btn-primary' href='/genres/create'><span class='glyphicon glyphicon-plus'></span> Genre</a>
 
+				{{-- Add new movie --}}
 				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			

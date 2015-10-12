@@ -82,8 +82,16 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
-				<a class='btn btn-primary' href='/genres/create'><span class='glyphicon glyphicon-plus'></span> Genre</a>
+				{{-- Delete rating --}}
+				<form action='/ratings/{{ $rating->id }}' method='post'>
+					<input name='_method' type='hidden' value='delete'>
+					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
+				</form>
+				
+				{{-- Add new movie --}}
+				<a class='btn btn-primary' href='/ratings/create'><span class='glyphicon glyphicon-plus'></span> Rating</a>
 
+				{{-- Add new movie --}}
 				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			

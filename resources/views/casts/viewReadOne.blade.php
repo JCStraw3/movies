@@ -94,15 +94,19 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				{{-- Edit cast --}}
 				<a class='btn btn-info' href='/cast/{{ $cast->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
 
+				{{-- Delete cast --}}
 				<form action='/cast/{{ $cast->id }}' method='post'>
 					<input name='_method' type='hidden' value='delete'>
 					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
 				</form>
 				
+				{{-- Add new cast --}}
 				<a class='btn btn-primary' href='/cast/create'><span class='glyphicon glyphicon-plus'></span> Cast</a>
 
+				{{-- Add new movie --}}
 				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
