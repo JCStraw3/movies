@@ -112,9 +112,11 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
-				<a class='btn btn-info' href='/user/{{ $user->id }}/edit'>Edit profile</a>
+				{{-- Edit user profile --}}
+				<a class='btn btn-info' href='/user/{{ $user->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
 
-				<a class='btn btn-primary' href='/movies/create'>New Movie</a>
+				{{-- Add new movie --}}
+				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>
