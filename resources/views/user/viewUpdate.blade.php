@@ -38,7 +38,6 @@
 				</div>
 
 				<div class='form-group'>
-					
 					<select class='form-control' name='gender'>
 						@if($user->gender)
 							<option value='{{ $user->gender }}' selected>{{ $user->gender }}</option>
