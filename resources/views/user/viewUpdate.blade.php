@@ -43,9 +43,9 @@
 						@if($user->gender)
 							<option value='{{ $user->gender }}' selected>{{ $user->gender }}</option>
 						@endif
-						
-						<option value='female'>Female</option>
-						<option value='male'>Male</option>
+
+						<option value='Female'>Female</option>
+						<option value='Male'>Male</option>
 					</select>
 				</div>
 
