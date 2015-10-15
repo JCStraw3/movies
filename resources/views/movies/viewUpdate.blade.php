@@ -163,18 +163,21 @@
 	<script type='text/javascript'>
 		$('#writer').select2({
 			placeholder: 'Writer',
+			tags: true,
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#cast').select2({
 			placeholder: 'Cast',
+			tags: true,
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#label').select2({
 			placeholder: 'Label',
+			tags: true,
 		});
 	</script>
 

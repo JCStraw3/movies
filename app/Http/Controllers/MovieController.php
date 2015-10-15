@@ -419,79 +419,79 @@ class MovieController extends Controller {
 
 	// Add writer to database if it does not exist.
 
-	private function checkDirectors($directors){
+	private function checkWriters($writers){
 
 		$user = Auth::user();
 
-		$currentDirectors = array_filter($directors, 'is_numeric');
+		$currentWriters = array_filter($writers, 'is_numeric');
 
-		$newDirectors = array_diff($directors, $currentDirectors);
+		$newWriters = array_diff($writers, $currentWriters);
 
-		foreach($newDirectors as $newDirector){
+		foreach($newWriters as $newWriter){
 
-			$director = Director::create([
-				'name' => $newDirector,
+			$writer = Writer::create([
+				'name' => $newWriter,
 				]);
 
-			$user->directors()->save($director);
+			$user->writers()->save($writer);
 
-			$currentDirectors[] = $director->id;
+			$currentWriters[] = $writer->id;
 
 		}
 
-		return $currentDirectors;
+		return $currentWriters;
 
 	}
 
 	// Add cast to database if it does not exist.
 
-	private function checkDirectors($directors){
+	private function checkCasts($casts){
 
 		$user = Auth::user();
 
-		$currentDirectors = array_filter($directors, 'is_numeric');
+		$currentCasts = array_filter($casts, 'is_numeric');
 
-		$newDirectors = array_diff($directors, $currentDirectors);
+		$newCasts = array_diff($casts, $currentCasts);
 
-		foreach($newDirectors as $newDirector){
+		foreach($newCasts as $newCast){
 
-			$director = Director::create([
-				'name' => $newDirector,
+			$cast = Cast::create([
+				'name' => $newCast,
 				]);
 
-			$user->directors()->save($director);
+			$user->casts()->save($cast);
 
-			$currentDirectors[] = $director->id;
+			$currentCasts[] = $cast->id;
 
 		}
 
-		return $currentDirectors;
+		return $currentCasts;
 
 	}
 
 	// Add label to database if it does not exist.
 
-	private function checkDirectors($directors){
+	private function checkLabels($labels){
 
 		$user = Auth::user();
 
-		$currentDirectors = array_filter($directors, 'is_numeric');
+		$currentLabels = array_filter($labels, 'is_numeric');
 
-		$newDirectors = array_diff($directors, $currentDirectors);
+		$newLabels = array_diff($labels, $currentLabels);
 
-		foreach($newDirectors as $newDirector){
+		foreach($newLabels as $newLabel){
 
-			$director = Director::create([
-				'name' => $newDirector,
+			$label = Label::create([
+				'name' => $newLabel,
 				]);
 
-			$user->directors()->save($director);
+			$user->labels()->save($label);
 
-			$currentDirectors[] = $director->id;
+			$currentLabels[] = $label->id;
 
 		}
 
-		return $currentDirectors;
+		return $currentLabels;
 
 	}
 	
