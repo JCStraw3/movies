@@ -156,6 +156,7 @@
 	<script type='text/javascript'>
 		$('#director').select2({
 			placeholder: 'Director',
+			tags: true,
 		});
 	</script>
 

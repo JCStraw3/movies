@@ -249,7 +249,9 @@ class MovieController extends Controller {
 			$directors = [];
 		}
 
-		$movie->directors()->sync($directors);
+		$directorSync = $this->checkDirectors($directors);
+
+		$movie->directors()->sync($directorSync);
 
 		// Syncing writers to movies via pivot table.
 
@@ -259,7 +261,9 @@ class MovieController extends Controller {
 			$writers = [];
 		}
 
-		$movie->writers()->sync($writers);
+		$writerSync = $this->checkWriters($writers);
+
+		$movie->writers()->sync($writerSync);
 
 		// Syncing cast to movies via pivot table.
 
@@ -269,7 +273,9 @@ class MovieController extends Controller {
 			$casts = [];
 		}
 
-		$movie->casts()->sync($casts);
+		$castSync = $this->checkCasts($casts);
+
+		$movie->casts()->sync($castSync);
 
 		// Syncing labels to movies via pivot table
 
@@ -279,7 +285,9 @@ class MovieController extends Controller {
 			$labels = [];
 		}
 
-		$movie->labels()->sync($labels);
+		$labelSync = $this->checkLabels($labels);
+
+		$movie->labels()->sync($labelSync);
 
 		// Send flash message.
 
@@ -355,6 +363,10 @@ class MovieController extends Controller {
 
 	}
 
+// Private functions.
+
+	// Add genre to database if it does not exist.
+
 	private function checkGenres($genres){
 
 		$user = Auth::user();
@@ -376,6 +388,110 @@ class MovieController extends Controller {
 		}
 
 		return $currentGenres;
+
+	}
+
+	// Add director to database if it does not exist.
+
+	private function checkDirectors($directors){
+
+		$user = Auth::user();
+
+		$currentDirectors = array_filter($directors, 'is_numeric');
+
+		$newDirectors = array_diff($directors, $currentDirectors);
+
+		foreach($newDirectors as $newDirector){
+
+			$director = Director::create([
+				'name' => $newDirector,
+				]);
+
+			$user->directors()->save($director);
+
+			$currentDirectors[] = $director->id;
+
+		}
+
+		return $currentDirectors;
+
+	}
+
+	// Add writer to database if it does not exist.
+
+	private function checkDirectors($directors){
+
+		$user = Auth::user();
+
+		$currentDirectors = array_filter($directors, 'is_numeric');
+
+		$newDirectors = array_diff($directors, $currentDirectors);
+
+		foreach($newDirectors as $newDirector){
+
+			$director = Director::create([
+				'name' => $newDirector,
+				]);
+
+			$user->directors()->save($director);
+
+			$currentDirectors[] = $director->id;
+
+		}
+
+		return $currentDirectors;
+
+	}
+
+	// Add cast to database if it does not exist.
+
+	private function checkDirectors($directors){
+
+		$user = Auth::user();
+
+		$currentDirectors = array_filter($directors, 'is_numeric');
+
+		$newDirectors = array_diff($directors, $currentDirectors);
+
+		foreach($newDirectors as $newDirector){
+
+			$director = Director::create([
+				'name' => $newDirector,
+				]);
+
+			$user->directors()->save($director);
+
+			$currentDirectors[] = $director->id;
+
+		}
+
+		return $currentDirectors;
+
+	}
+
+	// Add label to database if it does not exist.
+
+	private function checkDirectors($directors){
+
+		$user = Auth::user();
+
+		$currentDirectors = array_filter($directors, 'is_numeric');
+
+		$newDirectors = array_diff($directors, $currentDirectors);
+
+		foreach($newDirectors as $newDirector){
+
+			$director = Director::create([
+				'name' => $newDirector,
+				]);
+
+			$user->directors()->save($director);
+
+			$currentDirectors[] = $director->id;
+
+		}
+
+		return $currentDirectors;
 
 	}
 	
