@@ -182,19 +182,25 @@ class MovieController extends Controller {
 
 		$writers = $request->input('writers');
 
-		$movie->writers()->attach($writers);
+		$writerAttach = $this->checkWriters($writers);
+
+		$movie->writers()->attach($writerAttach);
 
 		// Attaching cast to movies via pivot table.
 
 		$casts = $request->input('casts');
 
-		$movie->casts()->attach($casts);
+		$castAttach = $this->checkCasts($casts);
+
+		$movie->casts()->attach($castAttach);
 
 		// Attaching labels to movies via pivot table
 
 		$labels = $request->input('labels');
 
-		$movie->labels()->attach($labels);
+		$labelAttach = $this->checkLabels($labels);
+
+		$movie->labels()->attach($labelAttach);
 
 		// Sending flash message.
 
