@@ -227,12 +227,6 @@ class MovieController extends Controller {
 			$genres = [];
 		}
 
-		// foreach($genres as $genre){
-		// 	if(!$genre->id){
-
-		// 	}
-		// }
-
 		$genreSync = $this->checkGenres($genres);
 
 		$movie->genres()->sync($genreSync);
@@ -363,13 +357,22 @@ class MovieController extends Controller {
 
 	private function checkGenres($genres){
 
+		$user = Auth::user();
+
 		$currentGenres = array_filter($genres, 'is_numeric');
 
-		$newGenres = array_filter($genres, 'is_string');
+		$newGenres = array_diff($genres, $currentGenres);
 
 		foreach($newGenres as $newGenre){
-			if($genre = Genre::create(['name' => $newGenre]))
-				$currentGenres[] = $genre->id;
+
+			$genre = Genre::create([
+				'name' => $newGenre,
+				]);
+
+			$user->genres()->save($genre);
+
+			$currentGenres[] = $genre->id;
+
 		}
 
 		return $currentGenres;
