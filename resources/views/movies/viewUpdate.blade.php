@@ -56,7 +56,7 @@
 				</div>
 
 				<div class='form-group'>
-					<select class='form-control' name='ratings[]'>
+					<select id='rating' class='form-control' name='ratings[]'>
 						@if($movie->ratings)
 							@foreach ($movie->ratings as $rating)
 								<option value='{{ $rating->id }}' selected>{{ $rating->name }}</option>
@@ -149,6 +149,13 @@
 	<script type='text/javascript'>
 		$('#genre').select2({
 			placeholder: 'Genre',
+			tags: true,
+		});
+	</script>
+
+	<script type='text/javascript'>
+		$('#rating').select2({
+			placeholder: 'Rating',
 			tags: true,
 		});
 	</script>

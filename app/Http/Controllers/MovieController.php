@@ -239,7 +239,9 @@ class MovieController extends Controller {
 			$ratings = [];
 		}
 
-		$movie->ratings()->sync($ratings);
+		$ratingSync = $this->checkRatings($ratings);
+
+		$movie->ratings()->sync($ratingSync);
 
 		// Syncing directors to movies via pivot table.
 
@@ -388,6 +390,32 @@ class MovieController extends Controller {
 		}
 
 		return $currentGenres;
+
+	}
+
+	// Add rating to database if it does not exist.
+
+	private function checkRatings($ratings){
+
+		$user = Auth::user();
+
+		$currentRatings = array_filter($ratings, 'is_numeric');
+
+		$newRatings = array_diff($ratings, $currentRatings);
+
+		foreach($newRatings as $newRating){
+
+			$rating = Rating::create([
+				'name' => $newRating,
+				]);
+
+			$user->ratings()->save($rating);
+
+			$currentRatings[] = $rating->id;
+
+		}
+
+		return $currentRatings;
 
 	}
 
