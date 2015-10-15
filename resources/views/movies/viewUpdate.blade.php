@@ -148,31 +148,31 @@
 
 	<script type='text/javascript'>
 		$('#genre').select2({
-			placeholder: 'Genre (Required)',
+			placeholder: 'Genre',
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#director').select2({
-			placeholder: 'Director (Required)',
+			placeholder: 'Director',
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#writer').select2({
-			placeholder: 'Writer (Required)',
+			placeholder: 'Writer',
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#cast').select2({
-			placeholder: 'Cast (Required)',
+			placeholder: 'Cast',
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#label').select2({
-			placeholder: 'Label (Required)',
+			placeholder: 'Label',
 		});
 	</script>
 
