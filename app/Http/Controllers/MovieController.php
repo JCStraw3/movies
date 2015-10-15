@@ -233,11 +233,19 @@ class MovieController extends Controller {
 
 		$ratings = $request->input('ratings');
 
+		if(!is_array($ratings)){
+			$ratings = [];
+		}
+
 		$movie->ratings()->sync($ratings);
 
 		// Syncing directors to movies via pivot table.
 
 		$directors = $request->input('directors');
+
+		if(!is_array($directors)){
+			$directors = [];
+		}
 
 		$movie->directors()->sync($directors);
 
@@ -245,17 +253,29 @@ class MovieController extends Controller {
 
 		$writers = $request->input('writers');
 
+		if(!is_array($writers)){
+			$writers = [];
+		}
+
 		$movie->writers()->sync($writers);
 
 		// Syncing cast to movies via pivot table.
 
 		$casts = $request->input('casts');
 
+		if(!is_array($casts)){
+			$casts = [];
+		}
+
 		$movie->casts()->sync($casts);
 
 		// Syncing labels to movies via pivot table
 
 		$labels = $request->input('labels');
+
+		if(!is_array($labels)){
+			$labels = [];
+		}
 
 		$movie->labels()->sync($labels);
 
