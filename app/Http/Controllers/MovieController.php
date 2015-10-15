@@ -160,7 +160,9 @@ class MovieController extends Controller {
 
 		$genres = $request->input('genres');
 
-		$movie->genres()->attach($genres);
+		$genreAttach = $this->checkGenres($genres);
+
+		$movie->genres()->attach($genreAttach);
 
 		// Attaching ratings to movies via pivot table.
 

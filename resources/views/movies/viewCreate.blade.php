@@ -42,7 +42,7 @@
 					</div>
 
 					<div class='form-group'>
-						<select class='form-control' name='ratings'>
+						<select id='rating' class='form-control' name='ratings'>
 							@foreach ($ratings as $rating)
 								<option value='{{ $rating->id }}'>{{ $rating->name }}</option>
 							@endforeach
@@ -107,30 +107,42 @@
 	<script type='text/javascript'>
 		$('#genre').select2({
 			placeholder: 'Genre',
+			tags: true,
+		});
+	</script>
+
+	<script type='text/javascript'>
+		$('#rating').select2({
+			placeholder: 'Rating',
+			tags: true,
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#director').select2({
 			placeholder: 'Director',
+			tags: true,
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#writer').select2({
 			placeholder: 'Writer',
+			tags: true,
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#cast').select2({
 			placeholder: 'Cast',
+			tags: true,
 		});
 	</script>
 
 	<script type='text/javascript'>
 		$('#label').select2({
 			placeholder: 'Label',
+			tags: true,
 		});
 	</script>
 
