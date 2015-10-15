@@ -223,6 +223,10 @@ class MovieController extends Controller {
 
 		$genres = $request->input('genres');
 
+		if(!is_array($genres)){
+			$genres = [];
+		}
+
 		$movie->genres()->sync($genres);
 
 		// Syncing ratings to movies via pivot table.
