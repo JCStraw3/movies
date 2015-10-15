@@ -174,7 +174,9 @@ class MovieController extends Controller {
 
 		$directors = $request->input('directors');
 
-		$movie->directors()->attach($directors);
+		$directorAttach = $this->checkDirectors($directors);
+
+		$movie->directors()->attach($directorAttach);
 
 		// Attaching writers to movies via pivot table.
 
