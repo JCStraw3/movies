@@ -149,6 +149,7 @@
 	<script type='text/javascript'>
 		$('#genre').select2({
 			placeholder: 'Genre',
+			tags: true,
 		});
 	</script>
 

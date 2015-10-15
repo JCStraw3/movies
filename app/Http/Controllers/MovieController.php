@@ -227,7 +227,15 @@ class MovieController extends Controller {
 			$genres = [];
 		}
 
-		$movie->genres()->sync($genres);
+		// foreach($genres as $genre){
+		// 	if(!$genre->id){
+
+		// 	}
+		// }
+
+		$genreSync = $this->checkGenres($genres);
+
+		$movie->genres()->sync($genreSync);
 
 		// Syncing ratings to movies via pivot table.
 
@@ -350,6 +358,21 @@ class MovieController extends Controller {
 		// Redirect to movies page.
 
 		return redirect('movies');
+
+	}
+
+	private function checkGenres($genres){
+
+		$currentGenres = array_filter($genres, 'is_numeric');
+
+		$newGenres = array_filter($genres, 'is_string');
+
+		foreach($newGenres as $newGenre){
+			if($genre = Genre::create(['name' => $newGenre]))
+				$currentGenres[] = $genre->id;
+		}
+
+		return $currentGenres;
 
 	}
 	
