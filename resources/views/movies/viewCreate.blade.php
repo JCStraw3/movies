@@ -112,6 +112,13 @@
 	</script>
 
 	<script type='text/javascript'>
+		$('#rating').select2({
+			placeholder: 'Rating',
+			tags: true,
+		});
+	</script>
+
+	<script type='text/javascript'>
 		$('#director').select2({
 			placeholder: 'Director',
 			tags: true,

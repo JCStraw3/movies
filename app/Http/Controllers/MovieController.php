@@ -160,6 +160,10 @@ class MovieController extends Controller {
 
 		$genres = $request->input('genres');
 
+		if(!is_array($genres)){
+			$genres = [];
+		}
+
 		$genreAttach = $this->checkGenres($genres);
 
 		$movie->genres()->attach($genreAttach);
@@ -174,6 +178,10 @@ class MovieController extends Controller {
 
 		$directors = $request->input('directors');
 
+		if(!is_array($directors)){
+			$directors = [];
+		}
+
 		$directorAttach = $this->checkDirectors($directors);
 
 		$movie->directors()->attach($directorAttach);
@@ -181,6 +189,10 @@ class MovieController extends Controller {
 		// Attaching writers to movies via pivot table.
 
 		$writers = $request->input('writers');
+
+		if(!is_array($writers)){
+			$writers = [];
+		}
 
 		$writerAttach = $this->checkWriters($writers);
 
@@ -190,6 +202,10 @@ class MovieController extends Controller {
 
 		$casts = $request->input('casts');
 
+		if(!is_array($casts)){
+			$casts = [];
+		}
+
 		$castAttach = $this->checkCasts($casts);
 
 		$movie->casts()->attach($castAttach);
@@ -197,6 +213,10 @@ class MovieController extends Controller {
 		// Attaching labels to movies via pivot table
 
 		$labels = $request->input('labels');
+
+		if(!is_array($labels)){
+			$labels = [];
+		}
 
 		$labelAttach = $this->checkLabels($labels);
 
