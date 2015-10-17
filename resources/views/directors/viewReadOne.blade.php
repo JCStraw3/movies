@@ -12,48 +12,44 @@
 
 @section('content')
 
-	<div class='container'>
+	<div class='card'>
 
-		<div class='card'>
+		<div class='text-center'>
+			<h2>{{ $director->name }}</h2>
+		</div>
 
-			<div class='text-center'>
-				<h2>{{ $director->name }}</h2>
-			</div>
+		<hr />
 
-			<hr />
+		<div>
+			@foreach ($director->movies as $movie)
 
-			<div>
-				@foreach ($director->movies as $movie)
+				<br />
 
-					<br />
+				<div class='media'>
 
-					<div class='media'>
+					@if($movie->image)
 
-						@if($movie->image)
+						<div class='media-left'>
+							<img class='media-object-small' src='/uploads/{{ $movie->image }}'>
+						</div>
 
-							<div class='media-left'>
-								<img class='media-object-small' src='/uploads/{{ $movie->image }}'>
-							</div>
+					@endif
 
-						@endif
+					<div class='media-body'>
 
-						<div class='media-body'>
+						<div>
+							<h4 class='media-heading'>
+								<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+							</h4>
 
-							<div>
-								<h4 class='media-heading'>
-									<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
-								</h4>
-
-								<p>{{ $movie->synopsis }}</p>
-							</div>
-
+							<p>{{ $movie->synopsis }}</p>
 						</div>
 
 					</div>
-					
-				@endforeach
-			</div>
 
+				</div>
+				
+			@endforeach
 		</div>
 
 	</div>

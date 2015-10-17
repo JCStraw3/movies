@@ -2,7 +2,7 @@
 
 body {
 	background-color: rgb(244,244,244);
-	margin-top: 100px;
+	margin-top: 128px;
 }
 
 h1, h2 {
@@ -30,8 +30,9 @@ textarea.form-control {
 // Card class
 
 .card {
-	margin-left: 20em;
-	margin-right: 20em;
+	max-width: 580px;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 2em;
 	margin-bottom: 2em;
 	border-style: solid;
@@ -111,3 +112,8 @@ $toolbar-color: rgb(45,176,123);
 	width: 266px;
 	padding-right: 15px;
 }
+
+
+
+
+// 551

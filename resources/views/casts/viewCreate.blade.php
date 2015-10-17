@@ -14,32 +14,28 @@
 
 	<!-- Create a new cast form -->
 
-	<div class='container'>
+	<div class='card'>
 
-		<div class='card'>
+		<div class='text-center'>
 
-			<div class='text-center'>
+			<h2>New Cast</h2>
 
-				<h2>New Cast</h2>
+			<hr />
 
-				<hr />
+			<form action='/cast' method='post'>
+				<div class='form-group'>
+					<input class='form-control' name='name' type='text' placeholder='Name'>
+				</div>
+				
+				<br />
 
-				<form action='/cast' method='post'>
-					<div class='form-group'>
-						<input class='form-control' name='name' type='text' placeholder='Name'>
-					</div>
-					
-					<br />
+				<div>
+					<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Cast</button>
+				</div>
+			</form>
 
-					<div>
-						<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Cast</button>
-					</div>
-				</form>
-
-			</div>
-			
 		</div>
-
+		
 	</div>
 
 @endsection

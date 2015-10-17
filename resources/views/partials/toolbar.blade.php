@@ -1,4 +1,4 @@
-{{-- <nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
+<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
 	<div class='nav navbar-nav navbar-left'>
 
@@ -27,4 +27,4 @@
 		
 	</div>
 
-</nav> --}}
+</nav>

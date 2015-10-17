@@ -18,116 +18,112 @@
 
 	<!-- Movie -->
 
-	<div class='container'>
+	<div class='card'>
 
-		<div class='card'>
+		<div class='text-center'>
 
-			<div class='text-center'>
-
-				<h2>
-					{{ $movie->title }}
-				</h2>
-
-				<hr />
-
-				<p>
-					<span> | </span>
-
-					@foreach ($movie->ratings as $rating)
-						<a href='/ratings/{{ $rating->id }}'>{{ $rating->name }}</a>
-					@endforeach
-
-					<span> | </span>
-
-					{{ $movie->runtime }} min
-
-					<span> | </span>
-
-					{{ $movie->release_date }}
-
-					<span> | </span>
-				</p>
-
-				<p>
-					<span> | </span>
-
-					@foreach ($movie->genres as $genre)
-						<a href='/genres/{{ $genre->id }}'>{{ $genre->name }}</a>
-
-						<span> | </span>
-					@endforeach
-				</p>
-			</div>
+			<h2>
+				{{ $movie->title }}
+			</h2>
 
 			<hr />
 
-			<div class='media'>
+			<p>
+				<span> | </span>
 
-				<div class='media-left'>
+				@foreach ($movie->ratings as $rating)
+					<a href='/ratings/{{ $rating->id }}'>{{ $rating->name }}</a>
+				@endforeach
 
-					@if($movie->image)
-						<img class='media-object' src='/uploads/{{ $movie->image }}'>
-					@endif
-					
-					<br />
+				<span> | </span>
 
-					<form class='media-object-form' action='/movies/{{ $movie->id }}' method='post' enctype='multipart/form-data'>
-						Select image to upload:
-						<input name='image' type='file'>
-						<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
-					</form>
+				{{ $movie->runtime }} min
 
-				</div>
+				<span> | </span>
 
-				<div class='media-body'>
+				{{ $movie->release_date }}
 
-					<div>
-						<p>
-							Director(s):
+				<span> | </span>
+			</p>
 
-							@foreach ($movie->directors as $director)
-								<a href='/directors/{{ $director->id }}'>{{ $director->name }}</a>,
-							@endforeach
-						</p>
-					</div>
+			<p>
+				<span> | </span>
 
-					<div>
-						<p>
-							Writer(s):
+				@foreach ($movie->genres as $genre)
+					<a href='/genres/{{ $genre->id }}'>{{ $genre->name }}</a>
 
-							@foreach ($movie->writers as $writer)
-								<a href='/writers/{{ $writer->id }}'>{{ $writer->name }}</a>,
-							@endforeach
-						</p>
-					</div>
+					<span> | </span>
+				@endforeach
+			</p>
+		</div>
 
-					<div>
-						<p>
-							Cast:
+		<hr />
 
-							@foreach ($movie->casts as $cast)
-								<a href='/cast/{{ $cast->id }}'>{{ $cast->name }}</a>,
-							@endforeach
-						</p>
-					</div>
+		<div class='media'>
 
-					<hr />
+			<div class='media-left'>
 
-					<div>
-						{{ $movie->synopsis }}
-					</div>
+				@if($movie->image)
+					<img class='media-object' src='/uploads/{{ $movie->image }}'>
+				@endif
+				
+				<br />
 
-					<br />
+				<form class='media-object-form' action='/movies/{{ $movie->id }}' method='post' enctype='multipart/form-data'>
+					Select image to upload:
+					<input name='image' type='file'>
+					<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
+				</form>
 
-					<div>
-						@foreach ($movie->labels as $label)
-							<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
+			</div>
+
+			<div class='media-body'>
+
+				<div>
+					<p>
+						Director(s):
+
+						@foreach ($movie->directors as $director)
+							<a href='/directors/{{ $director->id }}'>{{ $director->name }}</a>,
 						@endforeach
-					</div>
-					
-					<br />
-
+					</p>
 				</div>
+
+				<div>
+					<p>
+						Writer(s):
+
+						@foreach ($movie->writers as $writer)
+							<a href='/writers/{{ $writer->id }}'>{{ $writer->name }}</a>,
+						@endforeach
+					</p>
+				</div>
+
+				<div>
+					<p>
+						Cast:
+
+						@foreach ($movie->casts as $cast)
+							<a href='/cast/{{ $cast->id }}'>{{ $cast->name }}</a>,
+						@endforeach
+					</p>
+				</div>
+
+				<hr />
+
+				<div>
+					{{ $movie->synopsis }}
+				</div>
+
+				<br />
+
+				<div>
+					@foreach ($movie->labels as $label)
+						<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
+					@endforeach
+				</div>
+				
+				<br />
 
 			</div>
 
