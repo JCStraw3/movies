@@ -14,92 +14,88 @@
 
 	<!-- Create a new movie form -->
 
-	<div class='container'>
+	<div class='card'>
 
-		<div class='card'>
+		<div class='text-center'>
 
-			<div class='text-center'>
+			<h2>New Movie</h2>
 
-				<h2>New Movie</h2>
+			<hr />
 
-				<hr />
+			<form action='/movies' method='post'>
+				<div class='form-group'>
+					<input class='form-control' name='title' type='text' placeholder='Title (Required)'>
+				</div>
 
-				<form action='/movies' method='post'>
-					<div class='form-group'>
-						<input class='form-control' name='title' type='text' placeholder='Title (Required)'>
-					</div>
+				<div class='form-group'>
+					<select id='genre' class='form-control' name='genres[]' multiple>
+						@foreach ($genres as $genre)
+							<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-					<div class='form-group'>
-						<select id='genre' class='form-control' name='genres[]' multiple>
-							@foreach ($genres as $genre)
-								<option value='{{ $genre->id }}'>{{ $genre->name }}</option>
-							@endforeach
-						</select>
-					</div>
+				<div class='form-group'>
+					<input class='form-control' name='release_date' type='date' placeholder='Release Date'>
+				</div>
 
-					<div class='form-group'>
-						<input class='form-control' name='release_date' type='date' placeholder='Release Date'>
-					</div>
+				<div class='form-group'>
+					<select id='rating' class='form-control' name='ratings'>
+						@foreach ($ratings as $rating)
+							<option value='{{ $rating->id }}'>{{ $rating->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-					<div class='form-group'>
-						<select id='rating' class='form-control' name='ratings'>
-							@foreach ($ratings as $rating)
-								<option value='{{ $rating->id }}'>{{ $rating->name }}</option>
-							@endforeach
-						</select>
-					</div>
+				<div class='form-group'>
+					<input class='form-control' name='runtime' type='text' placeholder='Runtime'>
+				</div>
 
-					<div class='form-group'>
-						<input class='form-control' name='runtime' type='text' placeholder='Runtime'>
-					</div>
+				<div class='form-group'>
+					<select id='director' class='form-control' name='directors[]' multiple>
+						@foreach ($directors as $director)
+							<option value='{{ $director->id }}'>{{ $director->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-					<div class='form-group'>
-						<select id='director' class='form-control' name='directors[]' multiple>
-							@foreach ($directors as $director)
-								<option value='{{ $director->id }}'>{{ $director->name }}</option>
-							@endforeach
-						</select>
-					</div>
+				<div class='form-group'>
+					<select id='writer' class='form-control' name='writers[]' multiple>
+						@foreach ($writers as $writer)
+							<option value='{{ $writer->id }}'>{{ $writer->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-					<div class='form-group'>
-						<select id='writer' class='form-control' name='writers[]' multiple>
-							@foreach ($writers as $writer)
-								<option value='{{ $writer->id }}'>{{ $writer->name }}</option>
-							@endforeach
-						</select>
-					</div>
+				<div class='form-group'>
+					<select id='cast' class='form-control' name='casts[]' multiple>
+						@foreach ($casts as $cast)
+							<option value='{{ $cast->id }}'>{{ $cast->name }}</option>
+						@endforeach
+					</select>
+				</div>
 
-					<div class='form-group'>
-						<select id='cast' class='form-control' name='casts[]' multiple>
-							@foreach ($casts as $cast)
-								<option value='{{ $cast->id }}'>{{ $cast->name }}</option>
-							@endforeach
-						</select>
-					</div>
+				<div class='form-group'>
+					<textarea class='form-control' name='synopsis' placeholder='Synopsis'></textarea>
+				</div>
 
-					<div class='form-group'>
-						<textarea class='form-control' name='synopsis' placeholder='Synopsis'></textarea>
-					</div>
+				<div class='form-group'>
+					<select id='label' class='form-control' name='labels[]' multiple>
+						@foreach ($labels as $label)
+							<option value='{{ $label->id }}'>{{ $label->name }}</option>
+						@endforeach
+					</select>
+				</div>
+				
+				<br />
 
-					<div class='form-group'>
-						<select id='label' class='form-control' name='labels[]' multiple>
-							@foreach ($labels as $label)
-								<option value='{{ $label->id }}'>{{ $label->name }}</option>
-							@endforeach
-						</select>
-					</div>
-					
-					<br />
+				<div>
+					<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Movie</button>
+				</div>
+			</form>
 
-					<div>
-						<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Movie</button>
-					</div>
-				</form>
-
-			</div>
-			
 		</div>
-
+		
 	</div>
 
 	{{-- Select 2 scripts --}}

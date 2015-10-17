@@ -8,28 +8,24 @@
 
 @section('content')
 
-	<div class='container'>
+	@foreach ($ratings as $rating)
 
-		@foreach ($ratings as $rating)
+		<div class='card'>
 
-			<div class='card'>
+			<form class='pull-right' action='/ratings/{{ $rating->id }}' method='post'>
+				<input name='_method' type='hidden' value='delete'>
+				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+			</form>
 
-				<form class='pull-right' action='/ratings/{{ $rating->id }}' method='post'>
-					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
-				</form>
+			<div class='clearfix'></div>
 
-				<div class='clearfix'></div>
-
-				<div class='text-center'>
-					<a href='/ratings/{{ $rating->id }}'><h2>{{ $rating->name }}</h2></a>
-				</div>
-
+			<div class='text-center'>
+				<a href='/ratings/{{ $rating->id }}'><h2>{{ $rating->name }}</h2></a>
 			</div>
 
-		@endforeach
+		</div>
 
-	</div>
+	@endforeach
 
 @endsection
 

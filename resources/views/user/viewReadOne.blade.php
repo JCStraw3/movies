@@ -14,72 +14,68 @@
 
 	<!-- User profile -->
 
-	<div class='container'>
+	<div class='card'>
 
-		<div class='card'>
-
-			<div class='text-center'>
-				<h2>{{ $user->name }}</h2>
-			</div>
-
-			<hr />
-
-			<div class='media'>
-
-				<div class='media-left'>
-
-					@if($user->image)
-						<img class='media-object' src='/uploads/{{ $user->image }}'>
-					@endif
-					
-					<br />
-
-					<form class='media-object-form' action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
-						Select image to upload:
-						<input name='image' type='file'>
-						<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
-					</form>
-
-				</div>
-
-				<div class='media-body'>
-
-					<div>
-						<p>
-							Email:
-
-							{{ $user->email }}
-						</p>
-					</div>
-
-					<hr />
-
-					<div>
-						<p>
-							Gender:
-
-							{{ $user->gender }}
-						</p>
-					</div>
-
-					<hr />
-
-					<div>
-						<p>
-							Birthday:
-
-							{{ $user->birthday }}
-						</p>
-					</div>
-
-					<hr />
-
-				</div>
-
-			</div>
-			
+		<div class='text-center'>
+			<h2>{{ $user->name }}</h2>
 		</div>
 
+		<hr />
+
+		<div class='media'>
+
+			<div class='media-left'>
+
+				@if($user->image)
+					<img class='media-object' src='/uploads/{{ $user->image }}'>
+				@endif
+				
+				<br />
+
+				<form class='media-object-form' action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
+					Select image to upload:
+					<input name='image' type='file'>
+					<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
+				</form>
+
+			</div>
+
+			<div class='media-body'>
+
+				<div>
+					<p>
+						Email:
+
+						{{ $user->email }}
+					</p>
+				</div>
+
+				<hr />
+
+				<div>
+					<p>
+						Gender:
+
+						{{ $user->gender }}
+					</p>
+				</div>
+
+				<hr />
+
+				<div>
+					<p>
+						Birthday:
+
+						{{ $user->birthday }}
+					</p>
+				</div>
+
+				<hr />
+
+			</div>
+
+		</div>
+		
 	</div>
 
 @endsection

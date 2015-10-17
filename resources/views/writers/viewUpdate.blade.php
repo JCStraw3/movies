@@ -18,36 +18,32 @@
 
 	<!-- Update a writer form -->
 
-	<div class='container'>
+	<div class='card'>
 
-		<div class='card'>
+		<div class='text-center'>
 
-			<div class='text-center'>
+			<h2>Edit {{ $writer->name }}</h2>
 
-				<h2>Edit {{ $writer->name }}</h2>
+			<hr />
 
-				<hr />
+			<form action='/writers/{{ $writer->id }}' method='post'>
+				<div>
+					<input name='_method' type='hidden' value='put'>
+				</div>
 
-				<form action='/writers/{{ $writer->id }}' method='post'>
-					<div>
-						<input name='_method' type='hidden' value='put'>
-					</div>
+				<div class='form-group'>
+					<input class='form-control' name='name' type='text' value='{{ $writer->name }}' placeholder='Name'>
+				</div>
+				
+				<br />
 
-					<div class='form-group'>
-						<input class='form-control' name='name' type='text' value='{{ $writer->name }}' placeholder='Name'>
-					</div>
-					
-					<br />
+				<div>
+					<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Edit Writer</button>
+				</div>
+			</form>
 
-					<div>
-						<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Edit Writer</button>
-					</div>
-				</form>
-
-			</div>
-			
 		</div>
-
+		
 	</div>
 
 @endsection
