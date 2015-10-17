@@ -14,32 +14,28 @@
 
 	<!-- Create a new label form -->
 
-	<div class='container'>
+	<div class='card'>
 
-		<div class='card'>
+		<div class='text-center'>
 
-			<div class='text-center'>
+			<h2>New Label</h2>
 
-				<h2>New Label</h2>
+			<hr />
 
-				<hr />
+			<form action='/labels' method='post'>
+				<div class='form-group'>
+					<input class='form-control' name='name' type='text' placeholder='Name'>
+				</div>
+				
+				<br />
 
-				<form action='/labels' method='post'>
-					<div class='form-group'>
-						<input class='form-control' name='name' type='text' placeholder='Name'>
-					</div>
-					
-					<br />
+				<div>
+					<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Label</button>
+				</div>
+			</form>
 
-					<div>
-						<button class='btn btn-group btn-group-justified btn-primary' type='submit'>Create Label</button>
-					</div>
-				</form>
-
-			</div>
-			
 		</div>
-
+		
 	</div>
 
 @endsection

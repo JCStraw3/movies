@@ -8,28 +8,24 @@
 
 @section('content')
 
-	<div class='container'>
+	@foreach ($labels as $label)
 
-		@foreach ($labels as $label)
+		<div class='card'>
 
-			<div class='card'>
+			<form class='pull-right' action='/labels/{{ $label->id }}' method='post'>
+				<input name='_method' type='hidden' value='delete'>
+				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+			</form>
 
-				<form class='pull-right' action='/labels/{{ $label->id }}' method='post'>
-					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
-				</form>
+			<div class='clearfix'></div>
 
-				<div class='clearfix'></div>
-
-				<div class='text-center'>
-					<a href='/labels/{{ $label->id }}'><h2>{{ $label->name }}</h2></a>
-				</div>
-
+			<div class='text-center'>
+				<a href='/labels/{{ $label->id }}'><h2>{{ $label->name }}</h2></a>
 			</div>
 
-		@endforeach
+		</div>
 
-	</div>
+	@endforeach
 
 @endsection
 
