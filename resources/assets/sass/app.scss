@@ -96,7 +96,7 @@ $toolbar-color: rgb(45,176,123);
 	margin-left: 12px;
 }
 
-// Image classes
+// Media classes
 
 .media-object, .media-object-form {
 	max-width: 256px;
@@ -109,11 +109,6 @@ $toolbar-color: rgb(45,176,123);
 }
 
 .media-left {
-	width: 266px;
+	max-width: 266px;
 	padding-right: 15px;
 }
-
-
-
-
-// 551

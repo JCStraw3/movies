@@ -72,7 +72,7 @@ textarea.form-control {
   padding-top: 2px; }
 
 .media-left {
-  width: 266px;
+  max-width: 266px;
   padding-right: 15px; }
 
 /*# sourceMappingURL=app.css.map */
