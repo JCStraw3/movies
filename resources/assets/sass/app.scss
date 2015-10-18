@@ -44,21 +44,41 @@ textarea.form-control {
 
 // Navbar classes
 
-$navbar-color: rgb(168,0,168);
+$navbar-backgroundColor: rgb(168,0,168);
+$navbar-textColor: #ffffff;
 
 .navbar {
-	background-color: $navbar-color;
-	border-color: $navbar-color;
+	background-color: $navbar-backgroundColor;
+	border-color: $navbar-backgroundColor;
 	margin: 0;
 }
 
 .navbar-inverse a {
-	color: #ffffff !important;
+	color: $navbar-textColor !important;
 	margin-right: 12px;
 }
 
+// .navbar-toggle {
+// 	border-color: $navbar-textColor !important;
+// }
+
+// .navbar-nav {
+// 	margin: auto;
+// }
+
+// .navbar-collapse {
+// 	border-color: $navbar-textColor !important;
+// 	padding: 0;
+// }
+
+// .navbar-form {
+// 	padding: 0;
+// 	border-top: 0;
+// 	border-bottom: 0;
+// }
+
 .navbar-inverse span {
-	color: #ffffff !important;
+	color: $navbar-textColor !important;
 }
 
 .navbar form {
@@ -68,12 +88,12 @@ $navbar-color: rgb(168,0,168);
 
 // Toolbar class
 
-$toolbar-color: rgb(45,176,123);
+$toolbar-backgroundColor: rgb(45,176,123);
 
 .toolbar {
 	top: 51px;
-	background-color: $toolbar-color;
-	border-color: $toolbar-color;
+	background-color: $toolbar-backgroundColor;
+	border-color: $toolbar-backgroundColor;
 	margin: 0;
 }
 
@@ -92,7 +112,7 @@ $toolbar-color: rgb(45,176,123);
 // Count class
 
 .count {
-	color: #ffffff !important;
+	color: $navbar-textColor !important;
 	margin-left: 12px;
 }
 
