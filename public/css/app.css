@@ -1,6 +1,7 @@
 body {
   background-color: #f4f4f4;
-  margin-top: 128px; }
+  margin-top: 128px;
+  height: 100%; }
 
 h1, h2 {
   margin-top: 0; }
@@ -20,8 +21,9 @@ textarea.form-control {
   max-width: 522px; }
 
 footer {
+  clear: both;
   text-align: center;
-  vertical-align: text-bottom; }
+  margin-bottom: 2em; }
 
 .card {
   max-width: 580px;

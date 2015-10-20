@@ -3,6 +3,7 @@
 body {
 	background-color: rgb(244,244,244);
 	margin-top: 128px;
+	height: 100%;
 }
 
 h1, h2 {
@@ -28,8 +29,9 @@ textarea.form-control {
 }
 
 footer {
+	clear: both;
 	text-align: center;
-	vertical-align: text-bottom;
+	margin-bottom: 2em;
 }
 
 // Card class
