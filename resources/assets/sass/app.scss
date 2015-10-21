@@ -65,19 +65,6 @@ $navbar-textColor: #ffffff;
 	margin-right: 12px;
 }
 
-// .navbar-toggle {
-// 	border-color: $navbar-textColor !important;
-// }
-
-// .navbar-nav {
-// 	margin: auto;
-// }
-
-// .navbar-collapse {
-// 	border-color: $navbar-textColor !important;
-// 	padding: 0;
-// }
-
 .navbar-form {
 	margin-top: 8px;
 	margin-bottom: 8px;
@@ -142,6 +129,8 @@ $toolbar-backgroundColor: rgb(45,176,123);
 	padding-right: 15px;
 }
 
+// Media queries
+
 @media (max-width: 768px) {
 
 	.navbar-left, .navbar-right {
@@ -155,6 +144,23 @@ $toolbar-backgroundColor: rgb(45,176,123);
 		padding-right: 15px;
 		padding-left: 15px;
 		border: 0;
+	}
+
+	.navbar-toggle {
+		border-color: $navbar-textColor !important;
+	}
+
+	.navbar-collapse {
+		border-color: $navbar-textColor !important;
+		padding: 0;
+	}
+
+	.navbar-inverse a {
+		margin-right: 5px;
+	}
+
+	.navbar form {
+		padding-right: 5px;
 	}
 
 }

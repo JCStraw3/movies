@@ -97,6 +97,15 @@ footer {
     padding-bottom: 8px;
     padding-right: 15px;
     padding-left: 15px;
-    border: 0; } }
+    border: 0; }
+  .navbar-toggle {
+    border-color: #ffffff !important; }
+  .navbar-collapse {
+    border-color: #ffffff !important;
+    padding: 0; }
+  .navbar-inverse a {
+    margin-right: 5px; }
+  .navbar form {
+    padding-right: 5px; } }
 
 /*# sourceMappingURL=app.css.map */
