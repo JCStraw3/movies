@@ -156,7 +156,7 @@
 				</ul>
 			</div>
 				
-			<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+			<a class='hidden-xs' href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
 			
 		</div>
 

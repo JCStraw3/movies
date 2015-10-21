@@ -46,6 +46,13 @@ footer {
   color: #ffffff !important;
   margin-right: 12px; }
 
+.navbar-form {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border: 0; }
+
 .navbar-inverse span {
   color: #ffffff !important; }
 
@@ -80,5 +87,16 @@ footer {
 .media-left {
   max-width: 266px;
   padding-right: 15px; }
+
+@media (max-width: 768px) {
+  .navbar-left, .navbar-right {
+    max-width: 50%;
+    max-height: 50px;
+    margin: 0; }
+  .navbar-form {
+    margin: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 0; } }
 
 /*# sourceMappingURL=app.css.map */

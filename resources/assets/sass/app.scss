@@ -78,11 +78,13 @@ $navbar-textColor: #ffffff;
 // 	padding: 0;
 // }
 
-// .navbar-form {
-// 	padding: 0;
-// 	border-top: 0;
-// 	border-bottom: 0;
-// }
+.navbar-form {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding-right: 15px;
+	padding-left: 15px;
+	border: 0;
+}
 
 .navbar-inverse span {
 	color: $navbar-textColor !important;
@@ -102,6 +104,7 @@ $toolbar-backgroundColor: rgb(45,176,123);
 	background-color: $toolbar-backgroundColor;
 	border-color: $toolbar-backgroundColor;
 	margin: 0;
+	// max-height: 51px;
 }
 
 // Label class
@@ -138,4 +141,21 @@ $toolbar-backgroundColor: rgb(45,176,123);
 .media-left {
 	max-width: 266px;
 	padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+
+	.navbar-left, .navbar-right {
+		max-width: 50%;
+		max-height: 50px;
+		margin: 0;
+	}
+
+	.navbar-form {
+		margin: auto;
+		padding-right: 15px;
+		padding-left: 15px;
+		border: 0;
+	}
+
 }
