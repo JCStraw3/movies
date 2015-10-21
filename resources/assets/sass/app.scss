@@ -101,8 +101,10 @@ $toolbar-backgroundColor: rgb(45,176,123);
 
 // Dropdown button menu class
 
+$dropdown-color:  rgb(114,201,226);
+
 .dropdown-menu {
-	background-color: rgb(114,201,226);
+	background-color: $dropdown-color;
 }
 
 // Count class
@@ -129,9 +131,13 @@ $toolbar-backgroundColor: rgb(45,176,123);
 	padding-right: 15px;
 }
 
-// Media queries
+// Media queries - responsive design
 
 @media (max-width: 768px) {
+
+	.navbar {
+		max-height: 102px;
+	}
 
 	.navbar-left, .navbar-right {
 		margin: 0;
@@ -161,6 +167,10 @@ $toolbar-backgroundColor: rgb(45,176,123);
 
 	.navbar form {
 		padding-right: 5px;
+	}
+
+	.dropdown-menu {
+		background-color: $dropdown-color !important;
 	}
 
 }
