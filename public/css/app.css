@@ -110,6 +110,9 @@ footer {
   .navbar form {
     padding-right: 5px; }
   .dropdown-menu {
-    background-color: #72c9e2 !important; } }
+    background-color: #72c9e2 !important; }
+  .media-object, .media-object-form {
+    max-width: 75px;
+    padding-top: 2px; } }
 
 /*# sourceMappingURL=app.css.map */

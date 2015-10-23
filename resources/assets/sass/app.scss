@@ -173,4 +173,9 @@ $dropdown-color:  rgb(114,201,226);
 		background-color: $dropdown-color !important;
 	}
 
+	.media-object, .media-object-form {
+		max-width: 75px;
+		padding-top: 2px;
+	}
+
 }
