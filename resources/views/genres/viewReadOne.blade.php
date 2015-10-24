@@ -79,42 +79,31 @@
 				</ul>
 			</div>
 
-			<a class='hidden-xs' href='/genres'>Genres</a>
+			<a href='/genres'>Genres</a>
 
-			<span class='hidden-xs'> | </span>
+			<span> | </span>
 
-			<span class='count hidden-xs'>{{ $genre->name }} has {{ count($genre->movies) }} movies</span>
-
-			{{-- Button when navbar is collapsed --}}
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#toolbar-collapse" aria-expanded="false">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+			<span class='count'>{{ $genre->name }} has {{ count($genre->movies) }} movies</span>
 			
 		</div>
 
 		<div class='nav navbar-nav navbar-right'>
 
-			<div class="collapse navbar-collapse" id="toolbar-collapse">
+			<div class='navbar-form'>
+				{{-- Edit genre --}}
+				<a class='btn btn-info' href='/genres/{{ $genre->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
 
-				<div class='navbar-form'>
-					{{-- Edit genre --}}
-					<a class='btn btn-info' href='/genres/{{ $genre->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
+				{{-- Delete genre --}}
+				<form action='/genres/{{ $genre->id }}' method='post'>
+					<input name='_method' type='hidden' value='delete'>
+					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
+				</form>
+				
+				{{-- Add new genre --}}
+				<a class='btn btn-primary' href='/genres/create'><span class='glyphicon glyphicon-plus'></span> Genre</a>
 
-					{{-- Delete genre --}}
-					<form action='/genres/{{ $genre->id }}' method='post'>
-						<input name='_method' type='hidden' value='delete'>
-						<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
-					</form>
-					
-					{{-- Add new genre --}}
-					<a class='btn btn-primary' href='/genres/create'><span class='glyphicon glyphicon-plus'></span> Genre</a>
-
-					{{-- Add new movie --}}
-					<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
-				</div>
-
+				{{-- Add new movie --}}
+				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>
