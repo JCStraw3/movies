@@ -26,13 +26,13 @@
 
 		<hr />
 
-		<form action='/movies/{{ $movie->id }}' method='post'>
+		<form id='update' action='/movies/{{ $movie->id }}' method='post'>
 			<div>
 				<input name='_method' type='hidden' value='put'>
 			</div>
 
 			<div class='form-group'>
-				<input class='form-control' name='title' type='text' value='{{ $movie->title }}' placeholder='Title (Required)'>
+				<input id='updateTitle' class='form-control' name='title' type='text' value='{{ $movie->title }}' placeholder='Title (Required)'>
 			</div>
 
 			<div class='form-group'>
@@ -50,7 +50,7 @@
 			</div>
 
 			<div class='form-group'>
-				<input class='form-control' name='release_date' type='date' value='{{ $movie->release_date }}' placeholder='Release Date'>
+				<input id='updateReleaseDate' class='form-control' name='release_date' type='date' value='{{ $movie->release_date }}' placeholder='Release Date'>
 			</div>
 
 			<div class='form-group'>
@@ -68,7 +68,7 @@
 			</div>
 
 			<div class='form-group'>
-				<input class='form-control' name='runtime' type='text' value='{{ $movie->runtime }}' placeholder='Runtime'>
+				<input id='updateRuntime' class='form-control' name='runtime' type='text' value='{{ $movie->runtime }}' placeholder='Runtime'>
 			</div>
 
 			<div class='form-group'>
@@ -114,7 +114,7 @@
 			</div>
 
 			<div class='form-group'>
-				<textarea class='form-control' name='synopsis' placeholder='Synopsis'>{{ $movie->synopsis }}</textarea>
+				<textarea id='updateSynopsis' class='form-control' name='synopsis' placeholder='Synopsis'>{{ $movie->synopsis }}</textarea>
 			</div>
 
 			<div class='form-group'>
@@ -181,6 +181,32 @@
 		$('#label').select2({
 			placeholder: 'Label',
 			tags: true,
+		});
+	</script>
+
+	<script>
+		$('#update').submit(function(event){
+			event.preventDefault();
+			var action = $('#update').attr('action');
+			$.ajax({
+				url: action,
+				method: 'post',
+				data: {
+					_method: 'put',
+					title: $('#updateTitle').val(),
+					genres: $('#genre').val(),
+					release_date: $('#updateReleaseDate').val(),
+					ratings: $('#rating').val(),
+					runtime: $('#updateRuntime').val(),
+					directors: $('#director').val(),
+					writers: $('#writer').val(),
+					casts: $('#cast').val(),
+					synopsis: $('#updateSynopsis').val(),
+					labels: $('#label').val(),
+				}
+			})
+			.done(function( data ) {
+			});
 		});
 	</script>
 
