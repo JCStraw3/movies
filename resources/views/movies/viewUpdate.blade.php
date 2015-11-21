@@ -184,6 +184,8 @@
 		});
 	</script>
 
+	{{-- Ajax form script --}}
+
 	<script>
 		$('#update').submit(function(event){
 			event.preventDefault();
@@ -205,7 +207,8 @@
 					labels: $('#label').val(),
 				}
 			})
-			.done(function( data ) {
+			.done(function(data){
+				alert('You have saved this movie.');
 			});
 		});
 	</script>

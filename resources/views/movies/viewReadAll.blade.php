@@ -127,6 +127,12 @@
 
 	@endforeach
 
+	{{-- Pagination links --}}
+
+	<footer>
+		{!! $movies->render() !!}
+	</footer>
+
 @endsection
 
 <!-- Toolbar -->

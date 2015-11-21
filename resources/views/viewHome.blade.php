@@ -21,13 +21,13 @@
 			<br />
 
 			<div>
-				<a class='btn btn-group btn-group-justified btn-primary' href='/auth/register'>Register</a>
+				<a class='btn btn-group btn-group-justified btn-primary' href='/auth/login'>Login</a>
 			</div>
 
 			<br />
 
 			<div>
-				<a class='btn btn-group btn-group-justified btn-primary' href='/auth/login'>Login</a>
+				<a class='btn btn-group btn-group-justified btn-primary' href='/auth/register'>Register</a>
 			</div>
 
 		</div>
