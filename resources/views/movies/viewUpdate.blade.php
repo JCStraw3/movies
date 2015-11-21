@@ -54,7 +54,7 @@
 			</div>
 
 			<div class='form-group'>
-				<select id='rating' class='form-control' name='ratings[]'>
+				<select id='rating' class='form-control' name='ratings[]' multiple>
 					@if($movie->ratings)
 						@foreach ($movie->ratings as $rating)
 							<option value='{{ $rating->id }}' selected>{{ $rating->name }}</option>
@@ -184,7 +184,7 @@
 		});
 	</script>
 
-	{{-- Ajax form script --}}
+	{{-- Ajax update form script --}}
 
 	<script>
 		$('#update').submit(function(event){
