@@ -16,10 +16,10 @@
 
 	@foreach ($movies as $movie)
 
-		<div class='card'>
+		<div id='movie' class='card'>
 
-			<form class='pull-right' action='/movies/{{ $movie->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
+			<form id='movieDeleteForm' class='pull-right' action='/movies/{{ $movie->id }}' method='post'>
+				<input id='movieDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
 
@@ -132,6 +132,25 @@
 	<footer>
 		{!! $movies->render() !!}
 	</footer>
+
+	{{-- Ajax movie delete form --}}
+
+	<script>
+		$('#movieDeleteForm').submit(function(event){
+			event.preventDefault();
+			var action = $('#movieDeleteForm').attr('action');
+			$.ajax({
+				url: action,
+				method: 'post',
+				data: {
+					_method: $('#movieDelete').val(),
+				}
+			})
+			.done(function(data){
+				$('#movie').remove();
+			});
+		});
+	</script>
 
 @endsection
 

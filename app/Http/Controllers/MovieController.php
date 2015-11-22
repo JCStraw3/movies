@@ -79,7 +79,7 @@ class MovieController extends Controller {
 
 		$movies = Movie::where('user_id', '=', $user->id)
 			->orderBy('title', 'asc')
-			->paginate(3);
+			->paginate(10);
 
 		return view('movies.viewReadAll')
 			->with('movies', $movies);
