@@ -62,4 +62,10 @@ class Movie extends Model {
 		return $this->belongsToMany('App\Label');
 	}
 
+	// Moive can belong to many lists.
+
+	public function lists(){
+		return $this->belongsToMany('App\List');
+	}
+
 }

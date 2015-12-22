@@ -88,5 +88,11 @@ class User extends Model implements AuthenticatableContract,
     public function labels(){
         return $this->hasMany('App\Label');
     }
+
+    // A user can have many lists.
+
+    public function lists(){
+        return $this->hasMany('App\List');
+    }
     
 }
