@@ -103,3 +103,13 @@ Route::get('labels/{id}/edit', 'LabelController@viewUpdate');
 Route::post('labels', 'LabelController@actionCreate');
 Route::put('labels/{id}', 'LabelController@actionUpdate');
 Route::delete('labels/{id}', 'LabelController@actionDelete');
+
+// Lists routes.
+
+Route::get('lists', 'ListController@viewReadAll');
+Route::get('lists/create', 'ListController@viewCreate');
+Route::get('lists/{id}', 'ListController@viewReadOne');
+Route::get('lists/{id}/edit', 'ListController@viewUpdate');
+Route::post('lists', 'ListController@actionCreate');
+Route::put('lists/{id}', 'ListController@actionUpdate');
+Route::delete('lists/{id}', 'ListController@actionDelete');

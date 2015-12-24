@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\List;
+// use App\List;
 
 use Auth;
 
@@ -23,6 +23,15 @@ class ListController extends Controller {
 // Views
 
 	// View page to create a list.
+
+	public function viewCreate(){
+
+		$user = Auth::user();
+
+		return view('lists.viewCreate')
+			->with('user', $user);
+
+	}
 
 	// View page to read all lists.
 
