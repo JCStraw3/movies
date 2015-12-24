@@ -20,4 +20,22 @@ class ListController extends Controller {
 		$this->middleware('auth');
 	}
 
+// Views
+
+	// View page to create a list.
+
+	// View page to read all lists.
+
+	// View page to read one list.
+
+	// View page to update a list.
+
+// Actions
+
+	// Create a list in the database.
+
+	// Update a list in the database.
+
+	// Delete a list from the database.
+
 }
