@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 // use App\List;
+use App\Movie;
 
 use Auth;
 
@@ -28,8 +29,13 @@ class ListController extends Controller {
 
 		$user = Auth::user();
 
+		$movies = Movie::where('user_id', '=', $user->id)
+			->orderBy('title', 'asc')
+			->get();
+
 		return view('lists.viewCreate')
-			->with('user', $user);
+			->with('user', $user)
+			->with('movies', $movies);
 
 	}
 

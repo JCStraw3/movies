@@ -33,6 +33,14 @@
 						<option value='1'>Public</option>
 					</select>
 				</div>
+
+				<div class='form-group'>
+					<select id='movie' class='form-control' name='movies[]' multiple>
+						@foreach($movies as $movie)
+							<option value='{{ $movie->id }}'>{{ $movie->title }}</option>
+						@endforeach
+					</select>
+				</div>
 				
 				<br />
 
@@ -44,6 +52,15 @@
 		</div>
 		
 	</div>
+
+	{{-- Select 2 scripts --}}
+
+	<script type='text/javascript'>
+		$('#movie').select2({
+			placeholder: 'Movie',
+			tags: true,
+		});
+	</script>
 
 @endsection
 
