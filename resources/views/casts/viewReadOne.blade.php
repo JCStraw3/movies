@@ -37,13 +37,15 @@
 
 					<div class='media-body'>
 
-						<div>
-							<h4 class='media-heading'>
-								<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
-							</h4>
+						<h4 class='media-heading'>
+							<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+						</h4>
 
-							<p>{{ $movie->synopsis }}</p>
-						</div>
+						<p>{{ $movie->synopsis }}</p>
+
+						@foreach($movie->labels as $label)
+							<a class='label label-primary pull-right' href='labels/{{ $label->id }}'>{{ $label->name }}</a>
+						@endforeach
 
 					</div>
 
