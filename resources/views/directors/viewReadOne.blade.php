@@ -43,6 +43,10 @@
 							</h4>
 
 							<p>{{ $movie->synopsis }}</p>
+
+							@foreach($movie->labels as $label)
+								<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
+							@endforeach
 						</div>
 
 					</div>
