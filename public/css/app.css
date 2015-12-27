@@ -67,7 +67,8 @@ footer {
   margin: 0; }
 
 .label {
-  margin-left: 5px; }
+  margin-left: 5px;
+  margin-bottom: 5px; }
 
 .dropdown-menu {
   background-color: #72c9e2; }
