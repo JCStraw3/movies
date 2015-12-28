@@ -28,6 +28,12 @@
 
 			<hr />
 
+			<div>
+				<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='This is a note.'><span class='glyphicon glyphicon-paperclip'></span></a>
+			</div>
+
+			<div class='clearfix'></div>
+
 			<p>
 				<span> | </span>
 
@@ -130,6 +136,14 @@
 		</div>
 
 	</div>
+
+	{{-- Popover Script --}}
+
+	<script>
+		$(function () {
+			$('[data-toggle="popover"]').popover()
+		})
+	</script>
 
 @endsection
 
