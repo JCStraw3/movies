@@ -33,17 +33,17 @@
 
 					<div class='media-body'>
 
-						<div>
-							<h4 class='media-heading'>
-								<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
-							</h4>
+						<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='This is a note.'><span class='glyphicon glyphicon-paperclip'></span></a>
 
-							<p>{{ $movie->synopsis }}</p>
+						<h4 class='media-heading'>
+							<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+						</h4>
 
-							@foreach($movie->labels as $label)
-								<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
-							@endforeach
-						</div>
+						<p>{{ $movie->synopsis }}</p>
+
+						@foreach($movie->labels as $label)
+							<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>
+						@endforeach
 
 					</div>
 
@@ -53,6 +53,14 @@
 		</div>
 
 	</div>
+
+	{{-- Popover Script --}}
+
+	<script>
+		$(function () {
+			$('[data-toggle="popover"]').popover()
+		})
+	</script>
 
 @endsection
 
