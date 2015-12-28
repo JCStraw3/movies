@@ -132,6 +132,12 @@ $dropdown-color:  rgb(114,201,226);
 	padding-right: 15px;
 }
 
+// Delete button class
+
+.delete-button {
+	margin-bottom: 0 !important;
+}
+
 // Media queries - responsive design
 
 @media (max-width: 768px) {

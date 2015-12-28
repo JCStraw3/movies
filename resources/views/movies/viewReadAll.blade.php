@@ -18,7 +18,7 @@
 
 		<div id='movie' class='card'>
 
-			<form id='movieDeleteForm' class='pull-right' action='/movies/{{ $movie->id }}' method='post'>
+			<form id='movieDeleteForm' class='delete-button pull-right' action='/movies/{{ $movie->id }}' method='post'>
 				<input id='movieDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
@@ -33,6 +33,8 @@
 				<div>
 					<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='This is a note.'><span class='glyphicon glyphicon-paperclip'></span></a>
 				</div>
+
+				<div class='clearfix'></div>
 
 				<p>
 					<span> | </span>
