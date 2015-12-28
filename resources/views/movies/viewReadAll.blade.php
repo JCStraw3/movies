@@ -1,4 +1,4 @@
-@extends('app')
+</strong>@extends('app')
 
 <!-- Title -->
 
@@ -29,6 +29,10 @@
 				<a href='/movies/{{ $movie->id }}'><h2>{{ $movie->title }}</h2></a>
 			
 				<hr />
+
+				<div>
+					<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='This is a note.'><span class='glyphicon glyphicon-paperclip'></span></a>
+				</div>
 
 				<p>
 					<span> | </span>
@@ -132,6 +136,14 @@
 	<footer>
 		{!! $movies->render() !!}
 	</footer>
+
+	{{-- Popover Script --}}
+
+	<script>
+		$(function () {
+			$('[data-toggle="popover"]').popover()
+		})
+	</script>
 
 	{{-- Ajax movie delete form --}}
 
