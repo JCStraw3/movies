@@ -38,6 +38,8 @@
 					<div class='media-body'>
 
 						<div>
+							<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='This is a note.'><span class='glyphicon glyphicon-paperclip'></span></a>
+
 							<h4 class='media-heading'>
 								<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
 							</h4>
@@ -57,6 +59,14 @@
 		</div>
 
 	</div>
+
+	{{-- Popover Script --}}
+
+	<script>
+		$(function () {
+			$('[data-toggle="popover"]').popover()
+		})
+	</script>
 
 @endsection
 
