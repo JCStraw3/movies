@@ -86,6 +86,10 @@
 						@endforeach
 					</select>
 				</div>
+
+				<div class='form-group'>
+					<textarea class='form-control' name='note' placeholder='Note'></textarea>
+				</div>
 				
 				<br />
 

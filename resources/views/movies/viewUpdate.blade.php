@@ -131,6 +131,10 @@
 				</select>
 			</div>
 
+			<div class='form-group'>
+				<textarea class='form-control' name='note' placeholder='Note'>{{ $movie->note }}</textarea>
+			</div>
+
 			<br />
 
 			<div>
