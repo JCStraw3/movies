@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-// use App\List;
+use App\UserList;
 use App\Movie;
 
 use Auth;
 
-class ListController extends Controller {
+class UserListController extends Controller {
 
 // Middleware
 
@@ -33,7 +33,7 @@ class ListController extends Controller {
 			->orderBy('title', 'asc')
 			->get();
 
-		return view('lists.viewCreate')
+		return view('userlists.viewCreate')
 			->with('user', $user)
 			->with('movies', $movies);
 

@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class List extends Model {
+class UserList extends Model {
 
 	// Database used by the model.
 
-	protected $table = 'lists';
+	protected $table = 'userlists';
 
 	// Attributes that are mass assignable.
 
@@ -17,13 +17,13 @@ class List extends Model {
 		'public',
 	]
 
-	// List belongs to one user.
+	// UserList belongs to one user.
 
 	public function user(){
 		return $this->belongsTo('App\User');
 	}
 
-	// Lists can have many movies.
+	// UserLists can have many movies.
 
 	public function movies(){
 		return $this->belongsToMany('App\Movie')
