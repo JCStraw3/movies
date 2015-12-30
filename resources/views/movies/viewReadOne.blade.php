@@ -28,9 +28,11 @@
 
 			<hr />
 
-			<div>
-				<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='This is a note.'><span class='glyphicon glyphicon-paperclip'></span></a>
-			</div>
+			@if($movie->note)
+				<div>
+					<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='{{ $movie->note }}'><span class='glyphicon glyphicon-paperclip'></span></a>
+				</div>
+			@endif
 
 			<div class='clearfix'></div>
 
