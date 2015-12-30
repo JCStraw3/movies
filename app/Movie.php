@@ -18,6 +18,7 @@ class Movie extends Model {
 		'runtime',
 		'synopsis',
         'image',
+        'note',
 	];
 
 	// Movie belongs to one user.
