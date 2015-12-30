@@ -37,7 +37,9 @@
 
 					<div class='media-body'>
 
-						<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='This is a note.'><span class='glyphicon glyphicon-paperclip'></span></a>
+						@if($movie->note)
+							<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='{{ $movie->note }}'><span class='glyphicon glyphicon-paperclip'></span></a>
+						@endif
 
 						<h4 class='media-heading'>
 							<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
