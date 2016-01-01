@@ -106,10 +106,10 @@ Route::delete('labels/{id}', 'LabelController@actionDelete');
 
 // Lists routes.
 
-Route::get('lists', 'UserListController@viewReadAll');
-Route::get('lists/create', 'UserListController@viewCreate');
-Route::get('lists/{id}', 'UserListController@viewReadOne');
-Route::get('lists/{id}/edit', 'UserListController@viewUpdate');
-Route::post('lists', 'UserListController@actionCreate');
-Route::put('lists/{id}', 'UserListController@actionUpdate');
-Route::delete('lists/{id}', 'UserListController@actionDelete');
+Route::get('lists', 'UserlistController@viewReadAll');
+Route::get('lists/create', 'UserlistController@viewCreate');
+Route::get('lists/{id}', 'UserlistController@viewReadOne');
+Route::get('lists/{id}/edit', 'UserlistController@viewUpdate');
+Route::post('lists', 'UserlistController@actionCreate');
+Route::put('lists/{id}', 'UserlistController@actionUpdate');
+Route::delete('lists/{id}', 'UserlistController@actionDelete');

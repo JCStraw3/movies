@@ -27,13 +27,13 @@
 		<hr />
 
 		<div>
-			@foreach($userlist->movies as $movies)
+			@foreach($userlist->movies as $movie)
 
 				<div class='media'>
 
 					@if($movie->image)
 						<div class='media-left'>
-							<a class='media-object-small' href='/uploads/{{ $movie->image }}'></a>
+							<img class='media-object-small' src='/uploads/{{ $movie->image }}'>
 						</div>
 					@endif
 
@@ -47,7 +47,7 @@
 							<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
 						</h4>
 
-						<p>{{ $movie->sysopsis }}</p>
+						<p>{{ $movie->synopsis }}</p>
 
 						@foreach($movie->labels as $label)
 							<a class='label label-primary pull-right' href='/labels/{{ $label->id }}'>{{ $label->name }}</a>

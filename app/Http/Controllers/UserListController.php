@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\UserList;
+use App\Userlist;
 use App\Movie;
 
 use Auth;
 
-class UserListController extends Controller {
+class UserlistController extends Controller {
 
 // Middleware
 
@@ -47,7 +47,7 @@ class UserListController extends Controller {
 
 		$user = Auth::user();
 
-		$userlist = UserList::where('user_id', '=', $user->id)
+		$userlist = Userlist::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
 		return view('userlists.viewReadOne')
@@ -62,9 +62,9 @@ class UserListController extends Controller {
 
 	// Create a list in the database.
 
-	public function actionCreate(Requests\CreateUserListRequest $request){
+	public function actionCreate(Requests\CreateUserlistRequest $request){
 
-		$userlist = new UserList($request->all());
+		$userlist = new Userlist($request->all());
 
 		Auth::user()->userlists()->save($userlist);
 

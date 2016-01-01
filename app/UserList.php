@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserList extends Model {
+class Userlist extends Model {
 
 	// Database used by the model.
 
