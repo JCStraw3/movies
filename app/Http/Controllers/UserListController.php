@@ -68,6 +68,14 @@ class UserListController extends Controller {
 
 		Auth::user()->userlists()->save($userlist);
 
+		$movies = $request->input('movies');
+
+		if(!is_array($movies)){
+			$movies = [];
+		}
+
+		$userlist->movies()->attach($movies);
+
 		\Session::flash('flash_message', 'You have successfully created a list.');
 
 		return redirect('/lists/'.$userlist->id);
