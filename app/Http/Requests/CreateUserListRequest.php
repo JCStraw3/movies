@@ -23,7 +23,6 @@ class CreateUserListRequest extends Request
     public function rules(){
         return [
             'name' => 'required',
-            'public' => 'required',
         ];
     }
 
