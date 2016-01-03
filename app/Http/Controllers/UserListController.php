@@ -41,6 +41,20 @@ class UserlistController extends Controller {
 
 	// View page to read all lists.
 
+	public function viewReadAll(){
+
+		$user = Auth::user();
+
+		$userlists = Userlist::where('user_id', '=', $user->id)
+			->orderBy('name', 'asc')
+			->get();
+
+		return view('userlists.viewReadAll')
+			->with('user', $user)
+			->with('userlists', $userlists);
+
+	}
+
 	// View page to read one list.
 
 	public function viewReadOne($id){
