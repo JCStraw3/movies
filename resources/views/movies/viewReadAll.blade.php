@@ -127,6 +127,14 @@
 					
 					<br />
 
+					<div class='clearfix'></div>
+
+					<div>
+						@foreach($movie->userlists as $userlist)
+							<a class='label label-success pull-right' href='/lists/{{ $userlist->id }}'>{{ $userlist->name }}</a>
+						@endforeach
+					</div>
+
 				</div>
 
 			</div>

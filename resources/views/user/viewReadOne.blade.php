@@ -72,6 +72,8 @@
 
 				<hr />
 
+				<a class='btn btn-primary pull-right' href='/lists'>Lists</a>
+
 			</div>
 
 		</div>
