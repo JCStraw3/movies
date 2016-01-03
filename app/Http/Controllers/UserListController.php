@@ -72,6 +72,24 @@ class UserlistController extends Controller {
 
 	// View page to update a list.
 
+	public function viewUpdate($id){
+
+		$user = Auth::user();
+
+		$userlist = Userlist::where('user_id', '=', $user->id)
+			->findOrFail($id);
+
+		$movies = Movie::where('user_id', '=', $user->id)
+			->orderBy('title', 'asc')
+			->get();
+
+		return view('userlists.viewUpdate')
+			->with('user', $user)
+			->with('userlist', $userlist)
+			->with('movies', $movies);
+
+	}
+
 // Actions
 
 	// Create a list in the database.
@@ -97,6 +115,29 @@ class UserlistController extends Controller {
 	}
 
 	// Update a list in the database.
+
+	public function actionUpdate($id, Requests\UpdateUserlistRequest $request){
+
+		$user = Auth::user();
+
+		$userlist = Userlist::where('user_id', '=', $user->id)
+			->findOrFail($id);
+
+		$userlist->update($request->all());
+
+		$movies = $request->input('movies');
+
+		if(!is_array($movies)){
+			$movies = [];
+		}
+
+		$userlist->movies()->sync($movies);
+
+		\Session::flash('flash_message', 'You have successfully updated a list.');
+
+		return redirect('/lists/'.$id);
+
+	}
 
 	// Delete a list from the database.
 
