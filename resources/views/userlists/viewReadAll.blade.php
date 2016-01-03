@@ -57,12 +57,21 @@
 					<li><a href='/labels'>Labels</a></li>
 				</ul>
 			</div>
+
+			<a href='/lists'>Lists</a>
+
+			<span> | </span>
+
+			<span class='count'>You have {{ count($userlists) }} lists.</span>
 			
 		</div>
 
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
+				{{-- Add new userlist --}}
+				<a class='btn btn-primary' href='/lists/create'><span class='glyphicon glyphicon-plus'></span> List</a>
+
 				{{-- Add new movie --}}
 				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
