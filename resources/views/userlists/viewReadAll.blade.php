@@ -18,6 +18,13 @@
 
 		<div class='card'>
 
+			<form class='pull-right' action='/lists/{{ $userlist->id }}' method='post'>
+				<input name='_method' type='hidden' value='delete'>
+				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+			</form>
+
+			<div class='clearfix'></div>
+
 			<div class='text-center'>
 				<a href='/lists/{{ $userlist->id }}'><h2>{{ $userlist->name }}</h2></a>
 			</div>

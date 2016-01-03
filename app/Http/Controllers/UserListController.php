@@ -118,10 +118,7 @@ class UserlistController extends Controller {
 
 	public function actionUpdate($id, Requests\UpdateUserlistRequest $request){
 
-		$user = Auth::user();
-
-		$userlist = Userlist::where('user_id', '=', $user->id)
-			->findOrFail($id);
+		$userlist = Userlist::findOrFail($id);
 
 		$userlist->update($request->all());
 
@@ -140,5 +137,17 @@ class UserlistController extends Controller {
 	}
 
 	// Delete a list from the database.
+
+	public function actionDelete($id){
+
+		$userlist = Userlist::findOrFail($id);
+
+		$userlist->delete($userlist);
+
+		\Session::flash('flash_message', 'You have successfully deleted a list.');
+
+		return redirect('/lists');
+
+	}
 
 }
