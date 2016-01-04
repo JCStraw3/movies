@@ -76,8 +76,7 @@ class UserlistController extends Controller {
 
 		$user = Auth::user();
 
-		$userlist = Userlist::where('user_id', '=', $user->id)
-			->findOrFail($id);
+		$userlist = Userlist::findOrFail($id);
 
 		$movies = Movie::where('user_id', '=', $user->id)
 			->orderBy('title', 'asc')
