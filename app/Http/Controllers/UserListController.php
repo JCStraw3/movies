@@ -61,7 +61,8 @@ class UserlistController extends Controller {
 
 		$user = Auth::user();
 
-		$userlist = Userlist::findOrFail($id);
+		$userlist = Userlist::where('user_id', '=', $user->id)
+			->findOrFail($id);
 
 		return view('userlists.viewReadOne')
 			->with('user', $user)
@@ -71,13 +72,14 @@ class UserlistController extends Controller {
 
 	// View page to view a public list.
 
-	// public function viewReadOnePublic($id){
+	public function viewReadOnePublic($id){
 
-	// 	$user = Auth::user();
+		$userlist = Userlist::findOrFail($id);
 
-	// 	$userlist = Userlist::
+		return view('userlists.viewReadOnePublic')
+			->with('userlist', $userlist);
 
-	// }
+	}
 
 	// View page to update a list.
 
@@ -85,7 +87,8 @@ class UserlistController extends Controller {
 
 		$user = Auth::user();
 
-		$userlist = Userlist::findOrFail($id);
+		$userlist = Userlist::where('user_id', '=', $user->id)
+			->findOrFail($id);
 
 		$movies = Movie::where('user_id', '=', $user->id)
 			->orderBy('title', 'asc')
