@@ -61,14 +61,23 @@ class UserlistController extends Controller {
 
 		$user = Auth::user();
 
-		$userlist = Userlist::where('user_id', '=', $user->id)
-			->findOrFail($id);
+		$userlist = Userlist::findOrFail($id);
 
 		return view('userlists.viewReadOne')
 			->with('user', $user)
 			->with('userlist', $userlist);
 
 	}
+
+	// View page to view a public list.
+
+	// public function viewReadOnePublic($id){
+
+	// 	$user = Auth::user();
+
+	// 	$userlist = Userlist::
+
+	// }
 
 	// View page to update a list.
 

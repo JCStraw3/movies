@@ -109,6 +109,7 @@ Route::delete('labels/{id}', 'LabelController@actionDelete');
 Route::get('lists', 'UserlistController@viewReadAll');
 Route::get('lists/create', 'UserlistController@viewCreate');
 Route::get('lists/{id}', 'UserlistController@viewReadOne');
+Route::get('lists/{id}/p', 'UserlistController@viewReadOnePublic');
 Route::get('lists/{id}/edit', 'UserlistController@viewUpdate');
 Route::post('lists', 'UserlistController@actionCreate');
 Route::put('lists/{id}', 'UserlistController@actionUpdate');
