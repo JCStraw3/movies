@@ -21,6 +21,16 @@
 	<div class='card'>
 
 		<div class='text-center'>
+			@if($userlist->public === 1)
+				<div class='pull-right'>
+					<span class='glyphicon glyphicon-eye-open'></span>
+
+					<a href='/lists/{{ $userlist->id }}/p'>Public view</a>
+				</div>
+
+				<div class='clearfix'></div>
+			@endif
+
 			<h2>{{ $userlist->name }}</h2>
 		</div>
 

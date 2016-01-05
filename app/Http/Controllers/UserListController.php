@@ -76,7 +76,8 @@ class UserlistController extends Controller {
 
 	public function viewReadOnePublic($id){
 
-		$userlist = Userlist::findOrFail($id);
+		$userlist = Userlist::where('public', '=', 1)
+			->findOrFail($id);
 
 		return view('userlists.viewReadOnePublic')
 			->with('userlist', $userlist);
