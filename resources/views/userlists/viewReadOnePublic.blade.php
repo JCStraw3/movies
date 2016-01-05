@@ -36,7 +36,7 @@
 					<div class='media-body'>
 
 						<h4 class='media-heading'>
-							<a href='/movies/{{ $movie->id }}'>{{ $movie->title }}</a>
+							{{ $movie->title }}
 						</h4>
 
 						<p>{{ $movie->synopsis }}</p>

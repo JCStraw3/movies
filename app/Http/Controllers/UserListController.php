@@ -18,7 +18,9 @@ class UserlistController extends Controller {
 	// Only authenticated users can see certain pages.
 
 	public function __construct(){
-		$this->middleware('auth');
+		$this->middleware('auth', [
+			'except' => 'viewReadOnePublic'
+			]);
 	}
 
 // Views
