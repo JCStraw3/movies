@@ -28,6 +28,10 @@
 			<div class='text-center'>
 				<a href='/lists/{{ $userlist->id }}'><h2>{{ $userlist->name }}</h2></a>
 			</div>
+
+			<div>
+				{{ $userlist->description }}
+			</div>
 			
 		</div>
 
