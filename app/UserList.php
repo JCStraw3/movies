@@ -15,6 +15,7 @@ class Userlist extends Model {
 	protected $fillable = [
 		'name',
 		'public',
+		'description',
 	];
 
 	// UserList belongs to one user.
