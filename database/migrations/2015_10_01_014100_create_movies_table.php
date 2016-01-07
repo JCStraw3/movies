@@ -18,6 +18,7 @@ class CreateMoviesTable extends Migration {
             $table->tinyInteger('runtime')->unsigned();
             $table->text('synopsis');
             $table->string('image');
+            $table->text('note');
             $table->timestamps();
         });
     }

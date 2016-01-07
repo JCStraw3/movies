@@ -16,6 +16,7 @@ class CreateUserlistsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->boolean('public');
+            $table->text('description');
             $table->timestamps();
         });
 
