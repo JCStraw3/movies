@@ -41,6 +41,10 @@
 						@endforeach
 					</select>
 				</div>
+
+				<div>
+					<textarea class='form-control' name='description' type='text' placeholder='Description'></textarea>
+				</div>
 				
 				<br />
 

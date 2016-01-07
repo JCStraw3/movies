@@ -55,6 +55,10 @@
 						@endforeach
 					</select>
 				</div>
+
+				<div>
+					<textarea class='form-control' name='description' type='text' placeholder='Description'>{{ $userlist->description }}</textarea>
+				</div>
 				
 				<br />
 
