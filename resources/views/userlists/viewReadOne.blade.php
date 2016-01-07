@@ -112,6 +112,10 @@
 			</div>
 
 			<a href='/lists'>Lists</a>
+
+			<span> | </span>
+
+			<span class='count'>{{ $userlist->name }} has {{ count($userlist->movies) }} movies</span>
 			
 		</div>
 
