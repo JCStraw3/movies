@@ -36,7 +36,6 @@ class UserlistController extends Controller {
 			->get();
 
 		return view('userlists.viewCreate')
-			->with('user', $user)
 			->with('movies', $movies);
 
 	}
@@ -52,7 +51,6 @@ class UserlistController extends Controller {
 			->get();
 
 		return view('userlists.viewReadAll')
-			->with('user', $user)
 			->with('userlists', $userlists);
 
 	}
@@ -67,7 +65,6 @@ class UserlistController extends Controller {
 			->findOrFail($id);
 
 		return view('userlists.viewReadOne')
-			->with('user', $user)
 			->with('userlist', $userlist);
 
 	}
@@ -98,7 +95,6 @@ class UserlistController extends Controller {
 			->get();
 
 		return view('userlists.viewUpdate')
-			->with('user', $user)
 			->with('userlist', $userlist)
 			->with('movies', $movies);
 
