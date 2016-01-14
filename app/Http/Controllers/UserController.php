@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 
+use Auth;
+
 use Uuid;
 
 class UserController extends Controller {
@@ -26,7 +28,13 @@ class UserController extends Controller {
 
 	public function viewReadOne($id){
 
+		$authuser = Auth::user();
+
 		$user = User::findOrFail($id);
+
+		if($authuser->id !== $user->id){
+			return view('errors.403');
+		}
 
 		return view('user.viewReadOne')
 			->with('user', $user);
