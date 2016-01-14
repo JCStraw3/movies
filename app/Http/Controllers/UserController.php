@@ -45,7 +45,13 @@ class UserController extends Controller {
 
 	public function viewUpdate($id){
 
+		$authuser = Auth::user();
+
 		$user = User::findOrFail($id);
+
+		if($authuser->id !== $user->id){
+			return view('errors.403');
+		}
 
 		return view('user.viewUpdate')
 			->with('user', $user);
