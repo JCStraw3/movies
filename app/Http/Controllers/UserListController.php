@@ -15,7 +15,8 @@ class UserlistController extends Controller {
 
 // Middleware
 
-	// Only authenticated users can see certain pages.
+	// Only logged in users can see the app.
+	// If not logged in, redirected to login page.
 
 	public function __construct(){
 		$this->middleware('auth', [
