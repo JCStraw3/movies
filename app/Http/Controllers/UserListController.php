@@ -30,11 +30,18 @@ class UserlistController extends Controller {
 
 	public function viewCreate(){
 
+		// Set logged in user into a variable.
+
 		$user = Auth::user();
+
+		// Find all movies belonging to the logged in user
+		// And set into variable.
 
 		$movies = Movie::where('user_id', '=', $user->id)
 			->orderBy('title', 'asc')
 			->get();
+
+		// Return the create view with the movies variable.
 
 		return view('userlists.viewCreate')
 			->with('movies', $movies);
@@ -45,11 +52,18 @@ class UserlistController extends Controller {
 
 	public function viewReadAll(){
 
+		// Set logged in user into a variable.
+
 		$user = Auth::user();
+
+		// Find all userlists belonging to the logged in user
+		// And set into a variable.
 
 		$userlists = Userlist::where('user_id', '=', $user->id)
 			->orderBy('name', 'asc')
 			->get();
+
+		// Return userlist readAll view with userlists variable.
 
 		return view('userlists.viewReadAll')
 			->with('userlists', $userlists);
@@ -60,10 +74,18 @@ class UserlistController extends Controller {
 
 	public function viewReadOne($id){
 
+		// Set logged in user into a variable.
+
 		$user = Auth::user();
+
+		// Find the userlist with the passed through Id
+		// That belongs to the logged in user
+		// And set into a variable.
 
 		$userlist = Userlist::where('user_id', '=', $user->id)
 			->findOrFail($id);
+
+		// Return userlist readOne view with userlists variable.
 
 		return view('userlists.viewReadOne')
 			->with('userlist', $userlist);
@@ -74,8 +96,14 @@ class UserlistController extends Controller {
 
 	public function viewReadOnePublic($id){
 
+		// Find the userlist with the passed through Id
+		// Where the userlist is set to public
+		// And set into variable.
+
 		$userlist = Userlist::where('public', '=', 1)
 			->findOrFail($id);
+
+		// Return public userlist readOne view with userlists variable.
 
 		return view('userlists.viewReadOnePublic')
 			->with('userlist', $userlist);
@@ -86,14 +114,25 @@ class UserlistController extends Controller {
 
 	public function viewUpdate($id){
 
+		// Set logged in user into a variable.
+
 		$user = Auth::user();
+
+		// Find the userlist with the passed through Id
+		// That belongs to the logged in user
+		// And set into a variable.
 
 		$userlist = Userlist::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
+		// Find all movies belonging to the logged in user
+		// And set into variable.
+
 		$movies = Movie::where('user_id', '=', $user->id)
 			->orderBy('title', 'asc')
 			->get();
+
+		// Return userlist update view with userlists variable.
 
 		return view('userlists.viewUpdate')
 			->with('userlist', $userlist)
@@ -107,9 +146,15 @@ class UserlistController extends Controller {
 
 	public function actionCreate(Requests\CreateUserlistRequest $request){
 
+		// Set the request into a variable.
+
 		$userlist = new Userlist($request->all());
 
+		// Save the request variable to the logged in user's userlist table.
+
 		Auth::user()->userlists()->save($userlist);
+
+		// Attach movies to userlist via pivot table.
 
 		$movies = $request->input('movies');
 
@@ -119,7 +164,11 @@ class UserlistController extends Controller {
 
 		$userlist->movies()->attach($movies);
 
+		// Send flash message.
+
 		\Session::flash('flash_message', 'You have successfully created a list.');
+
+		// Redirect to new userlist's readOne view.
 
 		return redirect('/lists/'.$userlist->id);
 
@@ -129,9 +178,15 @@ class UserlistController extends Controller {
 
 	public function actionUpdate($id, Requests\UpdateUserlistRequest $request){
 
+		// Find the userlist with the passed through Id and set into variable.
+
 		$userlist = Userlist::findOrFail($id);
 
+		// Update the userlist with the request data.
+
 		$userlist->update($request->all());
+
+		// Sync the movies to the userlist via a pivot table.
 
 		$movies = $request->input('movies');
 
@@ -141,7 +196,11 @@ class UserlistController extends Controller {
 
 		$userlist->movies()->sync($movies);
 
+		// Send flash message.
+
 		\Session::flash('flash_message', 'You have successfully updated a list.');
+
+		// Redirect to userlist's readOne view.
 
 		return redirect('/lists/'.$id);
 
@@ -151,11 +210,19 @@ class UserlistController extends Controller {
 
 	public function actionDelete($id){
 
+		// Find the userlist with the passed through Id and set into variable.
+
 		$userlist = Userlist::findOrFail($id);
+
+		// Delete the userlist from the database.
 
 		$userlist->delete($userlist);
 
+		// Send flash message.
+
 		\Session::flash('flash_message', 'You have successfully deleted a list.');
+
+		// Redirect to lists readAll view.
 
 		return redirect('/lists');
 
