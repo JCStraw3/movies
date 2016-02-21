@@ -188,35 +188,6 @@
 		});
 	</script>
 
-	{{-- Ajax update form script --}}
-
-	// <script>
-	// 	$('#update').submit(function(event){
-	// 		event.preventDefault();
-	// 		var action = $('#update').attr('action');
-	// 		$.ajax({
-	// 			url: action,
-	// 			method: 'post',
-	// 			data: {
-	// 				_method: 'put',
-	// 				title: $('#updateTitle').val(),
-	// 				genres: $('#genre').val(),
-	// 				release_date: $('#updateReleaseDate').val(),
-	// 				ratings: $('#rating').val(),
-	// 				runtime: $('#updateRuntime').val(),
-	// 				directors: $('#director').val(),
-	// 				writers: $('#writer').val(),
-	// 				casts: $('#cast').val(),
-	// 				synopsis: $('#updateSynopsis').val(),
-	// 				labels: $('#label').val(),
-	// 			}
-	// 		})
-	// 		.done(function(data){
-	// 			alert('You have saved this movie.');
-	// 		});
-	// 	});
-	// </script>
-
 @endsection
 
 <!-- Toolbar -->
