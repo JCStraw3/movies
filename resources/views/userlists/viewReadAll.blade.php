@@ -16,10 +16,10 @@
 
 	@foreach($userlists as $userlist)
 
-		<div class='card'>
+		<div class='card userlist'>
 
-			<form class='pull-right' action='/lists/{{ $userlist->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
+			<form class='pull-right userlistDeleteForm' action='/lists/{{ $userlist->id }}' method='post'>
+				<input class='userlistDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
 
@@ -36,6 +36,27 @@
 		</div>
 
 	@endforeach
+
+	{{-- Ajax delete userlist --}}
+
+	<script>
+		$('.userlist').submit(function(event){
+			event.preventDefault();
+			var userlist = this;
+			var action = $(this).find('.userlistDeleteForm').attr('action');
+			var method = $(this).find('.userlistDelete').val();
+			$.ajax({
+				url: action,
+				method: 'post',
+				data: {
+					_method: method,
+				}
+			})
+			.done(function(){
+				userlist.remove();
+			});
+		});
+	</script>
 
 @endsection
 
