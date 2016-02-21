@@ -157,7 +157,7 @@
 		})
 	</script>
 
-	{{-- Ajax movie delete form --}}
+	{{-- Ajax delete movie --}}
 
 	<script>
 		$('.movie').submit(function(event){
