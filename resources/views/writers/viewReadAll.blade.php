@@ -10,10 +10,10 @@
 
 	@foreach ($writers as $writer)
 
-		<div class='card'>
+		<div class='card writer'>
 
-			<form class='pull-right' action='/writers/{{ $writer->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
+			<form class='pull-right writerDeleteForm' action='/writers/{{ $writer->id }}' method='post'>
+				<input class='writerDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
 
@@ -26,6 +26,27 @@
 		</div>
 
 	@endforeach
+
+	{{-- Ajax delete writer --}}
+
+	<script>
+		$('.writer').submit(function(event){
+			event.preventDefault();
+			var writer = this;
+			var action = $(this).find('.writerDeleteForm').attr('action');
+			var method = $(this).find('.writerDelete').val();
+			$.ajax({
+				url: action,
+				method: 'post',
+				data: {
+					_method: method,
+				}
+			})
+			.done(function(){
+				writer.remove();
+			});
+		});
+	</script>
 
 @endsection
 
