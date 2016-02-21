@@ -16,10 +16,10 @@
 
 	@foreach ($movies as $movie)
 
-		<div id='movie' class='card'>
+		<div class='card movie'>
 
-			<form id='movieDeleteForm' class='delete-button pull-right' action='/movies/{{ $movie->id }}' method='post'>
-				<input id='movieDelete' name='_method' type='hidden' value='delete'>
+			<form class='delete-button pull-right movieDeleteForm' action='/movies/{{ $movie->id }}' method='post'>
+				<input class='movieDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
 
@@ -160,18 +160,20 @@
 	{{-- Ajax movie delete form --}}
 
 	<script>
-		$('#movieDeleteForm').submit(function(event){
+		$('.movie').submit(function(event){
 			event.preventDefault();
-			var action = $('#movieDeleteForm').attr('action');
+			var movie = this;
+			var action = $(this).find('.movieDeleteForm').attr('action');
+			var method = $(this).find('.movieDelete').val();
 			$.ajax({
 				url: action,
 				method: 'post',
 				data: {
-					_method: $('#movieDelete').val(),
+					_method: method,
 				}
 			})
-			.done(function(data){
-				$('#movie').remove();
+			.done(function(){
+				movie.remove();
 			});
 		});
 	</script>
