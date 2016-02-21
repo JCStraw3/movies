@@ -10,10 +10,10 @@
 
 	@foreach ($directors as $director)
 
-		<div class='card'>
+		<div class='card director'>
 
-			<form class='pull-right' action='/directors/{{ $director->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
+			<form class='pull-right directorDeleteForm' action='/directors/{{ $director->id }}' method='post'>
+				<input class='directorDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
 
@@ -26,6 +26,25 @@
 		</div>
 
 	@endforeach
+
+	<script>
+		$('.director').submit(function(event){
+			event.preventDefault();
+			var director = this;
+			var action = $(this).find('.directorDeleteForm').attr('action');
+			var method = $(this).find('.directorDelete').val();
+			$.ajax({
+				url: action,
+				method: 'post',
+				data: {
+					_method: method,
+				}
+			})
+			.done(function(){
+				director.remove();
+			});
+		});
+	</script>
 
 @endsection
 
