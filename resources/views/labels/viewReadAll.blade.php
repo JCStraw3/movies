@@ -10,10 +10,10 @@
 
 	@foreach ($labels as $label)
 
-		<div class='card'>
+		<div class='card labelLabel'>
 
-			<form class='pull-right' action='/labels/{{ $label->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
+			<form class='pull-right labelDeleteForm' action='/labels/{{ $label->id }}' method='post'>
+				<input class='labelDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
 
@@ -26,6 +26,27 @@
 		</div>
 
 	@endforeach
+
+	{{-- Ajax delete label --}}
+
+	<script>
+		$('.labelLabel').submit(function(event){
+			event.preventDefault();
+			var labelLabel = this;
+			var action = $(this).find('.labelDeleteForm').attr('action');
+			var method = $(this).find('.labelDelete').val();
+			$.ajax({
+				url: action,
+				method: 'post',
+				data: {
+					_method: method,
+				}
+			})
+			.done(function(){
+				labelLabel.remove();
+			});
+		});
+	</script>
 
 @endsection
 
