@@ -27,6 +27,8 @@
 
 	@endforeach
 
+	{{-- Ajax delete director --}}
+
 	<script>
 		$('.director').submit(function(event){
 			event.preventDefault();

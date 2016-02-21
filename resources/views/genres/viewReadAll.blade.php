@@ -10,10 +10,10 @@
 
 	@foreach ($genres as $genre)
 
-		<div class='card'>
+		<div class='card genre'>
 
-			<form class='pull-right' action='/genres/{{ $genre->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
+			<form class='pull-right genreDeleteForm' action='/genres/{{ $genre->id }}' method='post'>
+				<input class='genreDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
 
@@ -26,6 +26,27 @@
 		</div>
 
 	@endforeach
+
+	{{-- Ajax delete genre --}}
+
+	<script>
+		$('.genre').submit(function(event){
+			event.preventDefault();
+			var genre = this;
+			var action = $(this).find('.genreDeleteForm').attr('action');
+			var method = $(this).find('.genreDelete').val();
+			$.ajax({
+				url: action,
+				method: 'post',
+				data: {
+					_method: method,
+				}
+			})
+			.done(function(){
+				genre.remove();
+			});
+		});
+	</script>
 
 @endsection
 
