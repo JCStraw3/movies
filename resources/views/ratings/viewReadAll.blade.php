@@ -10,10 +10,10 @@
 
 	@foreach ($ratings as $rating)
 
-		<div class='card'>
+		<div class='card rating'>
 
-			<form class='pull-right' action='/ratings/{{ $rating->id }}' method='post'>
-				<input name='_method' type='hidden' value='delete'>
+			<form class='pull-right ratingDeleteForm' action='/ratings/{{ $rating->id }}' method='post'>
+				<input class='ratingDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
 
@@ -26,6 +26,27 @@
 		</div>
 
 	@endforeach
+
+	{{-- Ajax delete rating --}}
+
+	<script>
+		$('.rating').submit(function(event){
+			event.preventDefault();
+			var rating = this;
+			var action = $(this).find('.ratingDeleteForm').attr('action');
+			var method = $(this).find('.ratingDelete').val();
+			$.ajax({
+				url: action,
+				method: 'post',
+				data: {
+					_method: method,
+				}
+			})
+			.done(function(){
+				rating.remove();
+			});
+		});
+	</script>
 
 @endsection
 
