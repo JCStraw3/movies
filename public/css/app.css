@@ -90,7 +90,8 @@ footer {
   padding-right: 15px; }
 
 .delete-button {
-  margin-bottom: 0 !important; }
+  margin-bottom: 0 !important;
+  margin-left: 5px; }
 
 @media (max-width: 768px) {
   .navbar {

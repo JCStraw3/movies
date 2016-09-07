@@ -396,6 +396,14 @@ class MovieController extends Controller {
 
 	}
 
+	// Query the database for a movie.
+
+	public function actionSearch(Request $request){
+
+		$query = $request->input('q');
+
+	}
+
 // Private functions.
 
 	// Add genre to database if it does not exist.

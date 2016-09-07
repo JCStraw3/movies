@@ -20,6 +20,15 @@
 
 	<div class='card'>
 
+		<form class='delete-button pull-right movieDeleteForm' action='/movies/{{ $movie->id }}' method='post'>
+			<input class='movieDelete' name='_method' type='hidden' value='delete'>
+			<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+		</form>
+
+		<a class='btn btn-info btn-xs pull-right' href='/movies/{{ $movie->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
+
+		<div class='clearfix'></div>
+
 		<div class='text-center'>
 
 			<h2>
