@@ -194,15 +194,6 @@
 		<div class='nav navbar-nav navbar-right'>
 
 			<div class='navbar-form'>
-				{{-- Edit movie --}}
-				<a class='btn btn-info' href='/movies/{{ $movie->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
-
-				{{-- Delete movie --}}
-				<form action='/movies/{{ $movie->id }}' method='post'>
-					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
-				</form>
-
 				{{-- Add new movie --}}
 				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
