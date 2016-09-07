@@ -20,7 +20,7 @@
 
 	<div class='card'>
 
-		<form class='delete-button pull-right movieDeleteForm' action='/movies/{{ $movie->id }}' method='post'>
+		<form class='delete-button pull-right' action='/movies/{{ $movie->id }}' method='post'>
 			<input class='movieDelete' name='_method' type='hidden' value='delete'>
 			<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 		</form>
