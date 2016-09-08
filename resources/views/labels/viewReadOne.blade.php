@@ -13,6 +13,16 @@
 @section('content')
 
 	<div class='card'>
+		{{-- Delete label --}}
+		<form class='delete-button pull-right' action='/labels/{{ $label->id }}' method='post'>
+			<input name='_method' type='hidden' value='delete'>
+			<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+		</form>
+		
+		{{-- Edit label --}}
+		<a class='btn btn-info btn-xs pull-right' href='/labels/{{ $label->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
+
+		<div class='clearfix'></div>
 
 		<div class='text-center'>
 			<h2>{{ $label->name }}</h2>
@@ -82,7 +92,7 @@
 
 	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='nav navbar-nav navbar-left'>
+		<div class='nav navbar-nav navbar-left col-xs-7 col-sm-8 col-md-9 col-lg-9'>
 
 			<div class='navbar-form btn-group'>
 				<button class='btn btn-info dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -99,31 +109,22 @@
 				</ul>
 			</div>
 
-			<a href='/labels'>Labels</a>
+			<a class='hidden-xs' href='/labels'>Labels</a>
 
-			<span> | </span>
+			<span class='hidden-xs'> | </span>
 
-			<span class='count'>{{ $label->name }} has {{ count($label->movies) }} movies</span>
+			<span class='count hidden-xs'>{{ $label->name }} has {{ count($label->movies) }} movies</span>
 			
 		</div>
 
-		<div class='nav navbar-nav navbar-right'>
+		<div class='nav navbar-nav navbar-right col-xs-5 col-sm-4 col-md-3 col-lg-3'>
 
-			<div class='navbar-form'>
-				{{-- Edit label --}}
-				<a class='btn btn-info' href='/labels/{{ $label->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
-
-				{{-- Delete label --}}
-				<form action='/labels/{{ $label->id }}' method='post'>
-					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
-				</form>
-				
+			<div class='navbar-form'>				
 				{{-- Add new label --}}
 				<a class='btn btn-primary' href='/labels/create'><span class='glyphicon glyphicon-plus'></span> Label</a>
 
 				{{-- Add new movie --}}
-				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
+				<a class='btn btn-primary hidden-xs' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>
