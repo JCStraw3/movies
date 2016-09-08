@@ -93,6 +93,10 @@ footer {
   margin-bottom: 0 !important;
   margin-left: 5px; }
 
+.star-icon {
+  color: #fff200 !important;
+  font-size: 18px; }
+
 @media (max-width: 768px) {
   .navbar {
     max-height: 102px; }

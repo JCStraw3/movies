@@ -125,6 +125,26 @@
 			</div>
 
 			<div class='form-group'>
+				<select class='form-control' name='score'>
+					@if($movie->score)
+						<option value='{{ $movie->score }}' selected>{{ $movie->score }}</option>
+					@endif
+
+					<option value='No Score'>No Score</option>
+					<option value='1'>1</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5</option>
+					<option value='6'>6</option>
+					<option value='7'>7</option>
+					<option value='8'>8</option>
+					<option value='9'>9</option>
+					<option value='10'>10</option>
+				</select>
+			</div>
+
+			<div class='form-group'>
 				<select id='label' class='form-control' name='labels[]' multiple>
 					@if($movie->labels)
 						@foreach ($movie->labels as $label)

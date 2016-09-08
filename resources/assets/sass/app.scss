@@ -102,7 +102,7 @@ $toolbar-backgroundColor: rgb(45,176,123);
 
 // Dropdown button menu class
 
-$dropdown-color:  rgb(114,201,226);
+$dropdown-color: rgb(114,201,226);
 
 .dropdown-menu {
 	background-color: $dropdown-color;
@@ -137,6 +137,15 @@ $dropdown-color:  rgb(114,201,226);
 .delete-button {
 	margin-bottom: 0 !important;
 	margin-left: 5px;
+}
+
+// Star class
+
+$star-color: rgb(255,242,0);
+
+.star-icon {
+	color: $star-color !important;
+	font-size: 18px;
 }
 
 // Media queries - responsive design

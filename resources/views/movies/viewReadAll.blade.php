@@ -29,6 +29,11 @@
 
 			<div class='text-center'>
 				<a href='/movies/{{ $movie->id }}'><h2>{{ $movie->title }}</h2></a>
+
+				<p>
+					<span class='glyphicon glyphicon-star star-icon'></span>
+					{{ $movie->score }} / 10
+				</p>
 			
 				<hr />
 

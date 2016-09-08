@@ -35,6 +35,11 @@
 				{{ $movie->title }}
 			</h2>
 
+			<p>
+				<span class='glyphicon glyphicon-star star-icon'></span>
+				{{ $movie->score }} / 10
+			</p>
+
 			<hr />
 
 			@if($movie->note)
