@@ -92,6 +92,13 @@
 			</div>
 
 			<a href='/lists'>Lists</a>
+
+			<form class='navbar-form hidden-xs' role='search' action='/search'>
+				<div class='form-group'>
+					<input class='form-control' name='q' type='text' placeholder='Search'>
+				</div>
+				<button class='btn' type='submit'><span class='glyphicon glyphicon-search search-icon'></span></button>
+			</form>
 			
 		</div>
 

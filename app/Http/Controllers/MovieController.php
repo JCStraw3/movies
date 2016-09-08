@@ -406,7 +406,8 @@ class MovieController extends Controller {
 			->get();
 
 		return view('movies.search')
-			->with('movies', $movies);
+			->with('movies', $movies)
+			->with('query', $query);
 
 	}
 
