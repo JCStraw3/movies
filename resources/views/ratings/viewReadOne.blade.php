@@ -9,6 +9,16 @@
 @section('content')
 
 	<div class='card'>
+		{{-- Delete rating --}}
+		<form class='delete-button pull-right' action='/ratings/{{ $rating->id }}' method='post'>
+			<input name='_method' type='hidden' value='delete'>
+			<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+		</form>
+		
+		{{-- Edit rating --}}
+		<a class='btn btn-info btn-xs pull-right' href='/ratings/{{ $rating->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
+
+		<div class='clearfix'></div>
 
 		<div class='text-center'>
 			<h2>{{ $rating->name }}</h2>
@@ -78,7 +88,7 @@
 
 	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='nav navbar-nav navbar-left'>
+		<div class='nav navbar-nav navbar-left col-xs-7 col-sm-8 col-md-9 col-lg-9'>
 
 			<div class='navbar-form btn-group'>
 				<button class='btn btn-info dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -95,31 +105,22 @@
 				</ul>
 			</div>
 
-			<a href='/ratings'>Ratings</a>
+			<a class='hidden-xs' href='/ratings'>Ratings</a>
 
-			<span> | </span>
+			<span class='hidden-xs'> | </span>
 
-			<span class='count'>{{ $rating->name }} has {{ count($rating->movies) }} movies</span>
+			<span class='count hidden-xs'>{{ $rating->name }} has {{ count($rating->movies) }} movies</span>
 			
 		</div>
 
-		<div class='nav navbar-nav navbar-right'>
+		<div class='nav navbar-nav navbar-right col-xs-5 col-sm-4 col-md-3 col-lg-3'>
 
-			<div class='navbar-form'>
-				{{-- Edit rating --}}
-				<a class='btn btn-info' href='/ratings/{{ $rating->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
-
-				{{-- Delete rating --}}
-				<form action='/ratings/{{ $rating->id }}' method='post'>
-					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
-				</form>
-				
+			<div class='navbar-form'>				
 				{{-- Add new rating --}}
 				<a class='btn btn-primary' href='/ratings/create'><span class='glyphicon glyphicon-plus'></span> Rating</a>
 
 				{{-- Add new movie --}}
-				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
+				<a class='btn btn-primary hidden-xs' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>
