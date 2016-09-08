@@ -4,13 +4,13 @@
 
 	<div class='card'>
 		<h1 class='text-center'>
-			Error 403 - Not Authorized
+			Error 404 - Not Found
 		</h1>
 
 		<br />
 
 		<p>
-			You are not authorized to view this page.
+			The page you are looking for does not exist.
 		</p>
 	</div>
 

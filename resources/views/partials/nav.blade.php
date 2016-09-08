@@ -15,7 +15,7 @@
 			@endif
 
 			@if ($user)
-				<a class='btn btn-danger' href='/auth/logout'>Logout</a>
+				<a class='btn btn-danger' href='/auth/logout'><span class='glyphicon glyphicon-off'></span></a>
 			@endif
 
 		</div>
