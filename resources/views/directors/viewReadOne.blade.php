@@ -13,6 +13,16 @@
 @section('content')
 
 	<div class='card'>
+		{{-- Delete director --}}
+		<form class='delete-button pull-right' action='/directors/{{ $director->id }}' method='post'>
+			<input name='_method' type='hidden' value='delete'>
+			<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
+		</form>
+		
+		{{-- Edit director --}}
+		<a class='btn btn-info btn-xs pull-right' href='/directors/{{ $director->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
+
+		<div class='clearfix'></div>
 
 		<div class='text-center'>
 			<h2>{{ $director->name }}</h2>
@@ -82,7 +92,7 @@
 
 	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='nav navbar-nav navbar-left'>
+		<div class='nav navbar-nav navbar-left col-xs-7 col-sm-8 col-md-9 col-lg-9'>
 
 			<div class='navbar-form btn-group'>
 				<button class='btn btn-info dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -99,31 +109,22 @@
 				</ul>
 			</div>
 
-			<a href='/directors'>Directors</a>
+			<a class='hidden-xs' href='/directors'>Directors</a>
 
-			<span> | </span>
+			<span class='hidden-xs'> | </span>
 
-			<span class='count'>{{ $director->name }} has {{ count($director->movies) }} movies</span>
+			<span class='count hidden-xs'>{{ $director->name }} has {{ count($director->movies) }} movies</span>
 			
 		</div>
 
-		<div class='nav navbar-nav navbar-right'>
+		<div class='nav navbar-nav navbar-right col-xs-5 col-sm-4 col-md-3 col-lg-3'>
 
-			<div class='navbar-form'>
-				{{-- Edit director --}}
-				<a class='btn btn-info' href='/directors/{{ $director->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
-
-				{{-- Delete director --}}
-				<form action='/directors/{{ $director->id }}' method='post'>
-					<input name='_method' type='hidden' value='delete'>
-					<button type='submit' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></button>
-				</form>
-				
+			<div class='navbar-form'>				
 				{{-- Add new director --}}
 				<a class='btn btn-primary' href='/directors/create'><span class='glyphicon glyphicon-plus'></span> Director</a>
 
 				{{-- Add new movie --}}
-				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
+				<a class='btn btn-primary hidden-xs' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>
