@@ -114,3 +114,7 @@ Route::get('lists/{id}/edit', 'UserlistController@viewUpdate');
 Route::post('lists', 'UserlistController@actionCreate');
 Route::put('lists/{id}', 'UserlistController@actionUpdate');
 Route::delete('lists/{id}', 'UserlistController@actionDelete');
+
+// Search routes.
+
+Route::get('search', 'MovieController@search');

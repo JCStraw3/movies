@@ -2,7 +2,7 @@
 
 <!-- Title -->
 
-@section('title', 'Movies')
+@section('title', 'Search Results')
 
 <!-- Content -->
 
@@ -150,12 +150,6 @@
 
 	@endforeach
 
-	{{-- Pagination links --}}
-
-	<footer>
-		{!! $movies->render() !!}
-	</footer>
-
 	{{-- Popover Script --}}
 
 	<script>
@@ -210,9 +204,9 @@
 				</ul>
 			</div>
 
-			<span class='hidden-xs'>You have {{ count($movies) }} movies</span>
+			<span class='hidden-xs'>{{ count($movies) }} result(s)</span>
 
-			<form class='navbar-form hidden-xs' role='search' action='/search'>
+			<form class='navbar-form' role='search' action='/search'>
 				<div class='form-group'>
 					<input class='form-control' name='q' type='text' placeholder='Search'>
 				</div>

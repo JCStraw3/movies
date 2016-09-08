@@ -398,9 +398,15 @@ class MovieController extends Controller {
 
 	// Query the database for a movie.
 
-	public function actionSearch(Request $request){
+	public function search(Request $request){
 
 		$query = $request->input('q');
+
+		$movies = Movie::where('title', 'LIKE', '%'.$query.'%')
+			->get();
+
+		return view('movies.search')
+			->with('movies', $movies);
 
 	}
 

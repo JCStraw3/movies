@@ -139,13 +139,19 @@ $dropdown-color: rgb(114,201,226);
 	margin-left: 5px;
 }
 
-// Star class
+// Star icon class
 
 $star-color: rgb(255,242,0);
 
 .star-icon {
 	color: $star-color !important;
 	font-size: 18px;
+}
+
+// Search icon class
+
+.search-icon {
+	font-size: 20px;
 }
 
 // Media queries - responsive design
