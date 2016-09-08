@@ -18,10 +18,13 @@
 
 		<div class='card userlist'>
 
-			<form class='pull-right userlistDeleteForm' action='/lists/{{ $userlist->id }}' method='post'>
+			<form class='delete-button pull-right userlistDeleteForm' action='/lists/{{ $userlist->id }}' method='post'>
 				<input class='userlistDelete' name='_method' type='hidden' value='delete'>
 				<button type='submit' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button>
 			</form>
+		
+			{{-- Edit userlist --}}
+			<a class='btn btn-info btn-xs pull-right' href='/lists/{{ $userlist->id }}/edit'><span class='glyphicon glyphicon-pencil'></span></a>
 
 			<div class='clearfix'></div>
 
@@ -66,7 +69,7 @@
 
 	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='nav navbar-nav navbar-left'>
+		<div class='nav navbar-nav navbar-left col-xs-8 col-sm-8 col-md-9 col-lg-10'>
 
 			<div class='navbar-form btn-group'>
 				<button class='btn btn-info dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -85,20 +88,20 @@
 
 			<a href='/lists'>Lists</a>
 
-			<span> | </span>
+			<span class='hidden-xs'> | </span>
 
-			<span class='count'>You have {{ count($userlists) }} lists.</span>
+			<span class='count hidden-xs'>You have {{ count($userlists) }} lists.</span>
 			
 		</div>
 
-		<div class='nav navbar-nav navbar-right'>
+		<div class='nav navbar-nav navbar-right col-xs-4 col-sm-4 col-md-3 col-lg-2'>
 
 			<div class='navbar-form'>
 				{{-- Add new userlist --}}
 				<a class='btn btn-primary' href='/lists/create'><span class='glyphicon glyphicon-plus'></span> List</a>
 
 				{{-- Add new movie --}}
-				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
+				<a class='btn btn-primary hidden-xs' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>

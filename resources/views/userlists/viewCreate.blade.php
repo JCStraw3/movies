@@ -74,7 +74,7 @@
 
 	<nav class='toolbar navbar navbar-inverse navbar-fixed-top'>
 
-		<div class='nav navbar-nav navbar-left'>
+		<div class='nav navbar-nav navbar-left col-xs-8 col-sm-8 col-md-9 col-lg-10'>
 
 			<div class='navbar-form btn-group'>
 				<button class='btn btn-info dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -95,14 +95,14 @@
 			
 		</div>
 
-		<div class='nav navbar-nav navbar-right'>
+		<div class='nav navbar-nav navbar-right col-xs-4 col-sm-4 col-md-3 col-lg-2'>
 
 			<div class='navbar-form'>
 				{{-- Add new userlist --}}
 				<a class='btn btn-primary' href='/lists/create'><span class='glyphicon glyphicon-plus'></span> List</a>
 
 				{{-- Add new movie --}}
-				<a class='btn btn-primary' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
+				<a class='btn btn-primary hidden-xs' href='/movies/create'><span class='glyphicon glyphicon-plus'></span> Movie</a>
 			</div>
 			
 		</div>
