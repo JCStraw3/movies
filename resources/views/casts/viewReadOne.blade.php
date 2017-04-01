@@ -110,7 +110,7 @@
 				</ul>
 			</div>
 
-			<a href='/cast'>Cast</a>
+			<a class='hidden-xs' href='/cast'>Cast</a>
 
 			<span class='hidden-xs'> | </span>
 

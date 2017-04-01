@@ -76,7 +76,7 @@
 				</ul>
 			</div>
 				
-			<a href='/cast'>Cast</a>
+			<a class='hidden-xs' href='/cast'>Cast</a>
 
 			<form class='navbar-form hidden-xs' role='search' action='/search'>
 				<div class='form-group'>
