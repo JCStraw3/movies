@@ -49,7 +49,11 @@
 					<div class='media-body'>
 
 						@if($movie->note)
-							<a tabindex='0' class='btn btn-xs btn-primary pull-right' role='button' data-toggle='popover' data-trigger='focus' data-content='{{ $movie->note }}'><span class='glyphicon glyphicon-paperclip'></span></a>
+							<div>
+								<button type='button' class='btn btn-xs btn-primary pull-right' data-toggle='modal' data-target='#{{ $movie->id }}'>
+									<span class='glyphicon glyphicon-paperclip'></span>
+								</button>
+							</div>
 						@endif
 
 						<h4 class='media-heading'>
@@ -71,19 +75,35 @@
 					</div>
 
 				</div>
+
+				{{-- Note Modal --}}
+
+				<div class='modal fade' id='{{ $movie->id }}' tabindex='-1' role='dialog' aria-labelledby='noteModal'>
+
+					<div class='modal-dialog' role='document'>
+
+						<div class='modal-content'>
+
+							<div class='modal-header'>
+								<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+								
+								<h4 class='modal-title' id='noteModal'>{{ $movie->title }}</h4>
+							</div>
+
+							<div class='modal-body'>
+								{{ $movie->note }}
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
 				
 			@endforeach
 		</div>
 
 	</div>
-
-	{{-- Popover Script --}}
-
-	<script>
-		$(function () {
-			$('[data-toggle="popover"]').popover()
-		})
-	</script>
 
 @endsection
 
