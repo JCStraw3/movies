@@ -39,7 +39,7 @@
 				<form class='media-object-form' action='/user/{{ $user->id }}' method='post' enctype='multipart/form-data'>
 					Select image to upload:
 					<input name='image' type='file'>
-					<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
+					<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload'>
 				</form>
 
 			</div>
@@ -77,6 +77,19 @@
 				<hr />
 
 				<a class='btn btn-primary pull-right' href='/lists'>Lists</a>
+
+				<br />
+
+				<br />
+
+				<div class='pull-right'>
+					<form class='visible-xs' role='search' action='/search'>
+						<div class='form-group'>
+							<input class='form-control' name='q' type='text' placeholder='Search'>
+						</div>
+						<button class='btn pull-right' type='submit'><span class='glyphicon glyphicon-search search-icon'></span></button>
+					</form>
+				</div>
 
 			</div>
 
