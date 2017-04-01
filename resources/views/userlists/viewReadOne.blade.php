@@ -141,7 +141,7 @@
 				</ul>
 			</div>
 
-			<a href='/lists'>Lists</a>
+			<a class='hidden-xs' href='/lists'>Lists</a>
 
 			<span class='hidden-xs'> | </span>
 

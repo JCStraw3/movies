@@ -91,7 +91,7 @@
 				</ul>
 			</div>
 
-			<a href='/lists'>Lists</a>
+			<a class='hidden-xs' href='/lists'>Lists</a>
 
 			<form class='navbar-form hidden-xs' role='search' action='/search'>
 				<div class='form-group'>
