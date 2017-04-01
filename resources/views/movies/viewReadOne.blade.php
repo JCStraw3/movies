@@ -96,7 +96,7 @@
 				<form class='media-object-form' action='/movies/{{ $movie->id }}' method='post' enctype='multipart/form-data'>
 					Select image to upload:
 					<input name='image' type='file'>
-					<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload Image'>
+					<input name='submit' class='btn btn-group btn-primary' type='submit' value='Upload'>
 				</form>
 
 			</div>
