@@ -255,7 +255,14 @@ class MovieController extends Controller {
 
 		// Save request to the database.
 
-		$movie->update($request->all());
+		$movie->update([
+			'title' => $request->title,
+			'release_date' => $request->release_date,
+			'runtime' => $request->runtime,
+			'synopsis' => $request->synopsis,
+			'note' => $request->note,
+			'score' => $request->score,
+		]);
 
 		// Syncing genres to movies via pivot table.
 
