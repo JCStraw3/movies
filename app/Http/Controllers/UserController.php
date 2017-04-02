@@ -67,7 +67,12 @@ class UserController extends Controller {
 
 		$user = User::findOrFail($id);
 
-		$user->update($request->all());
+		$user->update([
+			'name' => $request->name,
+			'email' => $request->email,
+			'gender' => $request->gender,
+			'birthday' => $request->birthday,
+		]);
 
 		\Session::flash('flash_message', 'You have successfully updated your profile.');
 
