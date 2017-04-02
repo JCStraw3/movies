@@ -83,7 +83,9 @@ class CastController extends Controller {
 
 	public function actionCreate(Requests\CreateCastRequest $request){
 
-		$cast = new Cast($request->all());
+		$cast = new Cast([
+			'name' => $request->name,
+		]);
 
 		Auth::user()->casts()->save($cast);
 
@@ -102,7 +104,9 @@ class CastController extends Controller {
 		$cast = Cast::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
-		$cast->update($request->all());
+		$cast->update([
+			'name' => $request->name,
+		]);
 
 		\Session::flash('flash_message', 'You have successfully updated a cast.');
 
