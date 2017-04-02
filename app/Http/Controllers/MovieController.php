@@ -149,9 +149,12 @@ class MovieController extends Controller {
 
 	public function actionCreate(Requests\CreateMovieRequest $request){
 
+		$id = Uuid::generate(4);
+
 		// Set request into movie variable.
 
 		$movie = new Movie([
+			'id' => $id,
 			'title' => $request->title,
 			'release_date' => $request->release_date,
 			'runtime' => $request->runtime,
@@ -236,7 +239,7 @@ class MovieController extends Controller {
 
 		// Redirecting to movies page.
 
-		return redirect('/movies/'.$movie->id);
+		return redirect('/movies/'.$id);
 
 	}
 

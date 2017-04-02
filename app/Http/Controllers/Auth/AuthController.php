@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+// use Uuid;
+
 class AuthController extends Controller
 {
     /*
@@ -58,7 +60,11 @@ class AuthController extends Controller
      * @return User
      */
     protected function create(array $data){
+
+        // $id = Uuid::generate(4);
+
         return User::create([
+            // 'id' => $id,
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

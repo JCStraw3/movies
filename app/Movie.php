@@ -13,6 +13,7 @@ class Movie extends Model {
 	// Attributes that are mass assignable.
 
 	protected $fillable = [
+		'id',
 		'title',
 		'release_date',
 		'runtime',
