@@ -83,7 +83,9 @@ class RatingController extends Controller {
 
 	public function actionCreate(Requests\CreateRatingRequest $request){
 
-		$rating = new Rating($request->all());
+		$rating = new Rating([
+			'name' => $request->name,
+		]);
 
 		Auth::user()->ratings()->save($rating);
 
@@ -102,7 +104,9 @@ class RatingController extends Controller {
 		$rating = Rating::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
-		$rating->update($request->all());
+		$rating->update([
+			'name' => $request->name,
+		]);
 
 		\Session::flash('flash_message', 'You have successfully updated a rating.');
 
