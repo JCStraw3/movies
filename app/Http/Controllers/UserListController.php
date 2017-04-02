@@ -148,7 +148,11 @@ class UserlistController extends Controller {
 
 		// Set the request into a variable.
 
-		$userlist = new Userlist($request->all());
+		$userlist = new Userlist([
+			'name' => $request->name,
+			'public' => $request->public,
+			'description' => $request->description,
+		]);
 
 		// Save the request variable to the logged in user's userlist table.
 
@@ -184,7 +188,11 @@ class UserlistController extends Controller {
 
 		// Update the userlist with the request data.
 
-		$userlist->update($request->all());
+		$userlist->update([
+			'name' => $request->name,
+			'public' => $request->public,
+			'description' => $request->description,
+		]);
 
 		// Sync the movies to the userlist via a pivot table.
 
