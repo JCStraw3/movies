@@ -151,7 +151,14 @@ class MovieController extends Controller {
 
 		// Set request into movie variable.
 
-		$movie = new Movie($request->all());
+		$movie = new Movie([
+			'title' => $request->title,
+			'release_date' => $request->release_date,
+			'runtime' => $request->runtime,
+			'synopsis' => $request->synopsis,
+			'note' => $request->note,
+			'score' => $request->score,
+		]);
 
 		// Saving movie variable to authenticated user.
 
