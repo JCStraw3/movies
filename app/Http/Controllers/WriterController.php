@@ -83,7 +83,9 @@ class WriterController extends Controller {
 
 	public function actionCreate(Requests\CreateWriterRequest $request){
 
-		$writer = new Writer($request->all());
+		$writer = new Writer([
+			'name' => $request->name,
+		]);
 
 		Auth::user()->writers()->save($writer);
 
@@ -102,7 +104,9 @@ class WriterController extends Controller {
 		$writer = Writer::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
-		$writer->update($request->all());
+		$writer->update([
+			'name' => $request->name,
+		]);
 
 		\Session::flash('flash_message', 'You have successfully updated a writer.');
 
