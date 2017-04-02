@@ -83,7 +83,9 @@ class GenreController extends Controller {
 
 	public function actionCreate(Requests\CreateGenreRequest $request){
 
-		$genre = new Genre($request->all());
+		$genre = new Genre([
+			'name' => $request->name,
+		]);
 
 		Auth::user()->genres()->save($genre);
 
@@ -102,7 +104,9 @@ class GenreController extends Controller {
 		$genre = Genre::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
-		$genre->update($request->all());
+		$genre->update([
+			'name' => $request->name,
+		]);
 
 		\Session::flash('flash_message', 'You have successfully updated a genre.');
 
