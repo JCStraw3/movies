@@ -83,7 +83,9 @@ class DirectorController extends Controller {
 
 	public function actionCreate(Requests\CreateDirectorRequest $request){
 
-		$director = new Director($request->all());
+		$director = new Director([
+			'name' => $request->name,
+		]);
 
 		Auth::user()->directors()->save($director);
 
@@ -102,7 +104,9 @@ class DirectorController extends Controller {
 		$director = Director::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
-		$director->update($request->all());
+		$director->update([
+			'name' => $request->name,
+		]);
 
 		\Session::flash('flash_message', 'You have successfully updated a director.');
 
