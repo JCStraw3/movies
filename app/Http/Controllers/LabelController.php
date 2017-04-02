@@ -83,7 +83,9 @@ class LabelController extends Controller {
 
 	public function actionCreate(Requests\CreateLabelRequest $request){
 
-		$label = new Label($request->all());
+		$label = new Label([
+			'name' => $request->name,
+		]);
 
 		Auth::user()->labels()->save($label);
 
@@ -102,7 +104,9 @@ class LabelController extends Controller {
 		$label = Label::where('user_id', '=', $user->id)
 			->findOrFail($id);
 
-		$label->update($request->all());
+		$label->update([
+			'name' => $request->name,
+		]);
 
 		\Session::flash('flash_message', 'You have successfully updated a label.');
 
