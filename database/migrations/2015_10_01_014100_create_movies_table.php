@@ -12,7 +12,7 @@ class CreateMoviesTable extends Migration {
     public function up(){
         Schema::create('movies', function (Blueprint $table) {
             $table->string('id');
-            $table->integer('user_id')->unsigned();
+            $table->string('user_id');
             $table->string('title');
             $table->date('release_date');
             $table->tinyInteger('runtime')->unsigned();
