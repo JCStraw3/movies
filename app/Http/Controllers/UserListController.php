@@ -148,6 +148,8 @@ class UserlistController extends Controller {
 
 	public function actionCreate(Requests\CreateUserlistRequest $request){
 
+		// Generate uuid for id.
+
 		$id = Uuid::generate(4);
 
 		// Set the request into a variable.
@@ -162,6 +164,10 @@ class UserlistController extends Controller {
 		// Save the request variable to the logged in user's userlist table.
 
 		Auth::user()->userlists()->save($userlist);
+
+		// Set userlist id as uuid for pivot table.
+
+		$userlist->id = $id;
 
 		// Attach movies to userlist via pivot table.
 
