@@ -185,7 +185,7 @@ class UserlistController extends Controller {
 
 		// Redirect to new userlist's readOne view.
 
-		return redirect('/lists/'.$id);
+		return redirect('/lists/'.$userlist->id);
 
 	}
 

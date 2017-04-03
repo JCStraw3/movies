@@ -149,6 +149,8 @@ class MovieController extends Controller {
 
 	public function actionCreate(Requests\CreateMovieRequest $request){
 
+		// Generate uuid for id.
+
 		$id = Uuid::generate(4);
 
 		// Set request into movie variable.
@@ -166,6 +168,10 @@ class MovieController extends Controller {
 		// Saving movie variable to authenticated user.
 
 		Auth::user()->movies()->save($movie);
+
+		// Set movie id as uuid for pivot table.
+
+		$movie->id = $id;
 
 		// Attaching genres to movies via pivot table.
 
@@ -239,7 +245,7 @@ class MovieController extends Controller {
 
 		// Redirecting to movies page.
 
-		return redirect('/movies/'.$id);
+		return redirect('/movies/'.$movie->id);
 
 	}
 
