@@ -19,7 +19,7 @@ class CreateRatingsTable extends Migration
         });
 
         Schema::create('movie_rating', function (Blueprint $table){
-            $table->integer('movie_id')->unsigned()->index();
+            $table->string('movie_id')->index();
 
             $table->integer('rating_id')->unsigned()->index();
 

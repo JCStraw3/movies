@@ -21,7 +21,7 @@ class CreateUserlistsTable extends Migration
         });
 
         Schema::create('movie_userlist', function (Blueprint $table){
-            $table->integer('movie_id')->unsigned()->index();
+            $table->string('movie_id')->index();
 
             $table->integer('userlist_id')->unsigned()->index();
 

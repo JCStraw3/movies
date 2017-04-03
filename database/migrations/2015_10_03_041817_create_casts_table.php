@@ -19,7 +19,7 @@ class CreateCastsTable extends Migration
         });
 
         Schema::create('cast_movie', function (Blueprint $table){
-            $table->integer('movie_id')->unsigned()->index();
+            $table->string('movie_id')->index();
 
             $table->integer('cast_id')->unsigned()->index();
 

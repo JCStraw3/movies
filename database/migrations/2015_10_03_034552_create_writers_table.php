@@ -19,7 +19,7 @@ class CreateWritersTable extends Migration
         });
 
         Schema::create('movie_writer', function (Blueprint $table){
-            $table->integer('movie_id')->unsigned()->index();
+            $table->string('movie_id')->index();
 
             $table->integer('writer_id')->unsigned()->index();
 

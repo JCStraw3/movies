@@ -19,7 +19,7 @@ class CreateLabelsTable extends Migration
         });
 
         Schema::create('label_movie', function (Blueprint $table){
-            $table->integer('movie_id')->unsigned()->index();
+            $table->string('movie_id')->index();
 
             $table->integer('label_id')->unsigned()->index();
 

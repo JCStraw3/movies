@@ -19,7 +19,7 @@ class CreateDirectorsTable extends Migration
         });
 
         Schema::create('director_movie', function (Blueprint $table){
-            $table->integer('movie_id')->unsigned()->index();
+            $table->string('movie_id')->index();
 
             $table->integer('director_id')->unsigned()->index();
 
