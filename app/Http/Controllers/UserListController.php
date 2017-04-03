@@ -11,6 +11,8 @@ use App\Movie;
 
 use Auth;
 
+use Uuid;
+
 class UserlistController extends Controller {
 
 // Middleware
@@ -146,9 +148,12 @@ class UserlistController extends Controller {
 
 	public function actionCreate(Requests\CreateUserlistRequest $request){
 
+		$id = Uuid::generate(4);
+
 		// Set the request into a variable.
 
 		$userlist = new Userlist([
+			'id' => $id,
 			'name' => $request->name,
 			'public' => $request->public,
 			'description' => $request->description,
@@ -174,7 +179,7 @@ class UserlistController extends Controller {
 
 		// Redirect to new userlist's readOne view.
 
-		return redirect('/lists/'.$userlist->id);
+		return redirect('/lists/'.$id);
 
 	}
 

@@ -13,6 +13,7 @@ class Userlist extends Model {
 	// Attributes that are mass assignable.
 
 	protected $fillable = [
+		'id',
 		'name',
 		'public',
 		'description',

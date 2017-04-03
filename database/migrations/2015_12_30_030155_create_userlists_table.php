@@ -12,7 +12,7 @@ class CreateUserlistsTable extends Migration
      */
     public function up(){
         Schema::create('userlists', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('id');
             $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->boolean('public');
@@ -23,7 +23,7 @@ class CreateUserlistsTable extends Migration
         Schema::create('movie_userlist', function (Blueprint $table){
             $table->string('movie_id')->index();
 
-            $table->integer('userlist_id')->unsigned()->index();
+            $table->string('userlist_id')->index();
 
             $table->timestamps();
         });
